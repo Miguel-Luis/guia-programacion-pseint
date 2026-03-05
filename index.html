@@ -1,0 +1,2283 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guía Completa — Programación desde Cero con PSeInt</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="top">
+      <div class="sidebar-header">
+        <div class="brand">
+          <img class="logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23345995'/%3E%3Cpath d='M30 35L15 50L30 65' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M70 35L85 50L70 65' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M58 25L42 75' stroke='%2322d3ee' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" alt="PSeInt" />
+          <div>
+            <h1>Guía Completa · Programación desde Cero</h1>
+            <p>Aprende con ejemplos reales en <strong>PSeInt</strong> (pseudocódigo).</p>
+          </div>
+        </div>
+        <button class="hamburger" id="menuToggle" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="sidebar-body" id="sidebarBody">
+
+      <div class="tools">
+        <div class="row search">
+          <input id="search" type="search" placeholder="Buscar… (ej: Si, arreglo, Mientras)" />
+          <button class="search-clear" id="clear" title="Limpiar búsqueda" aria-label="Limpiar">✕</button>
+        </div>
+
+        <div class="row">
+          <button class="btn" id="print">Imprimir</button>
+        </div>
+
+        <div class="row">
+          <div class="pill"><span>Progreso de lectura</span><strong id="progressLabel">0%</strong></div>
+        </div>
+        <div class="progress" aria-label="Progreso">
+          <div id="progressBar"></div>
+        </div>
+
+        <div class="row" style="margin-top:10px">
+          <div class="pill"><span>Atajo útil</span><strong class="kbd">Ctrl/Cmd + F</strong></div>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <a href="#s0" class="navlink"><span>0) Qué es programar</span><span class="tag">base</span></a>
+        <a href="#s1" class="navlink"><span>1) Variables y E/S</span><span class="tag">base</span></a>
+        <a href="#s2" class="navlink"><span>2) Estructura del algoritmo</span><span class="tag">clave</span></a>
+        <a href="#s3" class="navlink"><span>3) Tipos de datos</span><span class="tag">datos</span></a>
+        <a href="#s4" class="navlink"><span>4) Operadores</span><span class="tag">lógica</span></a>
+        <a href="#s5" class="navlink"><span>5) Condicionales</span><span class="tag">decisión</span></a>
+        <a href="#s6" class="navlink"><span>6) Ciclos</span><span class="tag">repetir</span></a>
+        <a href="#s7" class="navlink"><span>7) SubProcesos y Funciones</span><span class="tag">bloques</span></a>
+        <a href="#s8" class="navlink"><span>8) Arreglos (vectores)</span><span class="tag">listas</span></a>
+        <a href="#s9" class="navlink"><span>9) Matrices</span><span class="tag">tablas</span></a>
+        <a href="#s10" class="navlink"><span>10) Cadenas de texto</span><span class="tag">texto</span></a>
+        <a href="#s11" class="navlink"><span>11) Errores típicos</span><span class="tag">debug</span></a>
+        <a href="#s12" class="navlink"><span>12) Buenas prácticas</span><span class="tag">pro</span></a>
+        <a href="#s13" class="navlink"><span>13) Mini-talleres</span><span class="tag">práctica</span></a>
+        <a href="#top" class="navlink"><span>↑ Volver arriba</span><span class="tag">UI</span></a>
+      </nav>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content" id="main">
+      <div class="hero">
+        <h2>Programación desde Cero con PSeInt</h2>
+        <p>
+          Esta guía está pensada para personas que <strong>nunca han programado</strong>. Incluye
+          ejemplos, errores intencionales y correcciones. El objetivo no es memorizar, sino <strong>aprender a pensar como programador</strong>.
+        </p>
+        <div class="meta">
+          <span class="chip"><span class="dot" aria-hidden="true"></span>Enfoque: lógica + hábitos</span>
+          <span class="chip">Herramienta: PSeInt</span>
+          <span class="chip">Lenguaje: Pseudocódigo en español</span>
+          <span class="chip">Incluye: tabla de errores + ejercicios</span>
+        </div>
+      </div>
+
+      <!-- 0 -->
+      <section id="s0">
+        <h3>0) ¿Qué es programar?</h3>
+        <p class="lead">
+          Programar es <strong>dar instrucciones</strong> a una computadora para que haga algo. Un programa es una secuencia de pasos
+          que transforman <strong>datos</strong> en <strong>resultados</strong>. PSeInt te permite escribir esos pasos en pseudocódigo
+          (español estructurado) para aprender lógica de programación sin preocuparte por un lenguaje complejo.
+        </p>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h4>Lo que siempre existe en un programa</h4>
+            <p>
+              1) <strong>Datos</strong> (edad, nombre, puntaje).<br>
+              2) <strong>Decisiones</strong> (si aprobó, si es mayor de edad).<br>
+              3) <strong>Repeticiones</strong> (contar, sumar, recorrer listas).<br>
+              4) <strong>Acciones</strong> (mostrar, leer, calcular).
+            </p>
+          </div>
+          <div class="card col-6">
+            <h4>Cómo piensa un programador</h4>
+            <p>
+              Divide un problema grande en partes pequeñas: "pedir datos al usuario", "hacer el cálculo", "mostrar el resultado".
+              Cada parte se vuelve código.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h4>¿Qué es PSeInt?</h4>
+            <p>
+              PSeInt (<strong>Pseudo Intérprete</strong>) es una herramienta educativa que te permite escribir algoritmos
+              en pseudocódigo en español y ejecutarlos. También genera diagramas de flujo automáticamente.
+            </p>
+          </div>
+          <div class="card col-6">
+            <h4>¿Por qué pseudocódigo?</h4>
+            <p>
+              Porque te enseña la <strong>lógica</strong> sin distraerte con reglas complicadas de un lenguaje real.
+              Una vez que domines la lógica, migrar a Python, Java, C++ o cualquier otro lenguaje será mucho más fácil.
+            </p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="badge good">✓</div>
+          <div>
+            <strong>Meta de esta guía</strong>
+            <div class="muted">Que el estudiante pueda leer un error, ubicarlo en el código y corregirlo con seguridad.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 1 -->
+      <section id="s1">
+        <h3>1) Variables y Entrada/Salida</h3>
+        <p class="lead">
+          Una <strong>variable</strong> es una "caja con nombre" donde guardas un valor. Ese valor puede cambiar.
+          En PSeInt usas <code>Definir</code> para crear una variable, <code>&lt;-</code> para asignarle un valor,
+          <code>Escribir</code> para mostrar datos y <code>Leer</code> para pedir datos al usuario.
+        </p>
+
+        <div class="grid">
+          <div class="card col-7">
+            <h4>Declarar y asignar variables</h4>
+            <p>
+              Declarar es <strong>crear</strong> la variable y decirle qué tipo de dato guardará. Luego le asignas un valor con <code>&lt;-</code>.
+            </p>
+            <div class="examples">
+              <div class="codebar">
+                <div class="muted">Ejemplo: declarar y asignar</div>
+                <button class="btn small copy" data-copy="code-var-1">Copiar</button>
+              </div>
+              <pre><code id="code-var-1">Algoritmo MisVariables
+	Definir vidas Como Entero
+	Definir nombre Como Cadena
+	Definir velocidad Como Real
+
+	vidas &lt;- 3
+	nombre &lt;- "Mario"
+	velocidad &lt;- 120.5
+
+	Escribir "Vidas: ", vidas
+	Escribir "Nombre: ", nombre
+	Escribir "Velocidad: ", velocidad
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+
+          <div class="card col-5">
+            <h4>Cómo nombrar una variable</h4>
+            <p>
+              ✅ <strong>Descriptiva</strong>: <code>velocidad_jugador</code><br>
+              ✅ <strong>Sin espacios</strong>: usa <code>_</code> para separar palabras<br>
+              ✅ <strong>Sin tildes ni ñ</strong> en el nombre<br>
+              ❌ No empezar con número: <code>2vidas</code><br>
+              ❌ No usar palabras reservadas: <code>Si</code>, <code>Para</code>, <code>Mientras</code>
+            </p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h4>Escribir (mostrar en pantalla)</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Mostrar datos al usuario</div><button class="btn small copy" data-copy="code-var-esc">Copiar</button></div>
+              <pre><code id="code-var-esc">Algoritmo Salida
+	Definir edad Como Entero
+	edad &lt;- 20
+
+	// Texto fijo
+	Escribir "Hola mundo"
+
+	// Texto + variable (con coma)
+	Escribir "Tu edad es: ", edad
+
+	// Varias variables juntas
+	Escribir "Edad: ", edad, " años"
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+          <div class="card col-6">
+            <h4>Leer (pedir datos al usuario)</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Recibir datos del usuario</div><button class="btn small copy" data-copy="code-var-leer">Copiar</button></div>
+              <pre><code id="code-var-leer">Algoritmo Entrada
+	Definir nombre Como Cadena
+	Definir edad Como Entero
+
+	Escribir "¿Cómo te llamas?"
+	Leer nombre
+
+	Escribir "¿Cuántos años tienes?"
+	Leer edad
+
+	Escribir "Hola ", nombre, ", tienes ", edad, " años"
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="badge warn">!</div>
+          <div>
+            <strong>Importante: el operador de asignación</strong>
+            <div class="muted">
+              En PSeInt, para guardar un valor en una variable se usa <code>&lt;-</code> (flecha), no <code>=</code>.<br>
+              ✅ <code>vidas &lt;- 3</code> → Correcto: guarda 3 en vidas.<br>
+              ❌ <code>vidas = 3</code> → Incorrecto para asignar (el <code>=</code> se usa para comparar).
+            </div>
+          </div>
+        </div>
+
+        <details open>
+          <summary>Ejercicio rápido (3 min) <span class="tag">práctica</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea un algoritmo que declare una variable <code>monedas</code> de tipo Entero con valor <code>0</code>.</li>
+              <li>Declara <code>nombre_jugador</code> de tipo Cadena con tu nombre.</li>
+              <li>Declara <code>altura_salto</code> de tipo Real con un valor decimal (ej: 250.5).</li>
+              <li>Muestra las tres variables con <code>Escribir</code>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (5 min): Ficha del estudiante <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide al usuario su nombre, edad y promedio (Real).</li>
+              <li>Muestra un resumen: <code>"Nombre: ..., Edad: ..., Promedio: ..."</code></li>
+            </ol>
+          </div>
+        </details>
+      </section>
+
+      <!-- 2 -->
+      <section id="s2">
+        <h3>2) Estructura del algoritmo</h3>
+        <p class="lead">
+          Todo programa en PSeInt tiene una estructura clara: empieza con <code>Algoritmo NombreDelAlgoritmo</code> y termina con <code>FinAlgoritmo</code>.
+          Cada bloque (condicional, ciclo, etc.) se abre y se cierra con palabras clave específicas como <code>FinSi</code>, <code>FinPara</code>, <code>FinMientras</code>.
+        </p>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h4>Estructura mínima</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Plantilla base de todo programa</div><button class="btn small copy" data-copy="code-struct-1">Copiar</button></div>
+              <pre><code id="code-struct-1">Algoritmo MiPrograma
+	// Aquí van las instrucciones
+	Escribir "Hola mundo"
+FinAlgoritmo</code></pre>
+            </div>
+            <p class="muted">Todo lo que esté entre <code>Algoritmo</code> y <code>FinAlgoritmo</code> se ejecuta.</p>
+          </div>
+          <div class="card col-6">
+            <h4>Bloques y sus cierres</h4>
+            <p>
+              Cada estructura tiene su palabra de cierre:<br><br>
+              <code>Si ... Entonces</code> → <code>FinSi</code><br>
+              <code>Para ... </code> → <code>FinPara</code><br>
+              <code>Mientras ... Hacer</code> → <code>FinMientras</code><br>
+              <code>Repetir ... </code> → <code>Hasta Que</code><br>
+              <code>Segun ... Hacer</code> → <code>FinSegun</code><br>
+              <code>SubProceso ... </code> → <code>FinSubProceso</code>
+            </p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h4>Indentación (buena práctica)</h4>
+            <p>
+              Aunque PSeInt no <strong>obliga</strong> a indentar (a diferencia de Python), la indentación hace que tu código
+              sea mucho más fácil de leer. Usa tabulaciones para marcar qué código está "dentro" de un bloque.
+            </p>
+            <div class="examples">
+              <div class="codebar"><div class="muted">✅ Con indentación (legible)</div><button class="btn small copy" data-copy="code-struct-ok">Copiar</button></div>
+              <pre><code id="code-struct-ok">Algoritmo Ejemplo
+	Definir vidas Como Entero
+	vidas &lt;- 3
+
+	Si vidas &gt; 0 Entonces
+		Escribir "Sigues vivo"
+	SiNo
+		Escribir "Game Over"
+	FinSi
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+          <div class="card col-6">
+            <h4>❌ Sin indentación (difícil de leer)</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">El mismo código, sin indentar</div><button class="btn small copy" data-copy="code-struct-bad">Copiar</button></div>
+              <pre><code id="code-struct-bad">Algoritmo Ejemplo
+Definir vidas Como Entero
+vidas &lt;- 3
+Si vidas &gt; 0 Entonces
+Escribir "Sigues vivo"
+SiNo
+Escribir "Game Over"
+FinSi
+FinAlgoritmo</code></pre>
+            </div>
+            <div class="callout">
+              <div class="badge bad">✕</div>
+              <div>
+                <strong>¿Funciona? Sí. ¿Es legible? No.</strong>
+                <div class="muted">Sin indentación es muy difícil ver qué código pertenece al <code>Si</code> y qué al <code>SiNo</code>.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="badge warn">!</div>
+          <div>
+            <strong>Comentarios</strong>
+            <div class="muted">
+              Usa <code>//</code> para escribir comentarios. PSeInt los ignora al ejecutar, pero te ayudan a explicar tu código:<br>
+              <code>// Esto es un comentario</code>
+            </div>
+          </div>
+        </div>
+
+        <details open>
+          <summary>Checklist de estructura (para que revises solo) <span class="tag">hábito</span></summary>
+          <div class="details-body">
+            <ul>
+              <li>¿Mi código empieza con <code>Algoritmo NombreDelAlgoritmo</code>?</li>
+              <li>¿Mi código termina con <code>FinAlgoritmo</code>?</li>
+              <li>¿Cada <code>Si</code> tiene su <code>FinSi</code>?</li>
+              <li>¿Cada <code>Para</code> tiene su <code>FinPara</code>?</li>
+              <li>¿Cada <code>Mientras</code> tiene su <code>FinMientras</code>?</li>
+              <li>¿Estoy indentando el contenido de cada bloque?</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <!-- 3 -->
+      <section id="s3">
+        <h3>3) Tipos de datos</h3>
+        <p class="lead">
+          Un "tipo de dato" es <strong>qué clase de cosa</strong> guarda una variable. No es lo mismo guardar un número que un texto.
+          Si mezclas tipos sin querer, aparecen errores. En PSeInt hay 5 tipos básicos.
+        </p>
+
+        <div class="grid">
+          <div class="card col-12">
+            <h4>Los 5 tipos de PSeInt</h4>
+            <div class="table-wrap" style="margin-top:12px">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tipo</th>
+                    <th>Qué guarda</th>
+                    <th>Ejemplos</th>
+                    <th>Uso típico</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>Entero</code></td>
+                    <td>Números sin decimales</td>
+                    <td><code>0, 1, -5, 100</code></td>
+                    <td class="muted">Edades, contadores, vidas, puntaje</td>
+                  </tr>
+                  <tr>
+                    <td><code>Real</code></td>
+                    <td>Números con decimales</td>
+                    <td><code>3.14, -0.5, 120.0</code></td>
+                    <td class="muted">Promedios, precios, porcentajes</td>
+                  </tr>
+                  <tr>
+                    <td><code>Cadena</code></td>
+                    <td>Texto (entre comillas)</td>
+                    <td><code>"Hola", "Mario"</code></td>
+                    <td class="muted">Nombres, mensajes, respuestas</td>
+                  </tr>
+                  <tr>
+                    <td><code>Logico</code></td>
+                    <td>Verdadero o Falso</td>
+                    <td><code>Verdadero, Falso</code></td>
+                    <td class="muted">Estados, banderas (¿está vivo?)</td>
+                  </tr>
+                  <tr>
+                    <td><code>Caracter</code></td>
+                    <td>Un solo carácter</td>
+                    <td><code>"A", "z", "5"</code></td>
+                    <td class="muted">Opciones de menú, letras sueltas</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card col-12">
+            <h4>Ejemplo con todos los tipos</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Declaración de cada tipo</div><button class="btn small copy" data-copy="code-types-1">Copiar</button></div>
+              <pre><code id="code-types-1">Algoritmo TiposDeDatos
+	Definir vidas Como Entero
+	Definir promedio Como Real
+	Definir nombre Como Cadena
+	Definir esta_vivo Como Logico
+	Definir inicial Como Caracter
+
+	vidas &lt;- 3
+	promedio &lt;- 8.5
+	nombre &lt;- "Mario"
+	esta_vivo &lt;- Verdadero
+	inicial &lt;- "M"
+
+	Escribir "Nombre: ", nombre
+	Escribir "Vidas: ", vidas
+	Escribir "Promedio: ", promedio
+	Escribir "¿Vivo? ", esta_vivo
+	Escribir "Inicial: ", inicial
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="badge warn">!</div>
+          <div>
+            <strong>Declarar varias variables del mismo tipo</strong>
+            <div class="muted">
+              Puedes declarar varias en una sola línea:<br>
+              <code>Definir x, y, z Como Entero</code><br>
+              <code>Definir nombre, apellido Como Cadena</code>
+            </div>
+          </div>
+        </div>
+
+        <details open>
+          <summary>¿Por qué importa el tipo? <span class="tag">concepto</span></summary>
+          <div class="details-body">
+            Porque determina qué operaciones puedes hacer:
+            <ul>
+              <li>Puedes sumar números: <code>3 + 2</code> → <code>5</code></li>
+              <li>Puedes unir textos: <code>"Hola" + " Mundo"</code> → <code>"Hola Mundo"</code></li>
+              <li>Pero <code>"Hola" + 3</code> puede dar error o resultados inesperados si no conviertes.</li>
+              <li>Para convertir número a texto: <code>ConvertirATexto(3)</code></li>
+              <li>Para convertir texto a número: <code>ConvertirANumero("42")</code></li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <!-- 4 -->
+      <section id="s4">
+        <h3>4) Operadores (matemáticos, comparación y lógica)</h3>
+        <p class="lead">
+          Los operadores son los <strong>"verbos"</strong> de la programación: le dicen al programa <strong>qué hacer</strong> con los datos.
+          Sin operadores no podrías sumar puntaje, comparar notas, ni decidir si un alumno aprueba.
+        </p>
+
+        <!-- 4.1 — Matemáticos -->
+        <div class="grid">
+          <div class="card col-12">
+            <h4>4.1 · Operadores matemáticos (aritméticos)</h4>
+            <div class="table-wrap" style="margin-top:12px">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Operador</th>
+                    <th>Nombre</th>
+                    <th>Ejemplo</th>
+                    <th>Resultado</th>
+                    <th>¿Para qué sirve?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>+</code></td>
+                    <td>Suma</td>
+                    <td><code>10 + 3</code></td>
+                    <td><code>13</code></td>
+                    <td class="muted">Sumar puntaje, acumular totales</td>
+                  </tr>
+                  <tr>
+                    <td><code>-</code></td>
+                    <td>Resta</td>
+                    <td><code>10 - 3</code></td>
+                    <td><code>7</code></td>
+                    <td class="muted">Calcular diferencias, restar vidas</td>
+                  </tr>
+                  <tr>
+                    <td><code>*</code></td>
+                    <td>Multiplicación</td>
+                    <td><code>10 * 3</code></td>
+                    <td><code>30</code></td>
+                    <td class="muted">Calcular áreas, multiplicar precios</td>
+                  </tr>
+                  <tr>
+                    <td><code>/</code></td>
+                    <td>División</td>
+                    <td><code>10 / 3</code></td>
+                    <td><code>3.33...</code></td>
+                    <td class="muted">Promedios, repartir cantidades</td>
+                  </tr>
+                  <tr>
+                    <td><code>MOD</code></td>
+                    <td>Módulo (residuo)</td>
+                    <td><code>10 MOD 3</code></td>
+                    <td><code>1</code></td>
+                    <td class="muted">Saber si es par/impar, ciclos de turnos</td>
+                  </tr>
+                  <tr>
+                    <td><code>^</code></td>
+                    <td>Potencia</td>
+                    <td><code>2 ^ 3</code></td>
+                    <td><code>8</code></td>
+                    <td class="muted">Cuadrados, cubos, interés compuesto</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="examples">
+              <div class="codebar"><div class="muted">Ejemplo completo: cálculos básicos</div><button class="btn small copy" data-copy="code-op-1">Copiar</button></div>
+              <pre><code id="code-op-1">Algoritmo OperadoresMatematicos
+	Definir a, b Como Entero
+	a &lt;- 10
+	b &lt;- 3
+
+	Escribir "Suma: ", a + b
+	Escribir "Resta: ", a - b
+	Escribir "Multiplicación: ", a * b
+	Escribir "División: ", a / b
+	Escribir "Módulo: ", a MOD b
+	Escribir "Potencia: ", a ^ 2
+FinAlgoritmo</code></pre>
+            </div>
+
+            <div class="callout">
+              <div class="badge warn">!</div>
+              <div>
+                <strong>Cuidado con la división por cero</strong>
+                <div class="muted">
+                  Si divides entre <code>0</code>, PSeInt generará un error. Siempre verifica que el divisor no sea cero antes de dividir.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4.2 — Comparación -->
+        <div class="grid">
+          <div class="card col-12">
+            <h4>4.2 · Operadores de comparación</h4>
+            <p>
+              Comparan dos valores y devuelven <code>Verdadero</code> o <code>Falso</code>.
+              Son la base de todas las <strong>decisiones</strong>: "¿aprobó?", "¿es mayor de edad?", "¿tiene saldo?".
+            </p>
+
+            <div class="table-wrap" style="margin-top:12px">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Operador</th>
+                    <th>Significado</th>
+                    <th>Ejemplo</th>
+                    <th>Resultado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>=</code></td>
+                    <td>¿Es igual?</td>
+                    <td><code>3 = 3</code></td>
+                    <td><code>Verdadero</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;&gt;</code></td>
+                    <td>¿Es diferente?</td>
+                    <td><code>3 &lt;&gt; 5</code></td>
+                    <td><code>Verdadero</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>&gt;</code></td>
+                    <td>¿Es mayor?</td>
+                    <td><code>10 &gt; 5</code></td>
+                    <td><code>Verdadero</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;</code></td>
+                    <td>¿Es menor?</td>
+                    <td><code>2 &lt; 5</code></td>
+                    <td><code>Verdadero</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>&gt;=</code></td>
+                    <td>¿Es mayor o igual?</td>
+                    <td><code>5 &gt;= 5</code></td>
+                    <td><code>Verdadero</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;=</code></td>
+                    <td>¿Es menor o igual?</td>
+                    <td><code>0 &lt;= 0</code></td>
+                    <td><code>Verdadero</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="examples">
+              <div class="codebar"><div class="muted">Ejemplo: comparar valores</div><button class="btn small copy" data-copy="code-op-2">Copiar</button></div>
+              <pre><code id="code-op-2">Algoritmo Comparaciones
+	Definir nota Como Real
+	nota &lt;- 7.5
+
+	Escribir "¿Aprobó (nota &gt;= 6)? ", nota &gt;= 6
+	Escribir "¿Nota perfecta (= 10)? ", nota = 10
+	Escribir "¿Reprobó (&lt; 6)? ", nota &lt; 6
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4.3 — Lógicos -->
+        <div class="grid">
+          <div class="card col-12">
+            <h4>4.3 · Operadores lógicos</h4>
+            <p>
+              Combinan varias condiciones en una sola. Piensa en ellos como <strong>conectores</strong>:
+              "si tiene llave <strong>Y</strong> la puerta está cerrada", "si está vivo <strong>O</strong> tiene revive".
+            </p>
+
+            <div class="table-wrap" style="margin-top:12px">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Operador</th>
+                    <th>Significado</th>
+                    <th>Se cumple cuando…</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>Y</code></td>
+                    <td><strong>Y</strong> (ambas deben ser verdaderas)</td>
+                    <td class="muted">Las dos condiciones son Verdadero</td>
+                  </tr>
+                  <tr>
+                    <td><code>O</code></td>
+                    <td><strong>O</strong> (basta una verdadera)</td>
+                    <td class="muted">Al menos una condición es Verdadero</td>
+                  </tr>
+                  <tr>
+                    <td><code>NO</code></td>
+                    <td><strong>NO</strong> (invierte el valor)</td>
+                    <td class="muted">Convierte Verdadero en Falso y viceversa</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="examples">
+              <div class="codebar"><div class="muted">Ejemplo: combinar condiciones</div><button class="btn small copy" data-copy="code-op-3">Copiar</button></div>
+              <pre><code id="code-op-3">Algoritmo OperadoresLogicos
+	Definir tiene_llave Como Logico
+	Definir nivel Como Entero
+	tiene_llave &lt;- Verdadero
+	nivel &lt;- 7
+
+	// Y: ambas deben cumplirse
+	Si tiene_llave Y nivel &gt;= 5 Entonces
+		Escribir "Puedes abrir la puerta"
+	FinSi
+
+	// O: basta una
+	Definir vidas Como Entero
+	Definir tiene_revive Como Logico
+	vidas &lt;- 0
+	tiene_revive &lt;- Verdadero
+
+	Si vidas &gt; 0 O tiene_revive Entonces
+		Escribir "Sigue en el juego"
+	FinSi
+
+	// NO: invierte
+	Definir esta_congelado Como Logico
+	esta_congelado &lt;- Falso
+
+	Si NO esta_congelado Entonces
+		Escribir "Puede moverse"
+	FinSi
+FinAlgoritmo</code></pre>
+            </div>
+
+            <div class="callout">
+              <div class="badge good">✓</div>
+              <div>
+                <strong>Tabla de verdad rápida</strong>
+                <div class="muted">
+                  <code>Verdadero Y Verdadero</code> → <code>Verdadero</code> ·
+                  <code>Verdadero Y Falso</code> → <code>Falso</code> ·
+                  <code>Falso Y Falso</code> → <code>Falso</code><br>
+                  <code>Verdadero O Verdadero</code> → <code>Verdadero</code> ·
+                  <code>Verdadero O Falso</code> → <code>Verdadero</code> ·
+                  <code>Falso O Falso</code> → <code>Falso</code><br>
+                  <code>NO Verdadero</code> → <code>Falso</code> ·
+                  <code>NO Falso</code> → <code>Verdadero</code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4.4 — Asignación vs comparación -->
+        <details open>
+          <summary>Error MUY común: <code>&lt;-</code> vs <code>=</code> <span class="tag">típico</span></summary>
+          <div class="details-body">
+            <p>Este es el error más frecuente en principiantes:</p>
+            <p>
+              <strong><code>&lt;-</code></strong> → <strong>Asignar</strong>: guarda un valor. "Pon esto aquí".<br>
+              <strong><code>=</code></strong> → <strong>Comparar</strong>: pregunta si dos cosas son iguales. "¿Son iguales?"
+            </p>
+            <div class="grid examples">
+              <div class="card col-6">
+                <h4>✅ Asignar (guardar)</h4>
+                <pre><code>vidas &lt;- 3       // Guardar 3 en vidas
+vidas &lt;- vidas - 1  // Ahora vale 2</code></pre>
+              </div>
+              <div class="card col-6">
+                <h4>✅ Comparar (preguntar)</h4>
+                <pre><code>Si vidas = 0 Entonces  // ¿Vidas es igual a 0?
+	Escribir "Game Over"
+FinSi</code></pre>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (10 min): Calculadora de daño <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Declara: <code>ataque &lt;- 25</code>, <code>defensa &lt;- 10</code>, <code>es_critico &lt;- Verdadero</code></li>
+              <li>Calcula <code>dano &lt;- ataque - defensa</code></li>
+              <li>Si <code>es_critico</code> es Verdadero, multiplica el daño por 2: <code>dano &lt;- dano * 2</code></li>
+              <li>Muestra si el daño es mayor a 20</li>
+              <li>Muestra si puede atacar: <code>dano &gt; 0 Y NO esta_congelado</code></li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- 4.5 — Concatenar textos -->
+        <div class="grid">
+          <div class="card col-12">
+            <h4>4.4 · Concatenar textos (unir cadenas)</h4>
+            <p>
+              Puedes unir textos con <code>+</code> o simplemente usar comas en <code>Escribir</code>.
+              Si necesitas unir texto con un número, usa <code>ConvertirATexto()</code>.
+            </p>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Unir textos y mostrar datos</div><button class="btn small copy" data-copy="code-concat-1">Copiar</button></div>
+              <pre><code id="code-concat-1">Algoritmo ConcatenarTextos
+	Definir nombre Como Cadena
+	Definir vidas Como Entero
+	nombre &lt;- "Carlos"
+	vidas &lt;- 3
+
+	// Opción 1: comas en Escribir (más fácil)
+	Escribir "Hola ", nombre, ", tienes ", vidas, " vidas"
+
+	// Opción 2: concatenación con +
+	Escribir "Jugador: " + nombre
+	Escribir "Vidas: " + ConvertirATexto(vidas)
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 -->
+      <section id="s5">
+        <h3>5) Condicionales (Si / Según)</h3>
+        <p class="lead">
+          Los condicionales permiten tomar decisiones. El programa evalúa una condición y ejecuta un bloque u otro.
+        </p>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h4>Si / SiNo / FinSi</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Estructura básica</div><button class="btn small copy" data-copy="code-if-1">Copiar</button></div>
+              <pre><code id="code-if-1">Algoritmo CondicionalBasico
+	Definir vidas Como Entero
+	vidas &lt;- 1
+
+	Si vidas &gt; 1 Entonces
+		Escribir "Estás bien"
+	SiNo
+		Si vidas = 1 Entonces
+			Escribir "¡Cuidado! Última vida"
+		SiNo
+			Escribir "Game Over"
+		FinSi
+	FinSi
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+          <div class="card col-6">
+            <h4>Segun / FinSegun (selección múltiple)</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Cuando hay muchas opciones fijas</div><button class="btn small copy" data-copy="code-if-2">Copiar</button></div>
+              <pre><code id="code-if-2">Algoritmo CondicionalSegun
+	Definir dia Como Entero
+	Escribir "Ingresa un día (1-7):"
+	Leer dia
+
+	Segun dia Hacer
+		1:
+			Escribir "Lunes"
+		2:
+			Escribir "Martes"
+		3:
+			Escribir "Miércoles"
+		4:
+			Escribir "Jueves"
+		5:
+			Escribir "Viernes"
+		De Otro Modo:
+			Escribir "Fin de semana"
+	FinSegun
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="badge warn">!</div>
+          <div>
+            <strong>Si anidados vs Según</strong>
+            <div class="muted">
+              PSeInt no tiene <code>elif</code>. Para múltiples condiciones puedes:<br>
+              • <strong>Anidar Si dentro de SiNo</strong>: para condiciones con rangos (<code>&gt;</code>, <code>&lt;</code>).<br>
+              • <strong>Usar Segun</strong>: cuando comparas contra valores exactos (1, 2, 3, etc.).
+            </div>
+          </div>
+        </div>
+
+        <details open>
+          <summary>Ejercicio (5 min): Estado del personaje <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Declara <code>vida &lt;- 0</code></li>
+              <li>Si <code>vida &gt; 0</code>, escribe <code>"El personaje está vivo"</code></li>
+              <li>Si no, escribe <code>"El personaje ha muerto"</code></li>
+              <li>Prueba cambiando el valor a 5, 1 y 0.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (10 min): Semáforo de energía <span class="tag">reto</span></summary>
+          <div class="details-body">
+            Pide al usuario un valor de <code>energia</code> (0 a 100) e imprime:
+            <ul>
+              <li>"Alta" si &gt;= 70</li>
+              <li>"Media" si &gt;= 30 y &lt; 70</li>
+              <li>"Baja" si &lt; 30</li>
+            </ul>
+            Pista: anida <code>Si</code> dentro de <code>SiNo</code>, o usa <code>Y</code> en la condición de "Media".
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (8 min): Rango del jugador <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide al usuario su puntaje.</li>
+              <li>Muestra el rango:
+                <ul>
+                  <li><code>"Leyenda"</code> si puntaje &gt;= 5000</li>
+                  <li><code>"Veterano"</code> si puntaje &gt;= 2000</li>
+                  <li><code>"Soldado"</code> si puntaje &gt;= 500</li>
+                  <li><code>"Novato"</code> en cualquier otro caso</li>
+                </ul>
+              </li>
+            </ol>
+            Pista: empieza por el valor más alto con Si, y anida los demás.
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (10 min): Acceso a la zona secreta <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Declara <code>tiene_llave &lt;- Verdadero</code> y <code>nivel &lt;- 7</code></li>
+              <li>Si tiene la llave <strong>Y</strong> nivel &gt;= 5: <code>"Acceso concedido"</code></li>
+              <li>Si tiene la llave pero nivel &lt; 5: <code>"Tienes la llave, pero nivel muy bajo"</code></li>
+              <li>Si no tiene la llave: <code>"Necesitas la llave"</code></li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (12 min): Sistema de daño por tipo de arma <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide al usuario que escriba un arma: <code>"espada"</code>, <code>"arco"</code> o <code>"magia"</code></li>
+              <li>Pide si fue golpe crítico (1 = sí, 0 = no)</li>
+              <li>Asigna daño base según el arma (espada: 20, arco: 15, magia: 30, otra: 5)</li>
+              <li>Si fue crítico, multiplica el daño por 2</li>
+              <li>Muestra el resultado final</li>
+            </ol>
+          </div>
+        </details>
+      </section>
+
+      <!-- 6 -->
+      <section id="s6">
+        <h3>6) Ciclos (Para / Mientras / Repetir)</h3>
+        <p class="lead">
+          Un ciclo repite un bloque de código. PSeInt tiene tres tipos de ciclos, cada uno ideal para una situación diferente.
+        </p>
+
+        <div class="grid">
+          <div class="card col-4">
+            <h4>Para (cantidad conocida)</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Contar del 1 al 5</div><button class="btn small copy" data-copy="code-for-1">Copiar</button></div>
+              <pre><code id="code-for-1">Algoritmo CicloPara
+	Definir i Como Entero
+
+	Para i &lt;- 1 Hasta 5 Con Paso 1
+		Escribir "Número: ", i
+	FinPara
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+          <div class="card col-4">
+            <h4>Mientras (condición al inicio)</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Repetir mientras se cumpla</div><button class="btn small copy" data-copy="code-while-1">Copiar</button></div>
+              <pre><code id="code-while-1">Algoritmo CicloMientras
+	Definir cont Como Entero
+	cont &lt;- 0
+
+	Mientras cont &lt; 3 Hacer
+		Escribir "Intento: ", cont
+		cont &lt;- cont + 1
+	FinMientras
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+          <div class="card col-4">
+            <h4>Repetir (al menos una vez)</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Ejecuta y luego verifica</div><button class="btn small copy" data-copy="code-rep-1">Copiar</button></div>
+              <pre><code id="code-rep-1">Algoritmo CicloRepetir
+	Definir num Como Entero
+
+	Repetir
+		Escribir "Ingresa un número positivo:"
+		Leer num
+	Hasta Que num &gt; 0
+
+	Escribir "Ingresaste: ", num
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="badge good">✓</div>
+          <div>
+            <strong>¿Cuál uso?</strong>
+            <div class="muted">
+              <strong>Para</strong>: cuando sabes cuántas veces repetir (ej: del 1 al 10).<br>
+              <strong>Mientras</strong>: cuando depende de una condición que puede no cumplirse nunca (puede ejecutar 0 veces).<br>
+              <strong>Repetir</strong>: cuando necesitas que se ejecute al menos una vez (ideal para validar datos del usuario).
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h4>Para con paso diferente</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Cuenta regresiva y pares</div><button class="btn small copy" data-copy="code-for-2">Copiar</button></div>
+              <pre><code id="code-for-2">Algoritmo PasosDiferentes
+	Definir i Como Entero
+
+	// Cuenta regresiva: de 5 a 1
+	Para i &lt;- 5 Hasta 1 Con Paso -1
+		Escribir i
+	FinPara
+	Escribir "¡Despegue!"
+
+	// Solo pares: de 2 a 10 de 2 en 2
+	Para i &lt;- 2 Hasta 10 Con Paso 2
+		Escribir "Par: ", i
+	FinPara
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+          <div class="card col-6">
+            <h4>Ejemplo: combate hasta ganar</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Mientras con condición de combate</div><button class="btn small copy" data-copy="code-while-2">Copiar</button></div>
+              <pre><code id="code-while-2">Algoritmo Combate
+	Definir vida_enemigo, dano Como Entero
+	Definir golpe Como Entero
+	vida_enemigo &lt;- 100
+	dano &lt;- 30
+	golpe &lt;- 0
+
+	Mientras vida_enemigo &gt; 0 Hacer
+		golpe &lt;- golpe + 1
+		vida_enemigo &lt;- vida_enemigo - dano
+		Escribir "Golpe ", golpe, ": vida restante = ", vida_enemigo
+	FinMientras
+
+	Escribir "Enemigo derrotado en ", golpe, " golpes"
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <details open>
+          <summary>Error común: ciclo infinito <span class="tag">peligro</span></summary>
+          <div class="details-body">
+            Un <code>Mientras</code> puede volverse infinito si la condición nunca cambia.
+            <div class="grid examples">
+              <div class="card col-6">
+                <h4>❌ Infinito</h4>
+                <pre><code>Definir x Como Entero
+x &lt;- 0
+Mientras x &lt; 5 Hacer
+	Escribir x
+	// falta: x &lt;- x + 1
+FinMientras</code></pre>
+              </div>
+              <div class="card col-6">
+                <h4>✅ Correcto</h4>
+                <pre><code>Definir x Como Entero
+x &lt;- 0
+Mientras x &lt; 5 Hacer
+	Escribir x
+	x &lt;- x + 1
+FinMientras</code></pre>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (3 min): Cuenta regresiva <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Usa <code>Para</code> con paso <code>-1</code> para contar de 5 a 1.</li>
+              <li>Después del ciclo, escribe <code>"¡Despegue!"</code></li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (5 min): Tabla del multiplicar <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide al usuario un número.</li>
+              <li>Usa <code>Para i &lt;- 1 Hasta 10</code> para mostrar su tabla del multiplicar.</li>
+              <li>Cada línea: <code>"7 x 1 = 7"</code>, <code>"7 x 2 = 14"</code>, etc.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (8 min): Validar contraseña <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>La contraseña correcta es <code>"secreto123"</code>.</li>
+              <li>Usa <code>Repetir / Hasta Que</code> para pedir la contraseña hasta que sea correcta.</li>
+              <li>Cuenta los intentos y muestra cuántos necesitó.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (10 min): Sumar hasta que diga basta <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide números al usuario con <code>Mientras</code>.</li>
+              <li>Si ingresa <code>0</code>, el ciclo se detiene.</li>
+              <li>Al final, muestra la suma total y cuántos números ingresó.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (15 min): Combate por turnos <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Declara <code>vida_jugador &lt;- 100</code>, <code>vida_enemigo &lt;- 80</code>, <code>ataque_jugador &lt;- 20</code>, <code>ataque_enemigo &lt;- 15</code>, <code>turno &lt;- 1</code></li>
+              <li>Usa <code>Mientras vida_jugador &gt; 0 Y vida_enemigo &gt; 0</code></li>
+              <li>Cada turno: el jugador ataca primero, luego (si el enemigo sigue vivo) el enemigo contraataca.</li>
+              <li>Al final, muestra quién ganó y en cuántos turnos.</li>
+            </ol>
+          </div>
+        </details>
+      </section>
+
+      <!-- 7 -->
+      <section id="s7">
+        <h3>7) SubProcesos y Funciones</h3>
+        <p class="lead">
+          Un SubProceso (o Función) es un bloque de código con nombre, diseñado para hacer una tarea específica.
+          Te ayuda a no repetir código y a organizar tu lógica en partes reutilizables.
+        </p>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h4>SubProceso (sin retorno)</h4>
+            <p class="muted">Ejecuta acciones pero no devuelve un valor.</p>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Definir y llamar</div><button class="btn small copy" data-copy="code-func-1">Copiar</button></div>
+              <pre><code id="code-func-1">SubProceso Saludar(nombre)
+	Escribir "¡Hola ", nombre, "!"
+FinSubProceso
+
+Algoritmo Principal
+	Saludar("Mario")
+	Saludar("Luisa")
+	Saludar("Carlos")
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+          <div class="card col-6">
+            <h4>Función (con retorno)</h4>
+            <p class="muted">Calcula algo y devuelve un resultado que puedes guardar.</p>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Función que retorna un valor</div><button class="btn small copy" data-copy="code-func-2">Copiar</button></div>
+              <pre><code id="code-func-2">Funcion resultado &lt;- Sumar(a, b)
+	resultado &lt;- a + b
+FinFuncion
+
+Algoritmo Principal
+	Definir total Como Entero
+	total &lt;- Sumar(3, 5)
+	Escribir "3 + 5 = ", total
+
+	Escribir "10 + 20 = ", Sumar(10, 20)
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h4>Función con lógica interna</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Calcular daño con defensa y crítico</div><button class="btn small copy" data-copy="code-func-3">Copiar</button></div>
+              <pre><code id="code-func-3">Funcion d &lt;- CalcularDano(ataque, defensa, es_critico)
+	d &lt;- ataque - defensa
+	Si d &lt; 0 Entonces
+		d &lt;- 0
+	FinSi
+	Si es_critico Entonces
+		d &lt;- d * 2
+	FinSi
+FinFuncion
+
+Algoritmo Principal
+	Escribir "Normal: ", CalcularDano(25, 10, Falso)
+	Escribir "Crítico: ", CalcularDano(25, 10, Verdadero)
+	Escribir "Sin daño: ", CalcularDano(5, 20, Falso)
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+          <div class="card col-6">
+            <h4>SubProceso que modifica datos</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Pasar parámetros por referencia</div><button class="btn small copy" data-copy="code-func-4">Copiar</button></div>
+              <pre><code id="code-func-4">SubProceso MostrarResumen(nombre, vida, ataque)
+	Escribir "=== Resumen ==="
+	Escribir "Nombre: ", nombre
+	Escribir "Vida: ", vida
+	Escribir "Ataque: ", ataque
+FinSubProceso
+
+Algoritmo Principal
+	MostrarResumen("Guerrero", 100, 25)
+	MostrarResumen("Mago", 60, 40)
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="badge warn">!</div>
+          <div>
+            <strong>¿SubProceso o Función?</strong>
+            <div class="muted">
+              Usa <strong>Función</strong> cuando necesitas que <strong>devuelva un valor</strong> (un cálculo, una verificación).<br>
+              Usa <strong>SubProceso</strong> cuando solo necesitas <strong>ejecutar acciones</strong> (mostrar algo, modificar datos).
+            </div>
+          </div>
+        </div>
+
+        <details open>
+          <summary>Ejercicio (5 min): Grito de guerra <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea un SubProceso <code>Gritar(nombre, grito)</code> que escriba <code>nombre + " grita: ¡" + grito + "!"</code></li>
+              <li>Llámalo 3 veces con personajes distintos.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (7 min): EXP necesaria por nivel <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea una Función <code>ExpNecesaria(nivel)</code> que retorne <code>nivel * 100</code></li>
+              <li>Usa un <code>Para</code> del 1 al 5 y muestra la EXP de cada nivel.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (10 min): Curar con límite <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea una Función <code>Curar(vida_actual, cantidad, vida_maxima)</code> que sume <code>cantidad</code> a la vida sin pasarse del máximo.</li>
+              <li>Pruébala: Curar(60, 20, 100) → 80, Curar(60, 50, 100) → 100.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (15 min): Tienda con funciones <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea una Función <code>PuedeComprar(oro, precio)</code> que retorne Verdadero/Falso.</li>
+              <li>Crea un SubProceso <code>Comprar(objeto, precio)</code> que verifique y muestre el resultado.</li>
+              <li>Simula una sesión de compras con varias llamadas.</li>
+            </ol>
+          </div>
+        </details>
+      </section>
+
+      <!-- 8 -->
+      <section id="s8">
+        <h3>8) Arreglos (vectores)</h3>
+        <p class="lead">
+          Un arreglo es una <strong>lista ordenada</strong> de valores del mismo tipo. Piensa en él como una fila de casilleros numerados.
+          En PSeInt, los arreglos empiezan en la posición <strong>1</strong> (no en 0). Se crean con <code>Dimension</code>.
+        </p>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h4>Crear y llenar un arreglo</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Declarar, dimensionar y asignar</div><button class="btn small copy" data-copy="code-arr-1">Copiar</button></div>
+              <pre><code id="code-arr-1">Algoritmo MiArreglo
+	Definir enemigos Como Cadena
+	Dimension enemigos[3]
+
+	enemigos[1] &lt;- "Goomba"
+	enemigos[2] &lt;- "Koopa"
+	enemigos[3] &lt;- "Bowser"
+
+	Escribir "Primero: ", enemigos[1]
+	Escribir "Último: ", enemigos[3]
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+          <div class="card col-6">
+            <h4>Recorrer con Para</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Mostrar todos los elementos</div><button class="btn small copy" data-copy="code-arr-2">Copiar</button></div>
+              <pre><code id="code-arr-2">Algoritmo RecorrerArreglo
+	Definir nombres Como Cadena
+	Definir i Como Entero
+	Dimension nombres[4]
+
+	nombres[1] &lt;- "Ana"
+	nombres[2] &lt;- "Beto"
+	nombres[3] &lt;- "Carla"
+	nombres[4] &lt;- "Diego"
+
+	Para i &lt;- 1 Hasta 4 Con Paso 1
+		Escribir "Posición ", i, ": ", nombres[i]
+	FinPara
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visualización de índices -->
+        <div class="grid">
+          <div class="card col-12">
+            <h4>Visualización: ¿cómo se ven los índices?</h4>
+            <div class="table-wrap" style="margin-top:12px">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Índice</th>
+                    <th><code>[1]</code></th>
+                    <th><code>[2]</code></th>
+                    <th><code>[3]</code></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Valor</strong></td>
+                    <td><code>"Goomba"</code></td>
+                    <td><code>"Koopa"</code></td>
+                    <td><code>"Bowser"</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="callout">
+              <div class="badge warn">!</div>
+              <div>
+                <strong>Los arreglos en PSeInt empiezan en 1</strong>
+                <div class="muted">A diferencia de otros lenguajes (C, Java, Python), el primer elemento es <code>[1]</code>, no <code>[0]</code>.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h4>Llenar con Leer</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">El usuario ingresa los datos</div><button class="btn small copy" data-copy="code-arr-leer">Copiar</button></div>
+              <pre><code id="code-arr-leer">Algoritmo LlenarArreglo
+	Definir notas Como Real
+	Definir i Como Entero
+	Definir n Como Entero
+	n &lt;- 5
+	Dimension notas[n]
+
+	Para i &lt;- 1 Hasta n Con Paso 1
+		Escribir "Ingresa la nota ", i, ":"
+		Leer notas[i]
+	FinPara
+
+	Escribir "=== Notas ingresadas ==="
+	Para i &lt;- 1 Hasta n Con Paso 1
+		Escribir "Nota ", i, ": ", notas[i]
+	FinPara
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+          <div class="card col-6">
+            <h4>Buscar el mayor</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Encontrar el valor más alto</div><button class="btn small copy" data-copy="code-arr-mayor">Copiar</button></div>
+              <pre><code id="code-arr-mayor">Algoritmo BuscarMayor
+	Definir datos Como Entero
+	Definir i, mayor Como Entero
+	Dimension datos[5]
+
+	datos[1] &lt;- 30
+	datos[2] &lt;- 85
+	datos[3] &lt;- 50
+	datos[4] &lt;- 120
+	datos[5] &lt;- 45
+
+	mayor &lt;- datos[1]
+	Para i &lt;- 2 Hasta 5 Con Paso 1
+		Si datos[i] &gt; mayor Entonces
+			mayor &lt;- datos[i]
+		FinSi
+	FinPara
+
+	Escribir "El mayor es: ", mayor
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <details open>
+          <summary>Error común: índice fuera de rango <span class="tag">típico</span></summary>
+          <div class="details-body">
+            <p>Si declaras <code>Dimension arr[5]</code> y accedes a <code>arr[6]</code>, PSeInt dará error.</p>
+            <div class="grid examples">
+              <div class="card col-6">
+                <h4>❌ Error</h4>
+                <pre><code>Dimension datos[3]
+Escribir datos[5]  // No existe posición 5</code></pre>
+              </div>
+              <div class="card col-6">
+                <h4>✅ Correcto</h4>
+                <pre><code>Dimension datos[3]
+Escribir datos[3]  // Última posición válida</code></pre>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (5 min): Lista de habilidades <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea un arreglo de 3 cadenas: <code>"Golpe"</code>, <code>"Escudo"</code>, <code>"Curar"</code></li>
+              <li>Recorre e imprime cada habilidad.</li>
+              <li>Muestra el total de habilidades.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (10 min): Promedio de notas <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide al usuario 5 notas y guárdalas en un arreglo.</li>
+              <li>Calcula y muestra el promedio.</li>
+              <li>Muestra cuántas notas están por encima del promedio.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (12 min): Filtrar equipo por nivel <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea dos arreglos paralelos: <code>nombres[5]</code> y <code>niveles[5]</code></li>
+              <li>Llénalos con datos fijos (ej: "Aria" nivel 8, "Bron" nivel 3, etc.)</li>
+              <li>Muestra solo los que tienen nivel &gt;= 6 con el texto "seleccionado".</li>
+            </ol>
+          </div>
+        </details>
+      </section>
+
+      <!-- 9 -->
+      <section id="s9">
+        <h3>9) Matrices (arreglos bidimensionales)</h3>
+        <p class="lead">
+          Una matriz es un arreglo de <strong>dos dimensiones</strong>: filas y columnas. Es como una tabla o una cuadrícula.
+          Se declara con <code>Dimension matriz[filas, columnas]</code>.
+        </p>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h4>Crear y llenar una matriz</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Matriz de 3x3</div><button class="btn small copy" data-copy="code-mat-1">Copiar</button></div>
+              <pre><code id="code-mat-1">Algoritmo MiMatriz
+	Definir mat Como Entero
+	Definir f, c Como Entero
+	Dimension mat[3,3]
+
+	// Llenar con valores
+	mat[1,1] &lt;- 1
+	mat[1,2] &lt;- 2
+	mat[1,3] &lt;- 3
+	mat[2,1] &lt;- 4
+	mat[2,2] &lt;- 5
+	mat[2,3] &lt;- 6
+	mat[3,1] &lt;- 7
+	mat[3,2] &lt;- 8
+	mat[3,3] &lt;- 9
+
+	// Mostrar como tabla
+	Para f &lt;- 1 Hasta 3 Con Paso 1
+		Para c &lt;- 1 Hasta 3 Con Paso 1
+			Escribir Sin Saltar mat[f,c], "  "
+		FinPara
+		Escribir ""
+	FinPara
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+          <div class="card col-6">
+            <h4>Llenar con el usuario</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Pedir datos fila por fila</div><button class="btn small copy" data-copy="code-mat-2">Copiar</button></div>
+              <pre><code id="code-mat-2">Algoritmo MatrizUsuario
+	Definir notas Como Real
+	Definir i, j Como Entero
+	Dimension notas[3,4]
+
+	// 3 alumnos, 4 materias
+	Para i &lt;- 1 Hasta 3 Con Paso 1
+		Escribir "--- Alumno ", i, " ---"
+		Para j &lt;- 1 Hasta 4 Con Paso 1
+			Escribir "Nota materia ", j, ":"
+			Leer notas[i,j]
+		FinPara
+	FinPara
+
+	// Mostrar
+	Para i &lt;- 1 Hasta 3 Con Paso 1
+		Escribir "Alumno ", i, ":"
+		Para j &lt;- 1 Hasta 4 Con Paso 1
+			Escribir Sin Saltar notas[i,j], "  "
+		FinPara
+		Escribir ""
+	FinPara
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="badge good">✓</div>
+          <div>
+            <strong>Visualización de una matriz 3×3</strong>
+            <div class="muted">
+              <code>[1,1]=1  [1,2]=2  [1,3]=3</code><br>
+              <code>[2,1]=4  [2,2]=5  [2,3]=6</code><br>
+              <code>[3,1]=7  [3,2]=8  [3,3]=9</code><br><br>
+              Primer índice = <strong>fila</strong>, segundo índice = <strong>columna</strong>.
+            </div>
+          </div>
+        </div>
+
+        <details open>
+          <summary>Ejercicio (10 min): Promedio por alumno <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea una matriz de 3 alumnos × 4 notas (llénala con datos fijos).</li>
+              <li>Calcula y muestra el promedio de cada alumno.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (12 min): Buscar el mayor de la matriz <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Llena una matriz 4×4 con valores que el usuario ingrese.</li>
+              <li>Recórrela con dos <code>Para</code> anidados y encuentra el valor más grande.</li>
+              <li>Muestra en qué posición (fila, columna) está.</li>
+            </ol>
+          </div>
+        </details>
+      </section>
+
+      <!-- 10 -->
+      <section id="s10">
+        <h3>10) Cadenas de texto</h3>
+        <p class="lead">
+          Las cadenas (<code>Cadena</code>) son texto. PSeInt incluye varias funciones para manipular texto:
+          saber su longitud, extraer partes, convertir entre mayúsculas/minúsculas y más.
+        </p>
+
+        <div class="grid">
+          <div class="card col-12">
+            <h4>Funciones de cadenas más usadas</h4>
+            <div class="table-wrap" style="margin-top:12px">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Función</th>
+                    <th>Qué hace</th>
+                    <th>Ejemplo</th>
+                    <th>Resultado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>Longitud(cad)</code></td>
+                    <td>Cantidad de caracteres</td>
+                    <td><code>Longitud("Hola")</code></td>
+                    <td><code>4</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>SubCadena(cad, ini, fin)</code></td>
+                    <td>Extrae una parte del texto</td>
+                    <td><code>SubCadena("Hola Mundo", 1, 4)</code></td>
+                    <td><code>"Hola"</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>Concatenar(a, b)</code></td>
+                    <td>Une dos textos</td>
+                    <td><code>Concatenar("Hola", " Mundo")</code></td>
+                    <td><code>"Hola Mundo"</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>Mayusculas(cad)</code></td>
+                    <td>Convierte a mayúsculas</td>
+                    <td><code>Mayusculas("hola")</code></td>
+                    <td><code>"HOLA"</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>Minusculas(cad)</code></td>
+                    <td>Convierte a minúsculas</td>
+                    <td><code>Minusculas("HOLA")</code></td>
+                    <td><code>"hola"</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>ConvertirATexto(num)</code></td>
+                    <td>Número → texto</td>
+                    <td><code>ConvertirATexto(42)</code></td>
+                    <td><code>"42"</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>ConvertirANumero(cad)</code></td>
+                    <td>Texto → número</td>
+                    <td><code>ConvertirANumero("42")</code></td>
+                    <td><code>42</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card col-12">
+            <h4>Ejemplo: manipulando cadenas</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Operaciones con texto</div><button class="btn small copy" data-copy="code-str-1">Copiar</button></div>
+              <pre><code id="code-str-1">Algoritmo ManipularCadenas
+	Definir texto, parte Como Cadena
+
+	texto &lt;- "Hola Mundo"
+
+	Escribir "Texto: ", texto
+	Escribir "Longitud: ", Longitud(texto)
+	Escribir "Mayúsculas: ", Mayusculas(texto)
+	Escribir "Minúsculas: ", Minusculas(texto)
+
+	parte &lt;- SubCadena(texto, 1, 4)
+	Escribir "Primeras 4 letras: ", parte
+
+	Escribir "Concatenar: ", Concatenar("¡", Concatenar(texto, "!"))
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <details open>
+          <summary>Ejercicio (5 min): Iniciales del nombre <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide al usuario su nombre y apellido (por separado).</li>
+              <li>Extrae la primera letra de cada uno con <code>SubCadena</code>.</li>
+              <li>Muestra las iniciales en mayúsculas.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (8 min): Contar vocales <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide una palabra al usuario.</li>
+              <li>Conviértela a minúsculas.</li>
+              <li>Recorre cada carácter con <code>Para i &lt;- 1 Hasta Longitud(palabra)</code>.</li>
+              <li>Usa <code>SubCadena(palabra, i, i)</code> para obtener cada letra.</li>
+              <li>Cuenta cuántas vocales tiene (a, e, i, o, u) y muestra el total.</li>
+            </ol>
+          </div>
+        </details>
+      </section>
+
+      <!-- 11 -->
+      <section id="s11">
+        <h3>11) Errores típicos (y cómo leerlos)</h3>
+        <p class="lead">
+          Un programador real no evita errores: aprende a <strong>leerlos</strong>. La meta es que puedas:
+          <strong>(1)</strong> interpretar el mensaje, <strong>(2)</strong> ubicar la línea, <strong>(3)</strong> corregir.
+        </p>
+
+        <div class="callout">
+          <div class="badge good">✓</div>
+          <div>
+            <strong>Regla práctica</strong>
+            <div class="muted">PSeInt marca la línea del error con una flecha roja. Revisa esa línea y la anterior.</div>
+          </div>
+        </div>
+
+        <!-- Error 1 -->
+        <div class="error-card error-bad">
+          <div class="error-header">
+            <span class="sev bad">🔴 Bloquea</span>
+            <strong>Falta FinSi / FinPara / FinMientras</strong>
+          </div>
+          <p class="muted">PSeInt dice: <code>Se esperaba FinSi</code> (o FinPara, FinMientras, etc.)</p>
+          <div class="grid">
+            <div class="card col-6">
+              <h4>❌ Con error</h4>
+              <pre><code>Si vidas &gt; 0 Entonces
+	Escribir "Vivo"
+// Falta FinSi</code></pre>
+            </div>
+            <div class="card col-6">
+              <h4>✅ Corregido</h4>
+              <pre><code>Si vidas &gt; 0 Entonces
+	Escribir "Vivo"
+FinSi</code></pre>
+            </div>
+          </div>
+          <div class="error-tip">
+            <strong>Solución:</strong> Cada bloque que se abre debe cerrarse. Cuenta tus <code>Si/FinSi</code>, <code>Para/FinPara</code>, etc.
+          </div>
+        </div>
+
+        <!-- Error 2 -->
+        <div class="error-card error-bad">
+          <div class="error-header">
+            <span class="sev bad">🔴 Bloquea</span>
+            <strong>Usar = para asignar</strong>
+          </div>
+          <p class="muted">PSeInt esperaba <code>&lt;-</code> pero encontró <code>=</code> en una asignación.</p>
+          <div class="grid">
+            <div class="card col-6">
+              <h4>❌ Con error</h4>
+              <pre><code>vidas = 3  // ❌ Esto es comparación</code></pre>
+            </div>
+            <div class="card col-6">
+              <h4>✅ Corregido</h4>
+              <pre><code>vidas &lt;- 3  // ✅ Asignación correcta</code></pre>
+            </div>
+          </div>
+          <div class="error-tip">
+            <strong>Recuerda:</strong> <code>&lt;-</code> para asignar, <code>=</code> para comparar.
+          </div>
+        </div>
+
+        <!-- Error 3 -->
+        <div class="error-card error-bad">
+          <div class="error-header">
+            <span class="sev bad">🔴 Bloquea</span>
+            <strong>Variable no definida</strong>
+          </div>
+          <p class="muted">PSeInt dice: <code>La variable 'x' no fue definida</code></p>
+          <div class="grid">
+            <div class="card col-6">
+              <h4>❌ Con error</h4>
+              <pre><code>Escribir nombre  // nunca se definió</code></pre>
+            </div>
+            <div class="card col-6">
+              <h4>✅ Corregido</h4>
+              <pre><code>Definir nombre Como Cadena
+nombre &lt;- "Mario"
+Escribir nombre</code></pre>
+            </div>
+          </div>
+          <div class="error-tip">
+            <strong>Solución:</strong> Declara la variable con <code>Definir</code> antes de usarla. Revisa que el nombre esté bien escrito.
+          </div>
+        </div>
+
+        <!-- Error 4 -->
+        <div class="error-card error-bad">
+          <div class="error-header">
+            <span class="sev bad">🔴 Bloquea</span>
+            <strong>Falta "Entonces" después de Si</strong>
+          </div>
+          <p class="muted">PSeInt dice: <code>Se esperaba 'Entonces'</code></p>
+          <div class="grid">
+            <div class="card col-6">
+              <h4>❌ Con error</h4>
+              <pre><code>Si vidas &gt; 0    // falta Entonces
+	Escribir "Vivo"
+FinSi</code></pre>
+            </div>
+            <div class="card col-6">
+              <h4>✅ Corregido</h4>
+              <pre><code>Si vidas &gt; 0 Entonces
+	Escribir "Vivo"
+FinSi</code></pre>
+            </div>
+          </div>
+          <div class="error-tip">
+            <strong>Solución:</strong> Después de la condición del <code>Si</code> siempre va <code>Entonces</code>.
+          </div>
+        </div>
+
+        <!-- Error 5 -->
+        <div class="error-card error-bad">
+          <div class="error-header">
+            <span class="sev bad">🔴 Bloquea</span>
+            <strong>Falta "Hacer" después de Mientras</strong>
+          </div>
+          <p class="muted">PSeInt dice: <code>Se esperaba 'Hacer'</code></p>
+          <div class="grid">
+            <div class="card col-6">
+              <h4>❌ Con error</h4>
+              <pre><code>Mientras x &lt; 5
+	Escribir x
+FinMientras</code></pre>
+            </div>
+            <div class="card col-6">
+              <h4>✅ Corregido</h4>
+              <pre><code>Mientras x &lt; 5 Hacer
+	Escribir x
+	x &lt;- x + 1
+FinMientras</code></pre>
+            </div>
+          </div>
+          <div class="error-tip">
+            <strong>Solución:</strong> El <code>Mientras</code> siempre lleva <code>Hacer</code> al final de la línea.
+          </div>
+        </div>
+
+        <!-- Error 6 -->
+        <div class="error-card error-warn">
+          <div class="error-header">
+            <span class="sev warn">🟠 Confunde</span>
+            <strong>Comillas sin cerrar</strong>
+          </div>
+          <p class="muted">PSeInt dice: <code>Se esperaba cierre de cadena</code></p>
+          <div class="grid">
+            <div class="card col-6">
+              <h4>❌ Con error</h4>
+              <pre><code>Escribir "Hola   // falta la comilla final</code></pre>
+            </div>
+            <div class="card col-6">
+              <h4>✅ Corregido</h4>
+              <pre><code>Escribir "Hola"  // comilla cerrada</code></pre>
+            </div>
+          </div>
+          <div class="error-tip">
+            <strong>Solución:</strong> Cada <code>"</code> debe tener su par. Revisa que abras y cierres comillas correctamente.
+          </div>
+        </div>
+
+        <!-- Error 7 -->
+        <div class="error-card error-warn">
+          <div class="error-header">
+            <span class="sev warn">🟠 Confunde</span>
+            <strong>Tipo incompatible</strong>
+          </div>
+          <p class="muted">PSeInt dice: <code>No se puede asignar un valor de tipo Cadena a una variable de tipo Entero</code></p>
+          <div class="grid">
+            <div class="card col-6">
+              <h4>❌ Con error</h4>
+              <pre><code>Definir edad Como Entero
+edad &lt;- "veinte"  // texto en variable numérica</code></pre>
+            </div>
+            <div class="card col-6">
+              <h4>✅ Corregido</h4>
+              <pre><code>Definir edad Como Entero
+edad &lt;- 20  // número en variable numérica</code></pre>
+            </div>
+          </div>
+          <div class="error-tip">
+            <strong>Solución:</strong> Verifica que el tipo del valor coincida con el tipo declarado en <code>Definir</code>.
+          </div>
+        </div>
+
+        <!-- Error 8 -->
+        <div class="error-card error-good">
+          <div class="error-header">
+            <span class="sev good">🟢 Lógico</span>
+            <strong>Índice fuera de rango</strong>
+          </div>
+          <p class="muted">PSeInt dice: <code>Índice fuera de rango</code></p>
+          <div class="grid">
+            <div class="card col-6">
+              <h4>❌ Con error</h4>
+              <pre><code>Dimension datos[3]
+Escribir datos[5]  // solo tiene 1,2,3</code></pre>
+            </div>
+            <div class="card col-6">
+              <h4>✅ Corregido</h4>
+              <pre><code>Dimension datos[3]
+Escribir datos[3]  // último válido</code></pre>
+            </div>
+          </div>
+          <div class="error-tip">
+            <strong>Solución:</strong> Si declaraste <code>Dimension arr[N]</code>, los índices válidos son de <code>1</code> a <code>N</code>.
+          </div>
+        </div>
+
+        <!-- Error 9 -->
+        <div class="error-card error-good">
+          <div class="error-header">
+            <span class="sev good">🟢 Lógico</span>
+            <strong>Ciclo infinito</strong>
+          </div>
+          <p class="muted">El programa se queda ejecutando sin parar.</p>
+          <div class="grid">
+            <div class="card col-6">
+              <h4>❌ Infinito</h4>
+              <pre><code>Mientras x &lt; 5 Hacer
+	Escribir x
+	// Falta modificar x
+FinMientras</code></pre>
+            </div>
+            <div class="card col-6">
+              <h4>✅ Correcto</h4>
+              <pre><code>Mientras x &lt; 5 Hacer
+	Escribir x
+	x &lt;- x + 1
+FinMientras</code></pre>
+            </div>
+          </div>
+          <div class="error-tip">
+            <strong>Solución:</strong> Asegúrate de que dentro del <code>Mientras</code> haya algo que modifique la condición para que eventualmente sea Falsa.
+          </div>
+        </div>
+
+        <!-- Error 10 -->
+        <div class="error-card error-good">
+          <div class="error-header">
+            <span class="sev good">🟢 Lógico</span>
+            <strong>Falta FinAlgoritmo</strong>
+          </div>
+          <p class="muted">PSeInt dice: <code>Se esperaba FinAlgoritmo o FinProceso</code></p>
+          <div class="grid">
+            <div class="card col-6">
+              <h4>❌ Con error</h4>
+              <pre><code>Algoritmo MiPrograma
+	Escribir "Hola"
+// Falta cerrar</code></pre>
+            </div>
+            <div class="card col-6">
+              <h4>✅ Corregido</h4>
+              <pre><code>Algoritmo MiPrograma
+	Escribir "Hola"
+FinAlgoritmo</code></pre>
+            </div>
+          </div>
+          <div class="error-tip">
+            <strong>Solución:</strong> Todo <code>Algoritmo</code> debe terminar con <code>FinAlgoritmo</code>.
+          </div>
+        </div>
+
+        <!-- Método de 4 pasos -->
+        <div class="callout" style="margin-top:20px">
+          <div class="badge warn">!</div>
+          <div>
+            <strong>Método de 4 pasos para leer errores</strong>
+            <div class="muted">
+              <strong>1.</strong> Lee el mensaje (¿qué esperaba PSeInt?).<br>
+              <strong>2.</strong> Ve a la línea marcada (y revisa la anterior).<br>
+              <strong>3.</strong> Busca patrones: falta Entonces, FinSi, comillas, &lt;-.<br>
+              <strong>4.</strong> Corrige y vuelve a ejecutar (uno a la vez).
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12 -->
+      <section id="s12">
+        <h3>12) Buenas prácticas (hábitos que evitan bugs)</h3>
+        <p class="lead">
+          Las buenas prácticas ayudan a que el código sea fácil de leer, fácil de corregir y fácil de hacer crecer.
+        </p>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h4>Estilo y claridad</h4>
+            <p>
+              ✅ Nombres descriptivos: <code>velocidad_jugador</code><br>
+              ✅ Comentarios cortos solo donde hace falta<br>
+              ✅ Separar lógica en SubProcesos/Funciones<br>
+              ✅ Evitar "números mágicos": usar variables con nombre claro<br>
+              ✅ Indentar correctamente cada bloque
+            </p>
+          </div>
+          <div class="card col-6">
+            <h4>Estructura y organización</h4>
+            <p>
+              ✅ Declarar todas las variables al inicio del algoritmo<br>
+              ✅ Usar <code>Repetir/Hasta Que</code> para validar datos del usuario<br>
+              ✅ Probar con valores extremos (0, negativos, máximo)<br>
+              ✅ Dividir problemas grandes en funciones pequeñas<br>
+              ✅ Nombrar el algoritmo de forma descriptiva
+            </p>
+          </div>
+        </div>
+
+        <details open>
+          <summary>Ejemplo: código limpio vs desordenado <span class="tag">comparación</span></summary>
+          <div class="details-body examples">
+            <div class="grid">
+              <div class="card col-6">
+                <h4>❌ Desordenado</h4>
+                <pre><code>Algoritmo x
+Definir a Como Entero
+a &lt;- 100
+Definir b Como Entero
+b &lt;- 15
+Si a-b&gt;50 Entonces
+Escribir "si"
+FinSi
+FinAlgoritmo</code></pre>
+              </div>
+              <div class="card col-6">
+                <h4>✅ Limpio</h4>
+                <div class="codebar"><div class="muted">Código mejorado</div><button class="btn small copy" data-copy="code-best-1">Copiar</button></div>
+                <pre><code id="code-best-1">Algoritmo CalcularDanoFinal
+	Definir ataque, defensa, dano Como Entero
+
+	ataque &lt;- 100
+	defensa &lt;- 15
+	dano &lt;- ataque - defensa
+
+	Si dano &gt; 50 Entonces
+		Escribir "¡Golpe devastador! Daño: ", dano
+	FinSi
+FinAlgoritmo</code></pre>
+              </div>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <!-- 13 -->
+      <section id="s13">
+        <h3>13) Ejercicios prácticos (de menor a mayor dificultad)</h3>
+        <p class="lead">
+          Estos ejercicios están ordenados por dificultad. Todos se resuelven en PSeInt creando un nuevo algoritmo para cada uno.
+        </p>
+
+        <div class="callout">
+          <div class="badge good">✓</div>
+          <div>
+            <strong>¿Cómo probar cada ejercicio?</strong>
+            <div class="muted">
+              <strong>1.</strong> Abre PSeInt y crea un nuevo archivo.<br>
+              <strong>2.</strong> Escribe tu código dentro de <code>Algoritmo ... FinAlgoritmo</code>.<br>
+              <strong>3.</strong> Presiona el botón <strong>"Ejecutar"</strong> (▶) o <strong>F9</strong>.<br>
+              <strong>4.</strong> Revisa la salida en la consola de PSeInt.
+            </div>
+          </div>
+        </div>
+
+        <!-- Ejercicio 1 -->
+        <div class="error-card error-good">
+          <div class="error-header">
+            <span class="sev good">● Fácil</span>
+            <strong>Ejercicio 1: Mi primera variable</strong>
+          </div>
+          <p class="muted"><strong>Tema:</strong> variables + Escribir</p>
+          <div class="error-tip">
+            <strong>Instrucciones:</strong>
+            <ol>
+              <li>Declara una variable <code>nombre</code> (Cadena) con tu nombre.</li>
+              <li>Declara una variable <code>edad</code> (Entero) con tu edad.</li>
+              <li>Muestra: <code>"Me llamo [nombre] y tengo [edad] años"</code></li>
+            </ol>
+            <strong>Resultado esperado:</strong> <code>Me llamo Mario y tengo 20 años</code>
+            <br><br><strong>Pista:</strong> Usa comas en Escribir: <code>Escribir "Me llamo ", nombre, " y tengo ", edad, " años"</code>
+          </div>
+        </div>
+
+        <!-- Ejercicio 2 -->
+        <div class="error-card error-good">
+          <div class="error-header">
+            <span class="sev good">● Fácil</span>
+            <strong>Ejercicio 2: Contador de monedas</strong>
+          </div>
+          <p class="muted"><strong>Tema:</strong> variables + operadores aritméticos</p>
+          <div class="error-tip">
+            <strong>Instrucciones:</strong>
+            <ol>
+              <li>Declara <code>monedas &lt;- 0</code></li>
+              <li>Suma 5 monedas: <code>monedas &lt;- monedas + 5</code></li>
+              <li>Suma 3 más.</li>
+              <li>Resta 2.</li>
+              <li>Muestra el resultado final.</li>
+            </ol>
+            <strong>Resultado esperado:</strong> <code>6</code>
+          </div>
+        </div>
+
+        <!-- Ejercicio 3 -->
+        <div class="error-card error-good">
+          <div class="error-header">
+            <span class="sev good">● Fácil</span>
+            <strong>Ejercicio 3: Calculadora básica</strong>
+          </div>
+          <p class="muted"><strong>Tema:</strong> operadores + Leer</p>
+          <div class="error-tip">
+            <strong>Instrucciones:</strong>
+            <ol>
+              <li>Pide dos números al usuario.</li>
+              <li>Muestra: suma, resta, multiplicación, división y módulo.</li>
+              <li>Cada resultado con texto descriptivo.</li>
+            </ol>
+            <strong>Resultado esperado (con 15 y 4):</strong><br>
+            <code>Suma: 19</code> · <code>Resta: 11</code> · <code>Multiplicación: 60</code> · <code>División: 3.75</code> · <code>Módulo: 3</code>
+          </div>
+        </div>
+
+        <!-- Ejercicio 4 -->
+        <div class="error-card error-warn">
+          <div class="error-header">
+            <span class="sev warn">● Intermedio</span>
+            <strong>Ejercicio 4: Semáforo de vidas</strong>
+          </div>
+          <p class="muted"><strong>Tema:</strong> condicionales (Si / SiNo)</p>
+          <div class="error-tip">
+            <strong>Instrucciones:</strong>
+            <ol>
+              <li>Pide al usuario sus vidas.</li>
+              <li>Usa condicionales para imprimir:
+                <ul>
+                  <li>Si vidas &gt;= 3: <code>"Estado: Seguro"</code></li>
+                  <li>Si vidas = 2: <code>"Estado: Precaución"</code></li>
+                  <li>Si vidas = 1: <code>"Estado: Peligro"</code></li>
+                  <li>Si vidas &lt;= 0: <code>"Estado: Game Over"</code></li>
+                </ul>
+              </li>
+            </ol>
+            <strong>Resultado esperado (con vidas = 2):</strong> <code>Estado: Precaución</code>
+          </div>
+        </div>
+
+        <!-- Ejercicio 5 -->
+        <div class="error-card error-warn">
+          <div class="error-header">
+            <span class="sev warn">● Intermedio</span>
+            <strong>Ejercicio 5: Tabla del multiplicar</strong>
+          </div>
+          <p class="muted"><strong>Tema:</strong> ciclo Para + operadores</p>
+          <div class="error-tip">
+            <strong>Instrucciones:</strong>
+            <ol>
+              <li>Pide un número al usuario.</li>
+              <li>Usa <code>Para i &lt;- 1 Hasta 10</code> para imprimir su tabla del multiplicar.</li>
+              <li>Formato: <code>"7 x 1 = 7"</code>, <code>"7 x 2 = 14"</code>, etc.</li>
+            </ol>
+            <strong>Pista:</strong> Usa <code>Escribir numero, " x ", i, " = ", numero * i</code>
+          </div>
+        </div>
+
+        <!-- Ejercicio 6 -->
+        <div class="error-card error-warn">
+          <div class="error-header">
+            <span class="sev warn">● Intermedio</span>
+            <strong>Ejercicio 6: Lista de enemigos</strong>
+          </div>
+          <p class="muted"><strong>Tema:</strong> arreglos + Para</p>
+          <div class="error-tip">
+            <strong>Instrucciones:</strong>
+            <ol>
+              <li>Declara un arreglo de 5 nombres de enemigos.</li>
+              <li>Recorre el arreglo con <code>Para</code> e imprime cada uno con su número: <code>"Enemigo 1: Goomba"</code>.</li>
+              <li>Al final imprime cuántos enemigos hay.</li>
+            </ol>
+            <strong>Pista:</strong> Usa <code>Para i &lt;- 1 Hasta 5</code> y accede con <code>enemigos[i]</code>.
+          </div>
+        </div>
+
+        <!-- Ejercicio 7 -->
+        <div class="error-card error-warn">
+          <div class="error-header">
+            <span class="sev warn">● Intermedio</span>
+            <strong>Ejercicio 7: Promedio de notas</strong>
+          </div>
+          <p class="muted"><strong>Tema:</strong> arreglos + ciclos + acumulador</p>
+          <div class="error-tip">
+            <strong>Instrucciones:</strong>
+            <ol>
+              <li>Pide al usuario 5 notas y guárdalas en un arreglo.</li>
+              <li>Calcula la suma de todas las notas.</li>
+              <li>Calcula y muestra el promedio.</li>
+              <li>Muestra si aprobó (promedio &gt;= 6) o no.</li>
+            </ol>
+            <strong>Pista:</strong> Usa una variable <code>suma &lt;- 0</code> y ve acumulando: <code>suma &lt;- suma + notas[i]</code>
+          </div>
+        </div>
+
+        <!-- Ejercicio 8 -->
+        <div class="error-card error-bad">
+          <div class="error-header">
+            <span class="sev bad">● Avanzado</span>
+            <strong>Ejercicio 8: Sistema de daño</strong>
+          </div>
+          <p class="muted"><strong>Tema:</strong> funciones + condicionales</p>
+          <div class="error-tip">
+            <strong>Instrucciones:</strong>
+            <ol>
+              <li>Crea una Función <code>CalcularDano(ataque, defensa, es_critico)</code> que:
+                <ul>
+                  <li>Calcule <code>dano &lt;- ataque - defensa</code></li>
+                  <li>Si dano &lt; 0, ajuste a 0</li>
+                  <li>Si es_critico, multiplique por 2</li>
+                  <li>Retorne el daño</li>
+                </ul>
+              </li>
+              <li>En el algoritmo principal, prueba con 3 escenarios distintos.</li>
+            </ol>
+            <strong>Resultado esperado:</strong><br>
+            <code>CalcularDano(25, 10, Falso) → 15</code><br>
+            <code>CalcularDano(25, 10, Verdadero) → 30</code><br>
+            <code>CalcularDano(5, 20, Falso) → 0</code>
+          </div>
+        </div>
+
+        <!-- Ejercicio 9 -->
+        <div class="error-card error-bad">
+          <div class="error-header">
+            <span class="sev bad">● Avanzado</span>
+            <strong>Ejercicio 9: Tienda de objetos</strong>
+          </div>
+          <p class="muted"><strong>Tema:</strong> arreglos + condicionales + funciones</p>
+          <div class="error-tip">
+            <strong>Instrucciones:</strong>
+            <ol>
+              <li>Crea dos arreglos paralelos: <code>objetos[4]</code> (nombres) y <code>precios[4]</code> (costos).</li>
+              <li>Llena la tienda: Espada=30, Escudo=25, Poción=10, Armadura=80.</li>
+              <li>El jugador tiene <code>oro &lt;- 100</code>.</li>
+              <li>Recorre la tienda y muestra qué puede comprar (precio &lt;= oro).</li>
+              <li>Pide al usuario el número del objeto a comprar y resta el precio al oro.</li>
+              <li>Repite hasta que el usuario elija salir (ingrese 0).</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Ejercicio 10 -->
+        <div class="error-card error-bad">
+          <div class="error-header">
+            <span class="sev bad">● Avanzado</span>
+            <strong>Ejercicio 10: Simulador de combate por turnos</strong>
+          </div>
+          <p class="muted"><strong>Tema:</strong> todo lo aprendido (variables, condicionales, ciclos, funciones, arreglos)</p>
+          <div class="error-tip">
+            <strong>Instrucciones:</strong>
+            <ol>
+              <li>Crea variables para el jugador: <code>vida_j &lt;- 100</code>, <code>ataque_j &lt;- 15</code></li>
+              <li>Crea variables para el enemigo: <code>vida_e &lt;- 80</code>, <code>ataque_e &lt;- 10</code></li>
+              <li>Crea una Función <code>Atacar(ataque)</code> que retorne el daño (puede variar con <code>azar</code>).</li>
+              <li>Usa un <code>Mientras</code> que repita turnos mientras ambos tengan vida &gt; 0:
+                <ul>
+                  <li>El jugador ataca primero.</li>
+                  <li>Si el enemigo sigue vivo, contraataca.</li>
+                  <li>Muestra las vidas de ambos cada turno.</li>
+                </ul>
+              </li>
+              <li>Al salir del ciclo, muestra quién ganó y en cuántos turnos.</li>
+            </ol>
+            <strong>Resultado esperado (ejemplo):</strong><br>
+            <code>--- Turno 1 ---</code><br>
+            <code>Jugador ataca: -15 → Vida enemigo: 65</code><br>
+            <code>Enemigo ataca: -10 → Vida jugador: 90</code><br>
+            <code>...</code><br>
+            <code>¡Jugador ha ganado en 6 turnos!</code>
+            <br><br><strong>Pista:</strong> Usa <code>azar(5)</code> para agregar variación al daño: <code>dano &lt;- ataque + azar(5)</code>
+          </div>
+        </div>
+
+      </section>
+
+      <footer>
+        <div class="footer-inner">
+          <p class="footer-brand">Guía Completa · Programación desde Cero con PSeInt</p>
+          <p class="footer-copy">© 2026 Luis Miguel González Giraldo. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
