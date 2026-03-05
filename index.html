@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Guía Completa — Programación desde Cero con PSeInt</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23345995'/%3E%3Cpath d='M30 35L15 50L30 65' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M70 35L85 50L70 65' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M58 25L42 75' stroke='%2322d3ee' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -48,6 +49,7 @@
 
       <nav class="nav" id="nav">
         <a href="#s0" class="navlink"><span>0) Qué es programar</span><span class="tag">base</span></a>
+        <a href="#s01" class="navlink"><span>0.1) Interfaz de PSeInt</span><span class="tag">entorno</span></a>
         <a href="#s1" class="navlink"><span>1) Variables y E/S</span><span class="tag">base</span></a>
         <a href="#s2" class="navlink"><span>2) Estructura del algoritmo</span><span class="tag">clave</span></a>
         <a href="#s3" class="navlink"><span>3) Tipos de datos</span><span class="tag">datos</span></a>
@@ -134,6 +136,340 @@
             <div class="muted">Que el estudiante pueda leer un error, ubicarlo en el código y corregirlo con seguridad.</div>
           </div>
         </div>
+      </section>
+
+      <!-- 0.1 -->
+      <section id="s01">
+        <h3>0.1) La interfaz de PSeInt</h3>
+        <p class="lead">
+          Antes de escribir tu primer algoritmo, necesitas conocer la herramienta. PSeInt tiene una interfaz
+          sencilla pero completa. Aquí te explico <strong>cada parte</strong> para que sepas exactamente dónde escribir,
+          cómo ejecutar y dónde ver los resultados.
+        </p>
+
+        <!-- Descarga e instalación -->
+        <div class="callout">
+          <div class="badge good">✓</div>
+          <div>
+            <strong>¿Cómo consigo PSeInt?</strong>
+            <div class="muted">
+              Descárgalo gratis desde <strong>pseint.sourceforge.net</strong>. Está disponible para Windows, Linux y Mac.
+              No necesita instalación compleja: lo descargas, lo abres y ya puedes escribir código.
+            </div>
+          </div>
+        </div>
+
+        <!-- Partes principales -->
+        <div class="grid">
+          <div class="card col-12">
+            <h4>Vista general de la ventana principal</h4>
+            <p>Al abrir PSeInt verás una ventana dividida en varias zonas. Cada zona tiene una función específica:</p>
+            <div class="table-wrap" style="margin-top:12px">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Zona</th>
+                    <th>Ubicación</th>
+                    <th>¿Para qué sirve?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Barra de menú</strong></td>
+                    <td>Arriba del todo</td>
+                    <td class="muted">Archivo, Editar, Ejecutar, Configurar, Ayuda. Desde aquí accedes a todas las opciones.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Barra de herramientas</strong></td>
+                    <td>Debajo del menú</td>
+                    <td class="muted">Botones rápidos: Nuevo, Abrir, Guardar, Ejecutar (▶), Ejecutar paso a paso, Dibujar diagrama de flujo, etc.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Editor de código</strong></td>
+                    <td>Centro (área grande)</td>
+                    <td class="muted">Aquí escribes tu pseudocódigo. Ya viene con <code>Algoritmo sin_titulo</code> y <code>FinAlgoritmo</code> escritos.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Panel de comandos</strong></td>
+                    <td>Derecha del editor</td>
+                    <td class="muted">Botones que insertan estructuras automáticamente: Escribir, Leer, Si-Entonces, Mientras, Para, etc.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Panel de errores</strong></td>
+                    <td>Debajo del editor</td>
+                    <td class="muted">Muestra errores de sintaxis en tiempo real. Si hay un error, aparece con una flecha roja señalando la línea.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Pestañas de archivos</strong></td>
+                    <td>Encima del editor</td>
+                    <td class="muted">Si tienes varios archivos abiertos, cada uno aparece en una pestaña.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Barra de herramientas -->
+        <div class="grid">
+          <div class="card col-12">
+            <h4>Barra de herramientas — Los botones que más usarás</h4>
+            <div class="table-wrap" style="margin-top:12px">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Botón</th>
+                    <th>Atajo</th>
+                    <th>¿Qué hace?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Nuevo</strong></td>
+                    <td><code>Ctrl + N</code></td>
+                    <td class="muted">Crea un nuevo archivo en blanco con la estructura <code>Algoritmo/FinAlgoritmo</code> ya escrita.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Abrir</strong></td>
+                    <td><code>Ctrl + A</code></td>
+                    <td class="muted">Abre un archivo <code>.psc</code> existente (los archivos de PSeInt se guardan con extensión .psc).</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Guardar</strong></td>
+                    <td><code>Ctrl + G</code></td>
+                    <td class="muted">Guarda el archivo actual. La primera vez te pide nombre y ubicación.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>▶ Ejecutar</strong></td>
+                    <td><code>F9</code></td>
+                    <td class="muted">Ejecuta el algoritmo completo. Se abre una ventana de consola donde ves la salida y puedes ingresar datos.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Ejecutar paso a paso</strong></td>
+                    <td><code>F5</code></td>
+                    <td class="muted">Ejecuta línea por línea. Ideal para entender cómo fluye el programa y encontrar errores lógicos.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Dibujar diagrama de flujo</strong></td>
+                    <td><code>F7</code></td>
+                    <td class="muted">Genera automáticamente el diagrama de flujo de tu algoritmo. Muy útil para visualizar la lógica.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Deshacer</strong></td>
+                    <td><code>Ctrl + Z</code></td>
+                    <td class="muted">Deshace el último cambio en el editor. Puedes presionarlo varias veces.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Rehacer</strong></td>
+                    <td><code>Ctrl + Y</code></td>
+                    <td class="muted">Rehace lo que deshiciste. Útil si te arrepientes de un "deshacer".</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editor de código -->
+        <div class="grid">
+          <div class="card col-6">
+            <h4>El editor de código (zona central)</h4>
+            <p>
+              Es la zona más grande de la ventana. Aquí escribes tu pseudocódigo. Al crear un archivo nuevo, PSeInt ya escribe la estructura base:
+            </p>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Estructura que PSeInt genera automáticamente</div><button class="btn small copy" data-copy="code-interfaz-1">Copiar</button></div>
+              <pre><code id="code-interfaz-1">Algoritmo sin_titulo
+	
+FinAlgoritmo</code></pre>
+            </div>
+            <p class="muted" style="margin-top:10px">
+              Características del editor:<br>
+              • <strong>Colores de sintaxis</strong>: las palabras clave se resaltan en colores distintos.<br>
+              • <strong>Números de línea</strong>: aparecen a la izquierda para ubicarte rápido.<br>
+              • <strong>Autocompletado</strong>: al escribir, PSeInt te sugiere palabras clave.<br>
+              • <strong>Indicadores de error</strong>: las líneas con errores se marcan con íconos rojos.
+            </p>
+          </div>
+          <div class="card col-6">
+            <h4>Panel de comandos (lado derecho)</h4>
+            <p>
+              Son botones que insertan automáticamente la estructura de cada instrucción. No tienes que memorizar la sintaxis exacta al principio:
+            </p>
+            <p style="margin-top:10px">
+              <strong>Botones disponibles:</strong><br>
+              • <strong>Escribir</strong> → inserta <code>Escribir "";</code><br>
+              • <strong>Leer</strong> → inserta <code>Leer variable;</code><br>
+              • <strong>Si-Entonces</strong> → inserta el bloque Si/SiNo/FinSi<br>
+              • <strong>Según</strong> → inserta el bloque Segun/FinSegun<br>
+              • <strong>Mientras</strong> → inserta Mientras/FinMientras<br>
+              • <strong>Repetir</strong> → inserta Repetir/Hasta Que<br>
+              • <strong>Para</strong> → inserta Para/FinPara<br>
+              • <strong>Definir</strong> → inserta la declaración de variable<br>
+              • <strong>Dimensión</strong> → inserta Dimension para arreglos<br>
+              • <strong>SubProceso</strong> → inserta SubProceso/FinSubProceso
+            </p>
+            <div class="callout">
+              <div class="badge good">✓</div>
+              <div>
+                <strong>Consejo para principiantes</strong>
+                <div class="muted">Usa estos botones al principio. Te ahorran errores de sintaxis porque insertan la estructura completa y correcta. Con la práctica, terminarás escribiendo todo de memoria.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ventana de ejecución -->
+        <div class="grid">
+          <div class="card col-6">
+            <h4>La consola de ejecución</h4>
+            <p>
+              Cuando presionas <strong>▶ Ejecutar</strong> (o <code>F9</code>), se abre una ventana negra (la consola). Ahí sucede todo:
+            </p>
+            <p style="margin-top:8px">
+              • Lo que escribas con <code>Escribir</code> aparece como texto en la consola.<br>
+              • Cuando el programa llega a un <code>Leer</code>, la consola se pausa y espera que el usuario escriba algo y presione Enter.<br>
+              • Al terminar, aparece el mensaje <strong>"Presione cualquier tecla para continuar..."</strong>
+            </p>
+          </div>
+          <div class="card col-6">
+            <h4>El diagrama de flujo</h4>
+            <p>
+              PSeInt puede convertir tu pseudocódigo en un <strong>diagrama de flujo</strong> automáticamente (botón o <code>F7</code>).
+              Es una representación visual de la lógica de tu programa:
+            </p>
+            <p style="margin-top:8px">
+              • <strong>Rectángulos</strong>: instrucciones normales (asignaciones, Escribir).<br>
+              • <strong>Rombos</strong>: decisiones (Si/Entonces, condiciones de ciclos).<br>
+              • <strong>Paralelogramos</strong>: entrada/salida de datos (Leer, Escribir).<br>
+              • <strong>Flechas</strong>: conectan los bloques y muestran el flujo de ejecución.
+            </p>
+            <div class="callout">
+              <div class="badge warn">!</div>
+              <div>
+                <strong>Aprovéchalo</strong>
+                <div class="muted">El diagrama de flujo es una de las mayores ventajas de PSeInt. Si no entiendes cómo funciona tu código, dibuja el diagrama y sigue las flechas. Es como un mapa de tu programa.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Configuración del perfil -->
+        <div class="grid">
+          <div class="card col-12">
+            <h4>Configurar el perfil de PSeInt</h4>
+            <p>
+              PSeInt tiene diferentes <strong>perfiles de lenguaje</strong> que determinan qué tan estricto es con la sintaxis.
+              Ve a <strong>Configurar → Opciones del Lenguaje (Perfiles)</strong> para elegir uno:
+            </p>
+            <div class="table-wrap" style="margin-top:12px">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Perfil</th>
+                    <th>Nivel</th>
+                    <th>Descripción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Flexible</strong></td>
+                    <td class="muted">Principiante</td>
+                    <td class="muted">Permite muchas formas de escribir lo mismo. Más permisivo con errores menores. Ideal para empezar.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Estricto</strong></td>
+                    <td class="muted">Avanzado</td>
+                    <td class="muted">Obliga a declarar variables, usar tipos correctos y seguir la sintaxis exacta. Mejor preparación para lenguajes reales.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Personalizado</strong></td>
+                    <td class="muted">Variable</td>
+                    <td class="muted">Tú eliges qué reglas activar y cuáles no. Útil cuando el profesor quiere reglas específicas.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="badge warn">!</div>
+          <div>
+            <strong>Recomendación para esta guía</strong>
+            <div class="muted">
+              Usa el perfil <strong>Estricto</strong>. Aunque es más exigente, te obliga a declarar variables con <code>Definir</code>
+              y a usar los tipos de datos correctamente. Esto te crea mejores hábitos desde el principio y te prepara
+              para cuando programes en un lenguaje real.
+            </div>
+          </div>
+        </div>
+
+        <!-- Flujo de trabajo -->
+        <div class="grid">
+          <div class="card col-12">
+            <h4>Tu flujo de trabajo en PSeInt (paso a paso)</h4>
+            <p>Cada vez que trabajes en un ejercicio, sigue estos pasos:</p>
+            <p style="margin-top:10px">
+              <strong>1.</strong> Abre PSeInt y crea un <strong>nuevo archivo</strong> (<code>Ctrl + N</code>).<br>
+              <strong>2.</strong> Cambia el nombre del algoritmo: reemplaza <code>sin_titulo</code> por algo descriptivo (ej: <code>CalcularPromedio</code>).<br>
+              <strong>3.</strong> Escribe tu código dentro del bloque <code>Algoritmo ... FinAlgoritmo</code>.<br>
+              <strong>4.</strong> Revisa el <strong>panel de errores</strong> (abajo). Si hay errores, corrígelos antes de ejecutar.<br>
+              <strong>5.</strong> Presiona <strong>▶ Ejecutar</strong> (<code>F9</code>) para probar.<br>
+              <strong>6.</strong> Si algo no funciona como esperas, usa <strong>Ejecutar paso a paso</strong> (<code>F5</code>) para ver qué pasa en cada línea.<br>
+              <strong>7.</strong> Cuando funcione, <strong>guarda</strong> tu archivo (<code>Ctrl + G</code>).<br>
+              <strong>8.</strong> Opcional: genera el <strong>diagrama de flujo</strong> (<code>F7</code>) para visualizar tu lógica.
+            </p>
+          </div>
+        </div>
+
+        <details open>
+          <summary>Tu primer programa: ¡Hola Mundo! <span class="tag">práctica</span></summary>
+          <div class="details-body">
+            <p>Vamos a probar que todo funcione. Sigue estos pasos:</p>
+            <ol>
+              <li>Abre PSeInt y crea un archivo nuevo.</li>
+              <li>Escribe este código (reemplaza lo que ya hay):</li>
+            </ol>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Tu primer algoritmo</div><button class="btn small copy" data-copy="code-hola-1">Copiar</button></div>
+              <pre><code id="code-hola-1">Algoritmo HolaMundo
+	Escribir "¡Hola Mundo!"
+	Escribir "Mi primer programa en PSeInt"
+FinAlgoritmo</code></pre>
+            </div>
+            <ol start="3">
+              <li>Presiona <code>F9</code> (o el botón ▶).</li>
+              <li>Deberías ver en la consola:
+                <pre><code>¡Hola Mundo!
+Mi primer programa en PSeInt</code></pre>
+              </li>
+              <li>¡Felicidades! Ya escribiste y ejecutaste tu primer programa.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio: Programa interactivo <span class="tag">práctica</span></summary>
+          <div class="details-body">
+            <p>Ahora prueba un programa que use entrada y salida:</p>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Programa que pide tu nombre</div><button class="btn small copy" data-copy="code-hola-2">Copiar</button></div>
+              <pre><code id="code-hola-2">Algoritmo Saludo
+	Definir nombre Como Cadena
+	Escribir "¿Cómo te llamas?"
+	Leer nombre
+	Escribir "¡Bienvenido a PSeInt, ", nombre, "!"
+FinAlgoritmo</code></pre>
+            </div>
+            <ol>
+              <li>Copia este código, ejecútalo con <code>F9</code>.</li>
+              <li>Cuando aparezca la pregunta, escribe tu nombre y presiona Enter.</li>
+              <li>Después, prueba con <code>F5</code> (paso a paso) para ver cómo avanza línea por línea.</li>
+              <li>Finalmente, genera el diagrama de flujo con <code>F7</code> y observa las formas.</li>
+            </ol>
+          </div>
+        </details>
       </section>
 
       <!-- 1 -->
