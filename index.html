@@ -182,7 +182,7 @@
                   <tr>
                     <td><strong>Barra de herramientas</strong></td>
                     <td>Debajo del menú</td>
-                    <td class="muted">Botones rápidos: Nuevo, Abrir, Guardar, Ejecutar (▶), Ejecutar paso a paso, Dibujar diagrama de flujo, etc.</td>
+                    <td class="muted">Una fila de íconos con accesos rápidos (de izquierda a derecha): Nuevo, Abrir, Guardar, Guardar como, Deshacer, Rehacer, Cortar, Copiar, Pegar, Corregir Indentado, Mostrar mensajes de error, Buscar, Buscar Anterior, Buscar Siguiente, <strong>Ejecutar (▶)</strong>, Ejecutar paso a paso..., Dibujar Diagrama de Flujo, Ayuda...</td>
                   </tr>
                   <tr>
                     <td><strong>Editor de código</strong></td>
@@ -231,12 +231,37 @@
                   </tr>
                   <tr>
                     <td><strong>Abrir</strong></td>
-                    <td><code>Ctrl + A</code></td>
+                    <td><code>Ctrl + O</code></td>
                     <td class="muted">Abre un archivo <code>.psc</code> existente (los archivos de PSeInt se guardan con extensión .psc).</td>
                   </tr>
                   <tr>
+                    <td><strong>Seleccionar todo</strong></td>
+                    <td><code>Ctrl + A</code></td>
+                    <td class="muted">Selecciona todo el texto del editor. Útil para copiar o reemplazar el código completo.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Cortar</strong></td>
+                    <td><code>Ctrl + X</code></td>
+                    <td class="muted">Corta el texto seleccionado (lo elimina del editor y lo copia al portapapeles para pegarlo en otro lugar).</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Pegar</strong></td>
+                    <td><code>Ctrl + V</code></td>
+                    <td class="muted">Pega el texto que hayas copiado o cortado previamente en la posición del cursor.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Indentar</strong></td>
+                    <td><code>Tab</code></td>
+                    <td class="muted">Agrega una tabulación (sangría) al inicio de la línea. Úsala para indentar el código dentro de bloques como Si, Para, Mientras, etc.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Quitar indentación</strong></td>
+                    <td><code>Shift + Tab</code></td>
+                    <td class="muted">Quita una tabulación al inicio de la línea. Útil para corregir sangría excesiva o al cerrar un bloque.</td>
+                  </tr>
+                  <tr>
                     <td><strong>Guardar</strong></td>
-                    <td><code>Ctrl + G</code></td>
+                    <td><code>Ctrl + S</code></td>
                     <td class="muted">Guarda el archivo actual. La primera vez te pide nombre y ubicación.</td>
                   </tr>
                   <tr>
@@ -280,7 +305,7 @@
             <div class="examples">
               <div class="codebar"><div class="muted">Estructura que PSeInt genera automáticamente</div><button class="btn small copy" data-copy="code-interfaz-1">Copiar</button></div>
               <pre><code id="code-interfaz-1">Algoritmo sin_titulo
-	
+
 FinAlgoritmo</code></pre>
             </div>
             <p class="muted" style="margin-top:10px">
@@ -434,8 +459,8 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Tu primer algoritmo</div><button class="btn small copy" data-copy="code-hola-1">Copiar</button></div>
               <pre><code id="code-hola-1">Algoritmo HolaMundo
-	Escribir "¡Hola Mundo!"
-	Escribir "Mi primer programa en PSeInt"
+	Escribir "¡Hola Mundo!";
+	Escribir "Mi primer programa en PSeInt";
 FinAlgoritmo</code></pre>
             </div>
             <ol start="3">
@@ -456,10 +481,10 @@ Mi primer programa en PSeInt</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Programa que pide tu nombre</div><button class="btn small copy" data-copy="code-hola-2">Copiar</button></div>
               <pre><code id="code-hola-2">Algoritmo Saludo
-	Definir nombre Como Cadena
-	Escribir "¿Cómo te llamas?"
-	Leer nombre
-	Escribir "¡Bienvenido a PSeInt, ", nombre, "!"
+	Definir nombre Como Cadena;
+	Escribir "¿Cómo te llamas?";
+	Leer nombre;
+	Escribir "¡Bienvenido a PSeInt, ", nombre, "!";
 FinAlgoritmo</code></pre>
             </div>
             <ol>
@@ -493,17 +518,17 @@ FinAlgoritmo</code></pre>
                 <button class="btn small copy" data-copy="code-var-1">Copiar</button>
               </div>
               <pre><code id="code-var-1">Algoritmo MisVariables
-	Definir vidas Como Entero
-	Definir nombre Como Cadena
-	Definir velocidad Como Real
+	Definir vidas Como Entero;
+	Definir nombre Como Cadena;
+	Definir velocidad Como Real;
 
-	vidas &lt;- 3
-	nombre &lt;- "Mario"
-	velocidad &lt;- 120.5
+	vidas &lt;- 3;
+	nombre &lt;- "Mario";
+	velocidad &lt;- 120.5;
 
-	Escribir "Vidas: ", vidas
-	Escribir "Nombre: ", nombre
-	Escribir "Velocidad: ", velocidad
+	Escribir "Vidas: ", vidas;
+	Escribir "Nombre: ", nombre;
+	Escribir "Velocidad: ", velocidad;
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -526,17 +551,17 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Mostrar datos al usuario</div><button class="btn small copy" data-copy="code-var-esc">Copiar</button></div>
               <pre><code id="code-var-esc">Algoritmo Salida
-	Definir edad Como Entero
-	edad &lt;- 20
+	Definir edad Como Entero;
+	edad &lt;- 20;
 
 	// Texto fijo
-	Escribir "Hola mundo"
+	Escribir "Hola mundo";
 
 	// Texto + variable (con coma)
-	Escribir "Tu edad es: ", edad
+	Escribir "Tu edad es: ", edad;
 
 	// Varias variables juntas
-	Escribir "Edad: ", edad, " años"
+	Escribir "Edad: ", edad, " años";
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -545,16 +570,16 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Recibir datos del usuario</div><button class="btn small copy" data-copy="code-var-leer">Copiar</button></div>
               <pre><code id="code-var-leer">Algoritmo Entrada
-	Definir nombre Como Cadena
-	Definir edad Como Entero
+	Definir nombre Como Cadena;
+	Definir edad Como Entero;
 
-	Escribir "¿Cómo te llamas?"
-	Leer nombre
+	Escribir "¿Cómo te llamas?";
+	Leer nombre;
 
-	Escribir "¿Cuántos años tienes?"
-	Leer edad
+	Escribir "¿Cuántos años tienes?";
+	Leer edad;
 
-	Escribir "Hola ", nombre, ", tienes ", edad, " años"
+	Escribir "Hola ", nombre, ", tienes ", edad, " años";
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -566,8 +591,8 @@ FinAlgoritmo</code></pre>
             <strong>Importante: el operador de asignación</strong>
             <div class="muted">
               En PSeInt, para guardar un valor en una variable se usa <code>&lt;-</code> (flecha), no <code>=</code>.<br>
-              ✅ <code>vidas &lt;- 3</code> → Correcto: guarda 3 en vidas.<br>
-              ❌ <code>vidas = 3</code> → Incorrecto para asignar (el <code>=</code> se usa para comparar).
+              ✅ <code>vidas &lt;- 3;</code> → Correcto: guarda 3 en vidas.<br>
+              ❌ <code>vidas = 3;</code> → Incorrecto para asignar (el <code>=</code> se usa para comparar).
             </div>
           </div>
         </div>
@@ -610,7 +635,7 @@ FinAlgoritmo</code></pre>
               <div class="codebar"><div class="muted">Plantilla base de todo programa</div><button class="btn small copy" data-copy="code-struct-1">Copiar</button></div>
               <pre><code id="code-struct-1">Algoritmo MiPrograma
 	// Aquí van las instrucciones
-	Escribir "Hola mundo"
+	Escribir "Hola mundo";
 FinAlgoritmo</code></pre>
             </div>
             <p class="muted">Todo lo que esté entre <code>Algoritmo</code> y <code>FinAlgoritmo</code> se ejecuta.</p>
@@ -639,13 +664,13 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">✅ Con indentación (legible)</div><button class="btn small copy" data-copy="code-struct-ok">Copiar</button></div>
               <pre><code id="code-struct-ok">Algoritmo Ejemplo
-	Definir vidas Como Entero
-	vidas &lt;- 3
+	Definir vidas Como Entero;
+	vidas &lt;- 3;
 
 	Si vidas &gt; 0 Entonces
-		Escribir "Sigues vivo"
+		Escribir "Sigues vivo";
 	SiNo
-		Escribir "Game Over"
+		Escribir "Game Over";
 	FinSi
 FinAlgoritmo</code></pre>
             </div>
@@ -655,12 +680,12 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">El mismo código, sin indentar</div><button class="btn small copy" data-copy="code-struct-bad">Copiar</button></div>
               <pre><code id="code-struct-bad">Algoritmo Ejemplo
-Definir vidas Como Entero
-vidas &lt;- 3
+Definir vidas Como Entero;
+vidas &lt;- 3;
 Si vidas &gt; 0 Entonces
-Escribir "Sigues vivo"
+Escribir "Sigues vivo";
 SiNo
-Escribir "Game Over"
+Escribir "Game Over";
 FinSi
 FinAlgoritmo</code></pre>
             </div>
@@ -695,6 +720,7 @@ FinAlgoritmo</code></pre>
               <li>¿Cada <code>Para</code> tiene su <code>FinPara</code>?</li>
               <li>¿Cada <code>Mientras</code> tiene su <code>FinMientras</code>?</li>
               <li>¿Estoy indentando el contenido de cada bloque?</li>
+              <li>¿Cada instrucción ejecutable termina con <code>;</code> (punto y coma)?</li>
             </ul>
           </div>
         </details>
@@ -764,23 +790,23 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Declaración de cada tipo</div><button class="btn small copy" data-copy="code-types-1">Copiar</button></div>
               <pre><code id="code-types-1">Algoritmo TiposDeDatos
-	Definir vidas Como Entero
-	Definir promedio Como Real
-	Definir nombre Como Cadena
-	Definir esta_vivo Como Logico
-	Definir inicial Como Caracter
+	Definir vidas Como Entero;
+	Definir promedio Como Real;
+	Definir nombre Como Cadena;
+	Definir esta_vivo Como Logico;
+	Definir inicial Como Caracter;
 
-	vidas &lt;- 3
-	promedio &lt;- 8.5
-	nombre &lt;- "Mario"
-	esta_vivo &lt;- Verdadero
-	inicial &lt;- "M"
+	vidas &lt;- 3;
+	promedio &lt;- 8.5;
+	nombre &lt;- "Mario";
+	esta_vivo &lt;- Verdadero;
+	inicial &lt;- "M";
 
-	Escribir "Nombre: ", nombre
-	Escribir "Vidas: ", vidas
-	Escribir "Promedio: ", promedio
-	Escribir "¿Vivo? ", esta_vivo
-	Escribir "Inicial: ", inicial
+	Escribir "Nombre: ", nombre;
+	Escribir "Vidas: ", vidas;
+	Escribir "Promedio: ", promedio;
+	Escribir "¿Vivo? ", esta_vivo;
+	Escribir "Inicial: ", inicial;
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -886,16 +912,16 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Ejemplo completo: cálculos básicos</div><button class="btn small copy" data-copy="code-op-1">Copiar</button></div>
               <pre><code id="code-op-1">Algoritmo OperadoresMatematicos
-	Definir a, b Como Entero
-	a &lt;- 10
-	b &lt;- 3
+	Definir a, b Como Entero;
+	a &lt;- 10;
+	b &lt;- 3;
 
-	Escribir "Suma: ", a + b
-	Escribir "Resta: ", a - b
-	Escribir "Multiplicación: ", a * b
-	Escribir "División: ", a / b
-	Escribir "Módulo: ", a MOD b
-	Escribir "Potencia: ", a ^ 2
+	Escribir "Suma: ", a + b;
+	Escribir "Resta: ", a - b;
+	Escribir "Multiplicación: ", a * b;
+	Escribir "División: ", a / b;
+	Escribir "Módulo: ", a MOD b;
+	Escribir "Potencia: ", a ^ 2;
 FinAlgoritmo</code></pre>
             </div>
 
@@ -974,12 +1000,12 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Ejemplo: comparar valores</div><button class="btn small copy" data-copy="code-op-2">Copiar</button></div>
               <pre><code id="code-op-2">Algoritmo Comparaciones
-	Definir nota Como Real
-	nota &lt;- 7.5
+	Definir nota Como Real;
+	nota &lt;- 7.5;
 
-	Escribir "¿Aprobó (nota &gt;= 6)? ", nota &gt;= 6
-	Escribir "¿Nota perfecta (= 10)? ", nota = 10
-	Escribir "¿Reprobó (&lt; 6)? ", nota &lt; 6
+	Escribir "¿Aprobó (nota &gt;= 6)? ", nota &gt;= 6;
+	Escribir "¿Nota perfecta (= 10)? ", nota = 10;
+	Escribir "¿Reprobó (&lt; 6)? ", nota &lt; 6;
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -1026,32 +1052,32 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Ejemplo: combinar condiciones</div><button class="btn small copy" data-copy="code-op-3">Copiar</button></div>
               <pre><code id="code-op-3">Algoritmo OperadoresLogicos
-	Definir tiene_llave Como Logico
-	Definir nivel Como Entero
-	tiene_llave &lt;- Verdadero
-	nivel &lt;- 7
+	Definir tiene_llave Como Logico;
+	Definir nivel Como Entero;
+	tiene_llave &lt;- Verdadero;
+	nivel &lt;- 7;
 
 	// Y: ambas deben cumplirse
 	Si tiene_llave Y nivel &gt;= 5 Entonces
-		Escribir "Puedes abrir la puerta"
+		Escribir "Puedes abrir la puerta";
 	FinSi
 
 	// O: basta una
-	Definir vidas Como Entero
-	Definir tiene_revive Como Logico
-	vidas &lt;- 0
-	tiene_revive &lt;- Verdadero
+	Definir vidas Como Entero;
+	Definir tiene_revive Como Logico;
+	vidas &lt;- 0;
+	tiene_revive &lt;- Verdadero;
 
 	Si vidas &gt; 0 O tiene_revive Entonces
-		Escribir "Sigue en el juego"
+		Escribir "Sigue en el juego";
 	FinSi
 
 	// NO: invierte
-	Definir esta_congelado Como Logico
-	esta_congelado &lt;- Falso
+	Definir esta_congelado Como Logico;
+	esta_congelado &lt;- Falso;
 
 	Si NO esta_congelado Entonces
-		Escribir "Puede moverse"
+		Escribir "Puede moverse";
 	FinSi
 FinAlgoritmo</code></pre>
             </div>
@@ -1087,13 +1113,13 @@ FinAlgoritmo</code></pre>
             <div class="grid examples">
               <div class="card col-6">
                 <h4>✅ Asignar (guardar)</h4>
-                <pre><code>vidas &lt;- 3       // Guardar 3 en vidas
-vidas &lt;- vidas - 1  // Ahora vale 2</code></pre>
+                <pre><code>vidas &lt;- 3;       // Guardar 3 en vidas
+vidas &lt;- vidas - 1;  // Ahora vale 2</code></pre>
               </div>
               <div class="card col-6">
                 <h4>✅ Comparar (preguntar)</h4>
                 <pre><code>Si vidas = 0 Entonces  // ¿Vidas es igual a 0?
-	Escribir "Game Over"
+	Escribir "Game Over";
 FinSi</code></pre>
               </div>
             </div>
@@ -1124,17 +1150,17 @@ FinSi</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Unir textos y mostrar datos</div><button class="btn small copy" data-copy="code-concat-1">Copiar</button></div>
               <pre><code id="code-concat-1">Algoritmo ConcatenarTextos
-	Definir nombre Como Cadena
-	Definir vidas Como Entero
-	nombre &lt;- "Carlos"
-	vidas &lt;- 3
+	Definir nombre Como Cadena;
+	Definir vidas Como Entero;
+	nombre &lt;- "Carlos";
+	vidas &lt;- 3;
 
 	// Opción 1: comas en Escribir (más fácil)
-	Escribir "Hola ", nombre, ", tienes ", vidas, " vidas"
+	Escribir "Hola ", nombre, ", tienes ", vidas, " vidas";
 
 	// Opción 2: concatenación con +
-	Escribir "Jugador: " + nombre
-	Escribir "Vidas: " + ConvertirATexto(vidas)
+	Escribir "Jugador: " + nombre;
+	Escribir "Vidas: " + ConvertirATexto(vidas);
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -1154,16 +1180,16 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Estructura básica</div><button class="btn small copy" data-copy="code-if-1">Copiar</button></div>
               <pre><code id="code-if-1">Algoritmo CondicionalBasico
-	Definir vidas Como Entero
-	vidas &lt;- 1
+	Definir vidas Como Entero;
+	vidas &lt;- 1;
 
 	Si vidas &gt; 1 Entonces
-		Escribir "Estás bien"
+		Escribir "Estás bien";
 	SiNo
 		Si vidas = 1 Entonces
-			Escribir "¡Cuidado! Última vida"
+			Escribir "¡Cuidado! Última vida";
 		SiNo
-			Escribir "Game Over"
+			Escribir "Game Over";
 		FinSi
 	FinSi
 FinAlgoritmo</code></pre>
@@ -1174,23 +1200,23 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Cuando hay muchas opciones fijas</div><button class="btn small copy" data-copy="code-if-2">Copiar</button></div>
               <pre><code id="code-if-2">Algoritmo CondicionalSegun
-	Definir dia Como Entero
-	Escribir "Ingresa un día (1-7):"
-	Leer dia
+	Definir dia Como Entero;
+	Escribir "Ingresa un día (1-7):";
+	Leer dia;
 
 	Segun dia Hacer
 		1:
-			Escribir "Lunes"
+			Escribir "Lunes";
 		2:
-			Escribir "Martes"
+			Escribir "Martes";
 		3:
-			Escribir "Miércoles"
+			Escribir "Miércoles";
 		4:
-			Escribir "Jueves"
+			Escribir "Jueves";
 		5:
-			Escribir "Viernes"
+			Escribir "Viernes";
 		De Otro Modo:
-			Escribir "Fin de semana"
+			Escribir "Fin de semana";
 	FinSegun
 FinAlgoritmo</code></pre>
             </div>
@@ -1291,10 +1317,10 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Contar del 1 al 5</div><button class="btn small copy" data-copy="code-for-1">Copiar</button></div>
               <pre><code id="code-for-1">Algoritmo CicloPara
-	Definir i Como Entero
+	Definir i Como Entero;
 
-	Para i &lt;- 1 Hasta 5 Con Paso 1
-		Escribir "Número: ", i
+	Para i &lt;- 1 Hasta 5 Con Paso 1 Hacer
+		Escribir "Número: ", i;
 	FinPara
 FinAlgoritmo</code></pre>
             </div>
@@ -1304,12 +1330,12 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Repetir mientras se cumpla</div><button class="btn small copy" data-copy="code-while-1">Copiar</button></div>
               <pre><code id="code-while-1">Algoritmo CicloMientras
-	Definir cont Como Entero
-	cont &lt;- 0
+	Definir cont Como Entero;
+	cont &lt;- 0;
 
 	Mientras cont &lt; 3 Hacer
-		Escribir "Intento: ", cont
-		cont &lt;- cont + 1
+		Escribir "Intento: ", cont;
+		cont &lt;- cont + 1;
 	FinMientras
 FinAlgoritmo</code></pre>
             </div>
@@ -1319,14 +1345,14 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Ejecuta y luego verifica</div><button class="btn small copy" data-copy="code-rep-1">Copiar</button></div>
               <pre><code id="code-rep-1">Algoritmo CicloRepetir
-	Definir num Como Entero
+	Definir num Como Entero;
 
 	Repetir
-		Escribir "Ingresa un número positivo:"
-		Leer num
+		Escribir "Ingresa un número positivo:";
+		Leer num;
 	Hasta Que num &gt; 0
 
-	Escribir "Ingresaste: ", num
+	Escribir "Ingresaste: ", num;
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -1350,17 +1376,17 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Cuenta regresiva y pares</div><button class="btn small copy" data-copy="code-for-2">Copiar</button></div>
               <pre><code id="code-for-2">Algoritmo PasosDiferentes
-	Definir i Como Entero
+	Definir i Como Entero;
 
 	// Cuenta regresiva: de 5 a 1
-	Para i &lt;- 5 Hasta 1 Con Paso -1
-		Escribir i
+	Para i &lt;- 5 Hasta 1 Con Paso -1 Hacer
+		Escribir i;
 	FinPara
-	Escribir "¡Despegue!"
+	Escribir "¡Despegue!";
 
 	// Solo pares: de 2 a 10 de 2 en 2
-	Para i &lt;- 2 Hasta 10 Con Paso 2
-		Escribir "Par: ", i
+	Para i &lt;- 2 Hasta 10 Con Paso 2 Hacer
+		Escribir "Par: ", i;
 	FinPara
 FinAlgoritmo</code></pre>
             </div>
@@ -1370,19 +1396,19 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Mientras con condición de combate</div><button class="btn small copy" data-copy="code-while-2">Copiar</button></div>
               <pre><code id="code-while-2">Algoritmo Combate
-	Definir vida_enemigo, dano Como Entero
-	Definir golpe Como Entero
-	vida_enemigo &lt;- 100
-	dano &lt;- 30
-	golpe &lt;- 0
+	Definir vida_enemigo, dano Como Entero;
+	Definir golpe Como Entero;
+	vida_enemigo &lt;- 100;
+	dano &lt;- 30;
+	golpe &lt;- 0;
 
 	Mientras vida_enemigo &gt; 0 Hacer
-		golpe &lt;- golpe + 1
-		vida_enemigo &lt;- vida_enemigo - dano
-		Escribir "Golpe ", golpe, ": vida restante = ", vida_enemigo
+		golpe &lt;- golpe + 1;
+		vida_enemigo &lt;- vida_enemigo - dano;
+		Escribir "Golpe ", golpe, ": vida restante = ", vida_enemigo;
 	FinMientras
 
-	Escribir "Enemigo derrotado en ", golpe, " golpes"
+	Escribir "Enemigo derrotado en ", golpe, " golpes";
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -1395,25 +1421,28 @@ FinAlgoritmo</code></pre>
             <div class="grid examples">
               <div class="card col-6">
                 <h4>❌ Infinito</h4>
-                <pre><code>Definir x Como Entero
-x &lt;- 0
+                <pre><code>Definir x Como Entero;
+x &lt;- 0;
 Mientras x &lt; 5 Hacer
-	Escribir x
-	// falta: x &lt;- x + 1
+	Escribir x;
+	// falta: x &lt;- x + 1;
 FinMientras</code></pre>
               </div>
               <div class="card col-6">
                 <h4>✅ Correcto</h4>
-                <pre><code>Definir x Como Entero
-x &lt;- 0
+                <pre><code>Definir x Como Entero;
+x &lt;- 0;
 Mientras x &lt; 5 Hacer
-	Escribir x
-	x &lt;- x + 1
+	Escribir x;
+	x &lt;- x + 1;
 FinMientras</code></pre>
               </div>
             </div>
           </div>
         </details>
+
+        <!-- ═══════ Ejercicios con Para ═══════ -->
+        <h4 style="margin-top:28px; padding-left:14px; border-left:3px solid var(--accent);">Ejercicios con <code>Para</code></h4>
 
         <details>
           <summary>Ejercicio (3 min): Cuenta regresiva <span class="tag">reto</span></summary>
@@ -1430,30 +1459,132 @@ FinMientras</code></pre>
           <div class="details-body">
             <ol>
               <li>Pide al usuario un número.</li>
-              <li>Usa <code>Para i &lt;- 1 Hasta 10</code> para mostrar su tabla del multiplicar.</li>
+              <li>Usa <code>Para i &lt;- 1 Hasta 10 Con Paso 1 Hacer</code> para mostrar su tabla del multiplicar.</li>
               <li>Cada línea: <code>"7 x 1 = 7"</code>, <code>"7 x 2 = 14"</code>, etc.</li>
             </ol>
           </div>
         </details>
 
         <details>
-          <summary>Ejercicio (8 min): Validar contraseña <span class="tag">reto</span></summary>
+          <summary>Ejercicio (5 min): Números pares del 2 al 20 <span class="tag">reto</span></summary>
           <div class="details-body">
             <ol>
-              <li>La contraseña correcta es <code>"secreto123"</code>.</li>
-              <li>Usa <code>Repetir / Hasta Que</code> para pedir la contraseña hasta que sea correcta.</li>
-              <li>Cuenta los intentos y muestra cuántos necesitó.</li>
+              <li>Usa un <code>Para</code> con paso <code>2</code> para recorrer del 2 al 20.</li>
+              <li>Muestra cada número par.</li>
+              <li>Al final, muestra cuántos pares hay.</li>
+            </ol>
+            <p>Resultado esperado: <code>2, 4, 6, 8, 10, 12, 14, 16, 18, 20</code> → <code>"Total de pares: 10"</code></p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (8 min): Factorial de un número <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide un número al usuario (ej: 5).</li>
+              <li>Declara <code>factorial &lt;- 1</code>.</li>
+              <li>Usa <code>Para i &lt;- 1 Hasta numero Con Paso 1 Hacer</code> y en cada vuelta multiplica: <code>factorial &lt;- factorial * i;</code></li>
+              <li>Muestra: <code>"El factorial de 5 es: 120"</code></li>
+            </ol>
+            <p>Pista: 5! = 1 × 2 × 3 × 4 × 5 = 120.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (10 min): Sumar solo los múltiplos de 3 <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Recorre del 1 al 50 con <code>Para</code>.</li>
+              <li>Dentro del ciclo, usa <code>Si i MOD 3 = 0 Entonces</code> para detectar múltiplos de 3.</li>
+              <li>Si es múltiplo, súmalo a un acumulador y muéstralo.</li>
+              <li>Al final, muestra la suma total de todos los múltiplos de 3 entre 1 y 50.</li>
+            </ol>
+            <p>Resultado esperado: 3 + 6 + 9 + ... + 48 = <code>408</code></p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (12 min): Dibujar un triángulo de asteriscos <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Pide al usuario la altura del triángulo (ej: 5) y dibuja:</p>
+            <pre><code>*
+**
+***
+****
+*****</code></pre>
+            <ol>
+              <li>Usa un <code>Para fila &lt;- 1 Hasta altura Con Paso 1 Hacer</code> (ciclo externo).</li>
+              <li>Dentro, usa otro <code>Para col &lt;- 1 Hasta fila Con Paso 1 Hacer</code> (ciclo interno) con <code>Escribir Sin Saltar "*";</code></li>
+              <li>Después del ciclo interno, usa <code>Escribir "";</code> para saltar de línea.</li>
+            </ol>
+            <p>Pista: necesitas dos <code>Para</code> anidados. El interno controla cuántos <code>*</code> van en cada fila.</p>
+          </div>
+        </details>
+
+        <!-- ═══════ Ejercicios con Mientras ═══════ -->
+        <h4 style="margin-top:28px; padding-left:14px; border-left:3px solid var(--accent);">Ejercicios con <code>Mientras</code></h4>
+
+        <details>
+          <summary>Ejercicio (3 min): Esperar a que cargue <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Declara <code>carga &lt;- 0</code>.</li>
+              <li>Usa <code>Mientras carga &lt; 100 Hacer</code>.</li>
+              <li>Dentro, incrementa <code>carga &lt;- carga + 25;</code> y muestra <code>"Cargando... ", carga, "%"</code>.</li>
+              <li>Después del ciclo, escribe <code>"¡Nivel listo!"</code>.</li>
             </ol>
           </div>
         </details>
 
         <details>
-          <summary>Ejercicio (10 min): Sumar hasta que diga basta <span class="tag">reto</span></summary>
+          <summary>Ejercicio (5 min): Golpear al enemigo hasta derrotarlo <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Declara <code>vida_enemigo &lt;- 100</code>, <code>dano &lt;- 30</code>, <code>golpe &lt;- 0</code>.</li>
+              <li>Usa <code>Mientras vida_enemigo &gt; 0 Hacer</code>.</li>
+              <li>Dentro: incrementa golpe, resta daño, muestra vida restante.</li>
+              <li>Al final: <code>"Enemigo derrotado en X golpes"</code>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (8 min): Sumar hasta que diga basta <span class="tag">reto</span></summary>
           <div class="details-body">
             <ol>
               <li>Pide números al usuario con <code>Mientras</code>.</li>
               <li>Si ingresa <code>0</code>, el ciclo se detiene.</li>
               <li>Al final, muestra la suma total y cuántos números ingresó.</li>
+            </ol>
+            <p>Pista: pide el primer número antes del ciclo. Dentro del ciclo, acumula y pide el siguiente.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (10 min): Adivinar el número secreto <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Declara <code>secreto &lt;- 42</code> y <code>intentos &lt;- 0</code>.</li>
+              <li>Declara <code>adivinado &lt;- Falso</code>.</li>
+              <li>Usa <code>Mientras NO adivinado Hacer</code>.</li>
+              <li>Pide un número al usuario. Si es igual al secreto, cambia <code>adivinado &lt;- Verdadero;</code></li>
+              <li>Si el número es menor, escribe <code>"Más alto"</code>. Si es mayor, escribe <code>"Más bajo"</code>.</li>
+              <li>Al final: <code>"¡Adivinaste en X intentos!"</code></li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (12 min): Cajero automático <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>El usuario tiene <code>saldo &lt;- 1000</code>.</li>
+              <li>Usa <code>Mientras saldo &gt; 0 Hacer</code>.</li>
+              <li>En cada vuelta, muestra el saldo y pide un monto a retirar.</li>
+              <li>Si el monto es mayor al saldo, escribe <code>"Fondos insuficientes"</code> y no restes.</li>
+              <li>Si el monto es válido, réstalo al saldo.</li>
+              <li>Si el usuario ingresa <code>0</code>, termina el ciclo (usa una variable bandera).</li>
+              <li>Al final: <code>"Saldo final: X"</code></li>
             </ol>
           </div>
         </details>
@@ -1465,10 +1596,93 @@ FinMientras</code></pre>
               <li>Declara <code>vida_jugador &lt;- 100</code>, <code>vida_enemigo &lt;- 80</code>, <code>ataque_jugador &lt;- 20</code>, <code>ataque_enemigo &lt;- 15</code>, <code>turno &lt;- 1</code></li>
               <li>Usa <code>Mientras vida_jugador &gt; 0 Y vida_enemigo &gt; 0</code></li>
               <li>Cada turno: el jugador ataca primero, luego (si el enemigo sigue vivo) el enemigo contraataca.</li>
+              <li>Muestra las vidas de ambos en cada turno.</li>
               <li>Al final, muestra quién ganó y en cuántos turnos.</li>
             </ol>
           </div>
         </details>
+
+        <!-- ═══════ Ejercicios con Repetir ═══════ -->
+        <h4 style="margin-top:28px; padding-left:14px; border-left:3px solid var(--accent);">Ejercicios con <code>Repetir</code></h4>
+
+        <details>
+          <summary>Ejercicio (3 min): Pedir un número positivo <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Usa <code>Repetir / Hasta Que</code> para pedir un número al usuario.</li>
+              <li>El ciclo se repite hasta que el número sea mayor a 0.</li>
+              <li>Si ingresa un número negativo o cero, escribe <code>"Número inválido, intenta de nuevo"</code>.</li>
+              <li>Al final: <code>"Número válido: X"</code>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (5 min): Validar contraseña <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>La contraseña correcta es <code>"secreto123"</code>.</li>
+              <li>Usa <code>Repetir / Hasta Que</code> para pedir la contraseña hasta que sea correcta.</li>
+              <li>Cuenta los intentos y muestra cuántos necesitó.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (5 min): Menú interactivo <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Muestra un menú: <code>"1) Saludar  2) Despedir  3) Salir"</code>.</li>
+              <li>Pide una opción al usuario.</li>
+              <li>Si elige 1, escribe <code>"¡Hola!"</code>. Si elige 2, escribe <code>"¡Adiós!"</code>.</li>
+              <li>Usa <code>Repetir / Hasta Que opcion = 3</code> para que el menú se repita hasta que elija salir.</li>
+              <li>Si elige algo distinto a 1, 2 o 3, escribe <code>"Opción no válida"</code>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (8 min): Pedir nota válida (0 a 10) <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide una nota al usuario.</li>
+              <li>Usa <code>Repetir / Hasta Que nota &gt;= 0 Y nota &lt;= 10</code> para validar que esté en el rango.</li>
+              <li>Si la nota está fuera de rango, muestra <code>"Error: la nota debe estar entre 0 y 10"</code>.</li>
+              <li>Al final, muestra si aprobó (nota &gt;= 6) o no.</li>
+            </ol>
+            <p>Pista: el <code>Repetir</code> garantiza que el usuario no pueda avanzar con un dato inválido.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (10 min): Calculadora con menú <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Muestra un menú: <code>"1) Sumar  2) Restar  3) Multiplicar  4) Dividir  5) Salir"</code>.</li>
+              <li>Si elige 1 a 4: pide dos números, calcula y muestra el resultado.</li>
+              <li>Si elige 5: sale del ciclo.</li>
+              <li>Usa <code>Repetir / Hasta Que opcion = 5</code>.</li>
+              <li>Si elige dividir y el segundo número es 0, muestra <code>"Error: no se puede dividir entre cero"</code>.</li>
+            </ol>
+            <p>Pista: usa <code>Segun opcion Hacer</code> dentro del <code>Repetir</code> para manejar cada operación.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (12 min): Piedra, papel o tijera <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>La computadora siempre elige <code>"piedra"</code> (para simplificar, o usa <code>azar(3)</code> para hacerlo aleatorio).</li>
+              <li>Pide al usuario que elija: <code>"1) Piedra  2) Papel  3) Tijera"</code>.</li>
+              <li>Compara y muestra quién gana la ronda.</li>
+              <li>Lleva un contador de victorias del jugador y de la computadora.</li>
+              <li>Pregunta <code>"¿Jugar otra vez? (1=Sí, 0=No)"</code>.</li>
+              <li>Usa <code>Repetir / Hasta Que respuesta = 0</code>.</li>
+              <li>Al final, muestra el marcador: <code>"Jugador: X — Computadora: Y"</code>.</li>
+            </ol>
+          </div>
+        </details>
+
       </section>
 
       <!-- 7 -->
@@ -1486,13 +1700,13 @@ FinMientras</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Definir y llamar</div><button class="btn small copy" data-copy="code-func-1">Copiar</button></div>
               <pre><code id="code-func-1">SubProceso Saludar(nombre)
-	Escribir "¡Hola ", nombre, "!"
+	Escribir "¡Hola ", nombre, "!";
 FinSubProceso
 
 Algoritmo Principal
-	Saludar("Mario")
-	Saludar("Luisa")
-	Saludar("Carlos")
+	Saludar("Mario");
+	Saludar("Luisa");
+	Saludar("Carlos");
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -1502,15 +1716,15 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Función que retorna un valor</div><button class="btn small copy" data-copy="code-func-2">Copiar</button></div>
               <pre><code id="code-func-2">Funcion resultado &lt;- Sumar(a, b)
-	resultado &lt;- a + b
+	resultado &lt;- a + b;
 FinFuncion
 
 Algoritmo Principal
-	Definir total Como Entero
-	total &lt;- Sumar(3, 5)
-	Escribir "3 + 5 = ", total
+	Definir total Como Entero;
+	total &lt;- Sumar(3, 5);
+	Escribir "3 + 5 = ", total;
 
-	Escribir "10 + 20 = ", Sumar(10, 20)
+	Escribir "10 + 20 = ", Sumar(10, 20);
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -1522,19 +1736,19 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Calcular daño con defensa y crítico</div><button class="btn small copy" data-copy="code-func-3">Copiar</button></div>
               <pre><code id="code-func-3">Funcion d &lt;- CalcularDano(ataque, defensa, es_critico)
-	d &lt;- ataque - defensa
+	d &lt;- ataque - defensa;
 	Si d &lt; 0 Entonces
-		d &lt;- 0
+		d &lt;- 0;
 	FinSi
 	Si es_critico Entonces
-		d &lt;- d * 2
+		d &lt;- d * 2;
 	FinSi
 FinFuncion
 
 Algoritmo Principal
-	Escribir "Normal: ", CalcularDano(25, 10, Falso)
-	Escribir "Crítico: ", CalcularDano(25, 10, Verdadero)
-	Escribir "Sin daño: ", CalcularDano(5, 20, Falso)
+	Escribir "Normal: ", CalcularDano(25, 10, Falso);
+	Escribir "Crítico: ", CalcularDano(25, 10, Verdadero);
+	Escribir "Sin daño: ", CalcularDano(5, 20, Falso);
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -1543,15 +1757,15 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Pasar parámetros por referencia</div><button class="btn small copy" data-copy="code-func-4">Copiar</button></div>
               <pre><code id="code-func-4">SubProceso MostrarResumen(nombre, vida, ataque)
-	Escribir "=== Resumen ==="
-	Escribir "Nombre: ", nombre
-	Escribir "Vida: ", vida
-	Escribir "Ataque: ", ataque
+	Escribir "=== Resumen ===";
+	Escribir "Nombre: ", nombre;
+	Escribir "Vida: ", vida;
+	Escribir "Ataque: ", ataque;
 FinSubProceso
 
 Algoritmo Principal
-	MostrarResumen("Guerrero", 100, 25)
-	MostrarResumen("Mago", 60, 40)
+	MostrarResumen("Guerrero", 100, 25);
+	MostrarResumen("Mago", 60, 40);
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -1568,44 +1782,163 @@ FinAlgoritmo</code></pre>
           </div>
         </div>
 
+        <!-- Ejercicio 1 -->
         <details open>
-          <summary>Ejercicio (5 min): Grito de guerra <span class="tag">reto</span></summary>
+          <summary>Ejercicio (3 min): Saludar por nombre <span class="tag">reto</span></summary>
           <div class="details-body">
             <ol>
-              <li>Crea un SubProceso <code>Gritar(nombre, grito)</code> que escriba <code>nombre + " grita: ¡" + grito + "!"</code></li>
-              <li>Llámalo 3 veces con personajes distintos.</li>
+              <li>Crea un SubProceso <code>Saludar(nombre)</code> que escriba <code>"¡Hola, " + nombre + "!"</code>.</li>
+              <li>En el algoritmo principal, llámalo 3 veces con nombres distintos.</li>
             </ol>
           </div>
         </details>
 
+        <!-- Ejercicio 2 -->
+        <details>
+          <summary>Ejercicio (3 min): Función que duplica <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea una Función <code>Doble(n)</code> que retorne <code>n * 2</code>.</li>
+              <li>En el algoritmo principal, pide un número al usuario y muestra su doble usando la función.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 3 -->
+        <details>
+          <summary>Ejercicio (5 min): Grito de guerra <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea un SubProceso <code>Gritar(nombre, grito)</code> que escriba <code>nombre + " grita: ¡" + grito + "!"</code>.</li>
+              <li>Llámalo 3 veces con personajes distintos:
+                <ul>
+                  <li><code>Gritar("Guerrero", "Por el honor");</code></li>
+                  <li><code>Gritar("Mago", "Arcanos, escúchenme");</code></li>
+                  <li><code>Gritar("Pícaro", "Nunca me verán");</code></li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 4 -->
+        <details>
+          <summary>Ejercicio (5 min): ¿Es par o impar? <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea una Función <code>EsPar(n)</code> que retorne <code>Verdadero</code> si <code>n MOD 2 = 0</code>, o <code>Falso</code> si no.</li>
+              <li>Pide un número al usuario y usa la función para mostrar <code>"Es par"</code> o <code>"Es impar"</code>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 5 -->
         <details>
           <summary>Ejercicio (7 min): EXP necesaria por nivel <span class="tag">reto</span></summary>
           <div class="details-body">
             <ol>
-              <li>Crea una Función <code>ExpNecesaria(nivel)</code> que retorne <code>nivel * 100</code></li>
+              <li>Crea una Función <code>ExpNecesaria(nivel)</code> que retorne <code>nivel * 100</code>.</li>
               <li>Usa un <code>Para</code> del 1 al 5 y muestra la EXP de cada nivel.</li>
+            </ol>
+            <p>Resultado esperado:</p>
+            <pre><code>Nivel 1: necesitas 100 EXP
+Nivel 2: necesitas 200 EXP
+Nivel 3: necesitas 300 EXP
+Nivel 4: necesitas 400 EXP
+Nivel 5: necesitas 500 EXP</code></pre>
+          </div>
+        </details>
+
+        <!-- Ejercicio 6 -->
+        <details>
+          <summary>Ejercicio (7 min): Área y perímetro de un rectángulo <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea una Función <code>Area(base, altura)</code> que retorne <code>base * altura</code>.</li>
+              <li>Crea una Función <code>Perimetro(base, altura)</code> que retorne <code>(base + altura) * 2</code>.</li>
+              <li>Pide base y altura al usuario y muestra ambos resultados usando las funciones.</li>
             </ol>
           </div>
         </details>
 
+        <!-- Ejercicio 7 -->
         <details>
           <summary>Ejercicio (10 min): Curar con límite <span class="tag">reto</span></summary>
           <div class="details-body">
             <ol>
-              <li>Crea una Función <code>Curar(vida_actual, cantidad, vida_maxima)</code> que sume <code>cantidad</code> a la vida sin pasarse del máximo.</li>
-              <li>Pruébala: Curar(60, 20, 100) → 80, Curar(60, 50, 100) → 100.</li>
+              <li>Crea una Función <code>Curar(vida_actual, cantidad, vida_maxima)</code> que:
+                <ul>
+                  <li>Sume <code>cantidad</code> a <code>vida_actual</code>.</li>
+                  <li>Si el resultado supera <code>vida_maxima</code>, retorne <code>vida_maxima</code>.</li>
+                  <li>Si no, retorne el resultado.</li>
+                </ul>
+              </li>
+              <li>Pruébala: <code>Curar(60, 20, 100)</code> → 80, <code>Curar(60, 50, 100)</code> → 100.</li>
             </ol>
           </div>
         </details>
 
+        <!-- Ejercicio 8 -->
+        <details>
+          <summary>Ejercicio (10 min): Calculadora de daño con defensa y crítico <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea una Función <code>CalcularDano(ataque, defensa, es_critico)</code> que:
+                <ul>
+                  <li>Calcule <code>dano &lt;- ataque - defensa</code>.</li>
+                  <li>Si <code>dano &lt; 0</code>, lo ajuste a 0.</li>
+                  <li>Si <code>es_critico</code> es Verdadero, multiplique por 2.</li>
+                  <li>Retorne el daño final.</li>
+                </ul>
+              </li>
+              <li>Prueba: <code>CalcularDano(25, 10, Falso)</code> → 15, <code>CalcularDano(25, 10, Verdadero)</code> → 30, <code>CalcularDano(5, 20, Falso)</code> → 0.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 9 -->
+        <details>
+          <summary>Ejercicio (12 min): Sistema de recompensas por rango <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Crea dos funciones que trabajen juntas: una determina el rango y otra da la recompensa.</p>
+            <ol>
+              <li>Crea una Función <code>ObtenerRango(puntaje)</code> que retorne:
+                <ul>
+                  <li><code>"Oro"</code> si puntaje &gt;= 1000</li>
+                  <li><code>"Plata"</code> si puntaje &gt;= 500</li>
+                  <li><code>"Bronce"</code> en cualquier otro caso</li>
+                </ul>
+              </li>
+              <li>Crea una Función <code>DarRecompensa(rango)</code> que retorne monedas:
+                <ul>
+                  <li><code>"Oro"</code> → 300, <code>"Plata"</code> → 150, <code>"Bronce"</code> → 50</li>
+                </ul>
+              </li>
+              <li>Pide un puntaje al usuario, obtén su rango, calcula la recompensa y muestra todo:
+                <code>"Puntaje: 750 → Rango: Plata → Monedas: 150"</code></li>
+            </ol>
+            <p>Pista: una función usa el resultado de la otra.</p>
+          </div>
+        </details>
+
+        <!-- Ejercicio 10 -->
         <details>
           <summary>Ejercicio (15 min): Tienda con funciones <span class="tag">reto</span></summary>
           <div class="details-body">
+            <p>Crea un mini sistema de tienda usando varias funciones que se llaman entre sí.</p>
             <ol>
-              <li>Crea una Función <code>PuedeComprar(oro, precio)</code> que retorne Verdadero/Falso.</li>
-              <li>Crea un SubProceso <code>Comprar(objeto, precio)</code> que verifique y muestre el resultado.</li>
-              <li>Simula una sesión de compras con varias llamadas.</li>
+              <li>Crea una Función <code>PuedeComprar(oro, precio)</code> que retorne <code>Verdadero</code> si <code>oro &gt;= precio</code>.</li>
+              <li>Crea un SubProceso <code>MostrarTienda()</code> que muestre los objetos disponibles con su precio.</li>
+              <li>Crea un SubProceso <code>Comprar(objeto, precio)</code> que:
+                <ul>
+                  <li>Use <code>PuedeComprar</code> para verificar.</li>
+                  <li>Si puede: reste el precio al oro y muestre <code>"Compraste [objeto]. Te quedan: [oro]"</code>.</li>
+                  <li>Si no puede: muestre <code>"No te alcanza para [objeto]"</code>.</li>
+                </ul>
+              </li>
+              <li>En el algoritmo principal, el usuario empieza con 100 de oro y compra varios objetos.</li>
             </ol>
+            <p>Pista: observa cómo el saldo baja con cada compra exitosa.</p>
           </div>
         </details>
       </section>
@@ -1624,15 +1957,15 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Declarar, dimensionar y asignar</div><button class="btn small copy" data-copy="code-arr-1">Copiar</button></div>
               <pre><code id="code-arr-1">Algoritmo MiArreglo
-	Definir enemigos Como Cadena
-	Dimension enemigos[3]
+	Definir enemigos Como Cadena;
+	Dimension enemigos[3];
 
-	enemigos[1] &lt;- "Goomba"
-	enemigos[2] &lt;- "Koopa"
-	enemigos[3] &lt;- "Bowser"
+	enemigos[1] &lt;- "Goomba";
+	enemigos[2] &lt;- "Koopa";
+	enemigos[3] &lt;- "Bowser";
 
-	Escribir "Primero: ", enemigos[1]
-	Escribir "Último: ", enemigos[3]
+	Escribir "Primero: ", enemigos[1];
+	Escribir "Último: ", enemigos[3];
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -1641,17 +1974,17 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Mostrar todos los elementos</div><button class="btn small copy" data-copy="code-arr-2">Copiar</button></div>
               <pre><code id="code-arr-2">Algoritmo RecorrerArreglo
-	Definir nombres Como Cadena
-	Definir i Como Entero
-	Dimension nombres[4]
+	Definir nombres Como Cadena;
+	Definir i Como Entero;
+	Dimension nombres[4];
 
-	nombres[1] &lt;- "Ana"
-	nombres[2] &lt;- "Beto"
-	nombres[3] &lt;- "Carla"
-	nombres[4] &lt;- "Diego"
+	nombres[1] &lt;- "Ana";
+	nombres[2] &lt;- "Beto";
+	nombres[3] &lt;- "Carla";
+	nombres[4] &lt;- "Diego";
 
-	Para i &lt;- 1 Hasta 4 Con Paso 1
-		Escribir "Posición ", i, ": ", nombres[i]
+	Para i &lt;- 1 Hasta 4 Con Paso 1 Hacer
+		Escribir "Posición ", i, ": ", nombres[i];
 	FinPara
 FinAlgoritmo</code></pre>
             </div>
@@ -1698,20 +2031,19 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">El usuario ingresa los datos</div><button class="btn small copy" data-copy="code-arr-leer">Copiar</button></div>
               <pre><code id="code-arr-leer">Algoritmo LlenarArreglo
-	Definir notas Como Real
-	Definir i Como Entero
-	Definir n Como Entero
-	n &lt;- 5
-	Dimension notas[n]
+	Definir notas Como Real;
+	Definir i, n Como Entero;
+	n &lt;- 5;
+	Dimension notas[n];
 
-	Para i &lt;- 1 Hasta n Con Paso 1
-		Escribir "Ingresa la nota ", i, ":"
-		Leer notas[i]
+	Para i &lt;- 1 Hasta n Con Paso 1 Hacer
+		Escribir "Ingresa la nota ", i, ":";
+		Leer notas[i];
 	FinPara
 
-	Escribir "=== Notas ingresadas ==="
-	Para i &lt;- 1 Hasta n Con Paso 1
-		Escribir "Nota ", i, ": ", notas[i]
+	Escribir "=== Notas ingresadas ===";
+	Para i &lt;- 1 Hasta n Con Paso 1 Hacer
+		Escribir "Nota ", i, ": ", notas[i];
 	FinPara
 FinAlgoritmo</code></pre>
             </div>
@@ -1721,24 +2053,24 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Encontrar el valor más alto</div><button class="btn small copy" data-copy="code-arr-mayor">Copiar</button></div>
               <pre><code id="code-arr-mayor">Algoritmo BuscarMayor
-	Definir datos Como Entero
-	Definir i, mayor Como Entero
-	Dimension datos[5]
+	Definir datos Como Entero;
+	Definir i, mayor Como Entero;
+	Dimension datos[5];
 
-	datos[1] &lt;- 30
-	datos[2] &lt;- 85
-	datos[3] &lt;- 50
-	datos[4] &lt;- 120
-	datos[5] &lt;- 45
+	datos[1] &lt;- 30;
+	datos[2] &lt;- 85;
+	datos[3] &lt;- 50;
+	datos[4] &lt;- 120;
+	datos[5] &lt;- 45;
 
-	mayor &lt;- datos[1]
-	Para i &lt;- 2 Hasta 5 Con Paso 1
+	mayor &lt;- datos[1];
+	Para i &lt;- 2 Hasta 5 Con Paso 1 Hacer
 		Si datos[i] &gt; mayor Entonces
-			mayor &lt;- datos[i]
+			mayor &lt;- datos[i];
 		FinSi
 	FinPara
 
-	Escribir "El mayor es: ", mayor
+	Escribir "El mayor es: ", mayor;
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -1751,13 +2083,13 @@ FinAlgoritmo</code></pre>
             <div class="grid examples">
               <div class="card col-6">
                 <h4>❌ Error</h4>
-                <pre><code>Dimension datos[3]
-Escribir datos[5]  // No existe posición 5</code></pre>
+                <pre><code>Dimension datos[3];
+Escribir datos[5];  // No existe posición 5</code></pre>
               </div>
               <div class="card col-6">
                 <h4>✅ Correcto</h4>
-                <pre><code>Dimension datos[3]
-Escribir datos[3]  // Última posición válida</code></pre>
+                <pre><code>Dimension datos[3];
+Escribir datos[3];  // Última posición válida</code></pre>
               </div>
             </div>
           </div>
@@ -1811,27 +2143,27 @@ Escribir datos[3]  // Última posición válida</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Matriz de 3x3</div><button class="btn small copy" data-copy="code-mat-1">Copiar</button></div>
               <pre><code id="code-mat-1">Algoritmo MiMatriz
-	Definir mat Como Entero
-	Definir f, c Como Entero
-	Dimension mat[3,3]
+	Definir mat Como Entero;
+	Definir f, c Como Entero;
+	Dimension mat[3,3];
 
 	// Llenar con valores
-	mat[1,1] &lt;- 1
-	mat[1,2] &lt;- 2
-	mat[1,3] &lt;- 3
-	mat[2,1] &lt;- 4
-	mat[2,2] &lt;- 5
-	mat[2,3] &lt;- 6
-	mat[3,1] &lt;- 7
-	mat[3,2] &lt;- 8
-	mat[3,3] &lt;- 9
+	mat[1,1] &lt;- 1;
+	mat[1,2] &lt;- 2;
+	mat[1,3] &lt;- 3;
+	mat[2,1] &lt;- 4;
+	mat[2,2] &lt;- 5;
+	mat[2,3] &lt;- 6;
+	mat[3,1] &lt;- 7;
+	mat[3,2] &lt;- 8;
+	mat[3,3] &lt;- 9;
 
 	// Mostrar como tabla
-	Para f &lt;- 1 Hasta 3 Con Paso 1
-		Para c &lt;- 1 Hasta 3 Con Paso 1
-			Escribir Sin Saltar mat[f,c], "  "
+	Para f &lt;- 1 Hasta 3 Con Paso 1 Hacer
+		Para c &lt;- 1 Hasta 3 Con Paso 1 Hacer
+			Escribir Sin Saltar mat[f,c], "  ";
 		FinPara
-		Escribir ""
+		Escribir "";
 	FinPara
 FinAlgoritmo</code></pre>
             </div>
@@ -1841,26 +2173,26 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Pedir datos fila por fila</div><button class="btn small copy" data-copy="code-mat-2">Copiar</button></div>
               <pre><code id="code-mat-2">Algoritmo MatrizUsuario
-	Definir notas Como Real
-	Definir i, j Como Entero
-	Dimension notas[3,4]
+	Definir notas Como Real;
+	Definir i, j Como Entero;
+	Dimension notas[3,4];
 
 	// 3 alumnos, 4 materias
-	Para i &lt;- 1 Hasta 3 Con Paso 1
-		Escribir "--- Alumno ", i, " ---"
-		Para j &lt;- 1 Hasta 4 Con Paso 1
-			Escribir "Nota materia ", j, ":"
-			Leer notas[i,j]
+	Para i &lt;- 1 Hasta 3 Con Paso 1 Hacer
+		Escribir "--- Alumno ", i, " ---";
+		Para j &lt;- 1 Hasta 4 Con Paso 1 Hacer
+			Escribir "Nota materia ", j, ":";
+			Leer notas[i,j];
 		FinPara
 	FinPara
 
 	// Mostrar
-	Para i &lt;- 1 Hasta 3 Con Paso 1
-		Escribir "Alumno ", i, ":"
-		Para j &lt;- 1 Hasta 4 Con Paso 1
-			Escribir Sin Saltar notas[i,j], "  "
+	Para i &lt;- 1 Hasta 3 Con Paso 1 Hacer
+		Escribir "Alumno ", i, ":";
+		Para j &lt;- 1 Hasta 4 Con Paso 1 Hacer
+			Escribir Sin Saltar notas[i,j], "  ";
 		FinPara
-		Escribir ""
+		Escribir "";
 	FinPara
 FinAlgoritmo</code></pre>
             </div>
@@ -1978,19 +2310,19 @@ FinAlgoritmo</code></pre>
             <div class="examples">
               <div class="codebar"><div class="muted">Operaciones con texto</div><button class="btn small copy" data-copy="code-str-1">Copiar</button></div>
               <pre><code id="code-str-1">Algoritmo ManipularCadenas
-	Definir texto, parte Como Cadena
+	Definir texto, parte Como Cadena;
 
-	texto &lt;- "Hola Mundo"
+	texto &lt;- "Hola Mundo";
 
-	Escribir "Texto: ", texto
-	Escribir "Longitud: ", Longitud(texto)
-	Escribir "Mayúsculas: ", Mayusculas(texto)
-	Escribir "Minúsculas: ", Minusculas(texto)
+	Escribir "Texto: ", texto;
+	Escribir "Longitud: ", Longitud(texto);
+	Escribir "Mayúsculas: ", Mayusculas(texto);
+	Escribir "Minúsculas: ", Minusculas(texto);
 
-	parte &lt;- SubCadena(texto, 1, 4)
-	Escribir "Primeras 4 letras: ", parte
+	parte &lt;- SubCadena(texto, 1, 4);
+	Escribir "Primeras 4 letras: ", parte;
 
-	Escribir "Concatenar: ", Concatenar("¡", Concatenar(texto, "!"))
+	Escribir "Concatenar: ", Concatenar("¡", Concatenar(texto, "!"));
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -2047,14 +2379,14 @@ FinAlgoritmo</code></pre>
           <div class="grid">
             <div class="card col-6">
               <h4>❌ Con error</h4>
-              <pre><code>Si vidas &gt; 0 Entonces
-	Escribir "Vivo"
+                <pre><code>Si vidas &gt; 0 Entonces
+	Escribir "Vivo";
 // Falta FinSi</code></pre>
             </div>
             <div class="card col-6">
               <h4>✅ Corregido</h4>
               <pre><code>Si vidas &gt; 0 Entonces
-	Escribir "Vivo"
+	Escribir "Vivo";
 FinSi</code></pre>
             </div>
           </div>
@@ -2073,11 +2405,11 @@ FinSi</code></pre>
           <div class="grid">
             <div class="card col-6">
               <h4>❌ Con error</h4>
-              <pre><code>vidas = 3  // ❌ Esto es comparación</code></pre>
+                <pre><code>vidas = 3;  // ❌ Esto es comparación</code></pre>
             </div>
             <div class="card col-6">
               <h4>✅ Corregido</h4>
-              <pre><code>vidas &lt;- 3  // ✅ Asignación correcta</code></pre>
+              <pre><code>vidas &lt;- 3;  // ✅ Asignación correcta</code></pre>
             </div>
           </div>
           <div class="error-tip">
@@ -2095,13 +2427,13 @@ FinSi</code></pre>
           <div class="grid">
             <div class="card col-6">
               <h4>❌ Con error</h4>
-              <pre><code>Escribir nombre  // nunca se definió</code></pre>
+              <pre><code>Escribir nombre;  // nunca se definió</code></pre>
             </div>
             <div class="card col-6">
               <h4>✅ Corregido</h4>
-              <pre><code>Definir nombre Como Cadena
-nombre &lt;- "Mario"
-Escribir nombre</code></pre>
+              <pre><code>Definir nombre Como Cadena;
+nombre &lt;- "Mario";
+Escribir nombre;</code></pre>
             </div>
           </div>
           <div class="error-tip">
@@ -2120,13 +2452,13 @@ Escribir nombre</code></pre>
             <div class="card col-6">
               <h4>❌ Con error</h4>
               <pre><code>Si vidas &gt; 0    // falta Entonces
-	Escribir "Vivo"
+	Escribir "Vivo";
 FinSi</code></pre>
             </div>
             <div class="card col-6">
               <h4>✅ Corregido</h4>
               <pre><code>Si vidas &gt; 0 Entonces
-	Escribir "Vivo"
+	Escribir "Vivo";
 FinSi</code></pre>
             </div>
           </div>
@@ -2146,14 +2478,14 @@ FinSi</code></pre>
             <div class="card col-6">
               <h4>❌ Con error</h4>
               <pre><code>Mientras x &lt; 5
-	Escribir x
+	Escribir x;
 FinMientras</code></pre>
             </div>
             <div class="card col-6">
               <h4>✅ Corregido</h4>
               <pre><code>Mientras x &lt; 5 Hacer
-	Escribir x
-	x &lt;- x + 1
+	Escribir x;
+	x &lt;- x + 1;
 FinMientras</code></pre>
             </div>
           </div>
@@ -2172,11 +2504,11 @@ FinMientras</code></pre>
           <div class="grid">
             <div class="card col-6">
               <h4>❌ Con error</h4>
-              <pre><code>Escribir "Hola   // falta la comilla final</code></pre>
+              <pre><code>Escribir "Hola;   // falta la comilla final</code></pre>
             </div>
             <div class="card col-6">
               <h4>✅ Corregido</h4>
-              <pre><code>Escribir "Hola"  // comilla cerrada</code></pre>
+              <pre><code>Escribir "Hola";  // comilla cerrada</code></pre>
             </div>
           </div>
           <div class="error-tip">
@@ -2194,13 +2526,13 @@ FinMientras</code></pre>
           <div class="grid">
             <div class="card col-6">
               <h4>❌ Con error</h4>
-              <pre><code>Definir edad Como Entero
-edad &lt;- "veinte"  // texto en variable numérica</code></pre>
+              <pre><code>Definir edad Como Entero;
+edad &lt;- "veinte";  // texto en variable numérica</code></pre>
             </div>
             <div class="card col-6">
               <h4>✅ Corregido</h4>
-              <pre><code>Definir edad Como Entero
-edad &lt;- 20  // número en variable numérica</code></pre>
+              <pre><code>Definir edad Como Entero;
+edad &lt;- 20;  // número en variable numérica</code></pre>
             </div>
           </div>
           <div class="error-tip">
@@ -2243,15 +2575,15 @@ Escribir datos[3]  // último válido</code></pre>
             <div class="card col-6">
               <h4>❌ Infinito</h4>
               <pre><code>Mientras x &lt; 5 Hacer
-	Escribir x
+	Escribir x;
 	// Falta modificar x
 FinMientras</code></pre>
             </div>
             <div class="card col-6">
               <h4>✅ Correcto</h4>
               <pre><code>Mientras x &lt; 5 Hacer
-	Escribir x
-	x &lt;- x + 1
+	Escribir x;
+	x &lt;- x + 1;
 FinMientras</code></pre>
             </div>
           </div>
@@ -2271,13 +2603,13 @@ FinMientras</code></pre>
             <div class="card col-6">
               <h4>❌ Con error</h4>
               <pre><code>Algoritmo MiPrograma
-	Escribir "Hola"
+	Escribir "Hola";
 // Falta cerrar</code></pre>
             </div>
             <div class="card col-6">
               <h4>✅ Corregido</h4>
               <pre><code>Algoritmo MiPrograma
-	Escribir "Hola"
+	Escribir "Hola";
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -2338,12 +2670,12 @@ FinAlgoritmo</code></pre>
               <div class="card col-6">
                 <h4>❌ Desordenado</h4>
                 <pre><code>Algoritmo x
-Definir a Como Entero
-a &lt;- 100
-Definir b Como Entero
-b &lt;- 15
+Definir a Como Entero;
+a &lt;- 100;
+Definir b Como Entero;
+b &lt;- 15;
 Si a-b&gt;50 Entonces
-Escribir "si"
+Escribir "si";
 FinSi
 FinAlgoritmo</code></pre>
               </div>
@@ -2351,14 +2683,14 @@ FinAlgoritmo</code></pre>
                 <h4>✅ Limpio</h4>
                 <div class="codebar"><div class="muted">Código mejorado</div><button class="btn small copy" data-copy="code-best-1">Copiar</button></div>
                 <pre><code id="code-best-1">Algoritmo CalcularDanoFinal
-	Definir ataque, defensa, dano Como Entero
+	Definir ataque, defensa, dano Como Entero;
 
-	ataque &lt;- 100
-	defensa &lt;- 15
-	dano &lt;- ataque - defensa
+	ataque &lt;- 100;
+	defensa &lt;- 15;
+	dano &lt;- ataque - defensa;
 
 	Si dano &gt; 50 Entonces
-		Escribir "¡Golpe devastador! Daño: ", dano
+		Escribir "¡Golpe devastador! Daño: ", dano;
 	FinSi
 FinAlgoritmo</code></pre>
               </div>
