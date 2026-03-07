@@ -2095,36 +2095,176 @@ Escribir datos[3];  // Última posición válida</code></pre>
           </div>
         </details>
 
+        <!-- Ejercicio 1 -->
         <details>
-          <summary>Ejercicio (5 min): Lista de habilidades <span class="tag">reto</span></summary>
+          <summary>Ejercicio (3 min): Lista de habilidades <span class="tag">reto</span></summary>
           <div class="details-body">
             <ol>
-              <li>Crea un arreglo de 3 cadenas: <code>"Golpe"</code>, <code>"Escudo"</code>, <code>"Curar"</code></li>
-              <li>Recorre e imprime cada habilidad.</li>
-              <li>Muestra el total de habilidades.</li>
+              <li>Crea un arreglo de 3 cadenas con habilidades: <code>"Golpe"</code>, <code>"Escudo"</code>, <code>"Curar"</code>.</li>
+              <li>Recorre el arreglo con <code>Para</code> e imprime cada habilidad con su número: <code>"1) Golpe"</code>.</li>
+              <li>Al final, muestra: <code>"Total de habilidades: 3"</code>.</li>
             </ol>
           </div>
         </details>
 
+        <!-- Ejercicio 2 -->
         <details>
-          <summary>Ejercicio (10 min): Promedio de notas <span class="tag">reto</span></summary>
+          <summary>Ejercicio (5 min): Inventario de un RPG <span class="tag">reto</span></summary>
           <div class="details-body">
+            <p>Simula un inventario donde el jugador recoge objetos durante una aventura.</p>
             <ol>
-              <li>Pide al usuario 5 notas y guárdalas en un arreglo.</li>
-              <li>Calcula y muestra el promedio.</li>
-              <li>Muestra cuántas notas están por encima del promedio.</li>
+              <li>Crea un arreglo <code>inventario[5]</code> de tipo Cadena.</li>
+              <li>Asígnale 3 objetos iniciales: <code>"Espada"</code>, <code>"Poción"</code>, <code>"Mapa"</code>.</li>
+              <li>El jugador encuentra 2 objetos más: pídelos con <code>Leer</code> y guárdalos en las posiciones 4 y 5.</li>
+              <li>Muestra el inventario completo numerado.</li>
             </ol>
           </div>
         </details>
 
+        <!-- Ejercicio 3 -->
         <details>
-          <summary>Ejercicio (12 min): Filtrar equipo por nivel <span class="tag">reto</span></summary>
+          <summary>Ejercicio (5 min): Temperaturas de la semana <span class="tag">reto</span></summary>
           <div class="details-body">
+            <p>Una estación meteorológica registró la temperatura de cada día de la semana.</p>
             <ol>
-              <li>Crea dos arreglos paralelos: <code>nombres[5]</code> y <code>niveles[5]</code></li>
-              <li>Llénalos con datos fijos (ej: "Aria" nivel 8, "Bron" nivel 3, etc.)</li>
-              <li>Muestra solo los que tienen nivel &gt;= 6 con el texto "seleccionado".</li>
+              <li>Crea un arreglo <code>temperaturas[7]</code> de tipo Real.</li>
+              <li>Pide al usuario las 7 temperaturas.</li>
+              <li>Calcula y muestra la temperatura promedio de la semana.</li>
+              <li>Muestra cuál fue el día más caluroso y cuál el más frío (posición y valor).</li>
             </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 4 -->
+        <details>
+          <summary>Ejercicio (8 min): Buscar un nombre en la lista <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Tienes una lista de alumnos y quieres buscar si uno específico está inscrito.</p>
+            <ol>
+              <li>Crea un arreglo con 6 nombres: <code>"Ana"</code>, <code>"Luis"</code>, <code>"María"</code>, <code>"Pedro"</code>, <code>"Sofía"</code>, <code>"Carlos"</code>.</li>
+              <li>Pide al usuario un nombre a buscar.</li>
+              <li>Recorre el arreglo comparando cada posición con el nombre buscado.</li>
+              <li>Si lo encuentra, muestra <code>"Encontrado en la posición X"</code> y deja de buscar.</li>
+              <li>Si termina el ciclo sin encontrarlo, muestra <code>"No está en la lista"</code>.</li>
+            </ol>
+            <p>Pista: usa una variable <code>encontrado</code> de tipo Logico para saber si ya lo hallaste.</p>
+          </div>
+        </details>
+
+        <!-- Ejercicio 5 -->
+        <details>
+          <summary>Ejercicio (8 min): Contar aprobados y reprobados <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Un profesor tiene las notas de 8 alumnos y quiere un resumen rápido.</p>
+            <ol>
+              <li>Pide 8 notas al usuario y guárdalas en un arreglo.</li>
+              <li>Recorre el arreglo y cuenta cuántos aprobaron (nota &gt;= 6) y cuántos reprobaron.</li>
+              <li>Calcula el promedio general.</li>
+              <li>Muestra: <code>"Aprobados: X | Reprobados: Y | Promedio: Z"</code>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 6 -->
+        <details>
+          <summary>Ejercicio (10 min): Invertir un arreglo <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Dado un arreglo de números, crea su versión invertida (el primero pasa a ser el último y viceversa).</p>
+            <ol>
+              <li>Crea un arreglo <code>original[5]</code> con valores: <code>10, 20, 30, 40, 50</code>.</li>
+              <li>Crea un segundo arreglo <code>invertido[5]</code>.</li>
+              <li>Usa un <code>Para</code> para copiar los elementos en orden inverso: <code>invertido[1] &lt;- original[5]</code>, etc.</li>
+              <li>Muestra ambos arreglos para verificar.</li>
+            </ol>
+            <p>Pista: si <code>i</code> va de 1 a 5, la posición invertida es <code>5 - i + 1</code>.</p>
+          </div>
+        </details>
+
+        <!-- Ejercicio 7 -->
+        <details>
+          <summary>Ejercicio (10 min): Eliminar duplicados <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Un sensor registró lecturas, pero algunas se repiten. Encuentra los valores únicos.</p>
+            <ol>
+              <li>Crea un arreglo con datos que se repiten: <code>3, 7, 3, 9, 7, 1, 9, 3</code> (tamaño 8).</li>
+              <li>Crea un segundo arreglo <code>unicos[8]</code> y un contador <code>total_unicos &lt;- 0</code>.</li>
+              <li>Recorre el arreglo original. Para cada elemento, verifica si ya existe en <code>unicos</code>.</li>
+              <li>Si no existe, agrégalo a <code>unicos</code> e incrementa el contador.</li>
+              <li>Al final, muestra solo los valores únicos: <code>3, 7, 9, 1</code>.</li>
+            </ol>
+            <p>Pista: necesitas un <code>Para</code> dentro de otro <code>Para</code> para comparar cada elemento con los ya guardados.</p>
+          </div>
+        </details>
+
+        <!-- Ejercicio 8 -->
+        <details>
+          <summary>Ejercicio (12 min): Filtrar equipo para la misión <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Tienes un equipo de guerreros. Solo los más fuertes pueden ir a una misión peligrosa.</p>
+            <ol>
+              <li>Crea dos arreglos paralelos de 6 posiciones:
+                <ul>
+                  <li><code>nombres[6]</code>: <code>"Aria", "Bron", "Cleo", "Drake", "Eva", "Finn"</code></li>
+                  <li><code>niveles[6]</code>: <code>8, 3, 12, 5, 7, 15</code></li>
+                </ul>
+              </li>
+              <li>Pide al usuario el nivel mínimo requerido para la misión.</li>
+              <li>Recorre los arreglos y muestra quién clasifica: <code>"✅ Aria (nivel 8) — seleccionado"</code>.</li>
+              <li>Los que no clasifican: <code>"❌ Bron (nivel 3) — nivel insuficiente"</code>.</li>
+              <li>Al final, muestra cuántos guerreros fueron seleccionados.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 9 -->
+        <details>
+          <summary>Ejercicio (12 min): Ordenar de menor a mayor (burbuja) <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Ordena un arreglo de números usando el método de la burbuja: compara pares vecinos e intercambia si están en desorden.</p>
+            <ol>
+              <li>Crea un arreglo con: <code>64, 25, 12, 89, 37, 41</code> (tamaño 6).</li>
+              <li>Muestra el arreglo original.</li>
+              <li>Usa dos <code>Para</code> anidados:
+                <ul>
+                  <li>El externo <code>i</code> va de 1 a 5 (n-1 pasadas).</li>
+                  <li>El interno <code>j</code> va de 1 a <code>6-i</code>.</li>
+                  <li>Si <code>datos[j] &gt; datos[j+1]</code>, intercámbialos usando una variable <code>auxiliar</code>.</li>
+                </ul>
+              </li>
+              <li>Muestra el arreglo ordenado.</li>
+            </ol>
+            <p>Pista para el intercambio: <code>auxiliar &lt;- datos[j]; datos[j] &lt;- datos[j+1]; datos[j+1] &lt;- auxiliar;</code></p>
+          </div>
+        </details>
+
+        <!-- Ejercicio 10 -->
+        <details>
+          <summary>Ejercicio (15 min): Ranking de jugadores con podio <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Varios jugadores compitieron en un torneo. Construye un ranking con los 3 mejores puntajes.</p>
+            <ol>
+              <li>Crea dos arreglos paralelos de 7 posiciones:
+                <ul>
+                  <li><code>jugadores[7]</code>: <code>"Luna", "Max", "Zoe", "Rex", "Ana", "Leo", "Mía"</code></li>
+                  <li><code>puntajes[7]</code>: <code>450, 820, 610, 300, 750, 900, 580</code></li>
+                </ul>
+              </li>
+              <li>Encuentra los 3 mejores puntajes. Para cada puesto del podio:
+                <ul>
+                  <li>Recorre todos los puntajes buscando el mayor que aún no hayas seleccionado.</li>
+                  <li>Usa un arreglo <code>ya_elegido[7]</code> de tipo Logico (inicializado en Falso) para marcar los que ya están en el podio.</li>
+                </ul>
+              </li>
+              <li>Muestra el podio:
+                <ul>
+                  <li><code>"🥇 1°: Leo — 900 pts"</code></li>
+                  <li><code>"🥈 2°: Max — 820 pts"</code></li>
+                  <li><code>"🥉 3°: Ana — 750 pts"</code></li>
+                </ul>
+              </li>
+              <li>Muestra también el ranking completo ordenado de mayor a menor.</li>
+            </ol>
+            <p>Pista: necesitas un ciclo externo (3 vueltas para el podio) y uno interno (7 vueltas para buscar el mayor disponible).</p>
           </div>
         </details>
       </section>
@@ -2212,24 +2352,251 @@ FinAlgoritmo</code></pre>
           </div>
         </div>
 
-        <details open>
-          <summary>Ejercicio (10 min): Promedio por alumno <span class="tag">reto</span></summary>
+        <!-- Ejercicio 1 -->
+        <details>
+          <summary>Ejercicio (3 min): Llenar y mostrar una matriz 2×3 <span class="tag">reto</span></summary>
           <div class="details-body">
             <ol>
-              <li>Crea una matriz de 3 alumnos × 4 notas (llénala con datos fijos).</li>
-              <li>Calcula y muestra el promedio de cada alumno.</li>
+              <li>Declara una matriz <code>mat[2,3]</code> de tipo Entero.</li>
+              <li>Asígnale valores fijos (ej: 1 a 6).</li>
+              <li>Muéstrala con dos <code>Para</code> anidados usando <code>Escribir Sin Saltar</code> para que cada fila quede en una línea.</li>
             </ol>
           </div>
         </details>
 
+        <!-- Ejercicio 2 -->
         <details>
-          <summary>Ejercicio (12 min): Buscar el mayor de la matriz <span class="tag">reto</span></summary>
+          <summary>Ejercicio (5 min): Llenar una matriz desde el teclado <span class="tag">reto</span></summary>
           <div class="details-body">
             <ol>
-              <li>Llena una matriz 4×4 con valores que el usuario ingrese.</li>
-              <li>Recórrela con dos <code>Para</code> anidados y encuentra el valor más grande.</li>
-              <li>Muestra en qué posición (fila, columna) está.</li>
+              <li>Pide al usuario las dimensiones: filas y columnas (máximo 5 cada una).</li>
+              <li>Usa dos <code>Para</code> anidados para pedir cada valor con <code>Leer</code>.</li>
+              <li>Muestra la matriz completa en formato de tabla.</li>
             </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 3 -->
+        <details>
+          <summary>Ejercicio (5 min): Suma de todos los elementos <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Crea una matriz 3×3 con valores fijos.</li>
+              <li>Recórrela con dos <code>Para</code> y acumula la suma de todos los elementos.</li>
+              <li>Muestra: <code>"La suma total es: X"</code>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 4 -->
+        <details>
+          <summary>Ejercicio (7 min): Promedio por alumno <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Una matriz 3×4 guarda las notas de 3 alumnos en 4 materias.</p>
+            <ol>
+              <li>Llena la matriz con datos fijos.</li>
+              <li>Para cada fila (alumno), suma sus 4 notas y calcula el promedio.</li>
+              <li>Muestra: <code>"Alumno 1: promedio = 7.5"</code> para cada uno.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 5 -->
+        <details>
+          <summary>Ejercicio (7 min): Diagonal principal <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>En una matriz cuadrada, la diagonal principal son los elementos donde fila = columna.</p>
+            <ol>
+              <li>Crea una matriz 4×4 con valores fijos.</li>
+              <li>Muestra la matriz completa.</li>
+              <li>Recorre solo la diagonal principal (<code>mat[1,1]</code>, <code>mat[2,2]</code>, <code>mat[3,3]</code>, <code>mat[4,4]</code>) y muestra esos valores.</li>
+              <li>Calcula la suma de la diagonal.</li>
+            </ol>
+            <p>Pista: solo necesitas un <code>Para i &lt;- 1 Hasta 4</code> y accedes a <code>mat[i,i]</code>.</p>
+          </div>
+        </details>
+
+        <!-- Ejercicio 6 -->
+        <details>
+          <summary>Ejercicio (8 min): Buscar el mayor y su posición <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide al usuario los valores de una matriz 3×4.</li>
+              <li>Recórrela con dos <code>Para</code> anidados y encuentra el valor más grande.</li>
+              <li>Guarda la fila y columna donde se encontró.</li>
+              <li>Muestra: <code>"El mayor es X y está en la posición [fila, columna]"</code>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 7 -->
+        <details>
+          <summary>Ejercicio (8 min): Tabla de multiplicar como matriz <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Genera automáticamente una tabla de multiplicar del 1 al 5 dentro de una matriz.</p>
+            <ol>
+              <li>Declara <code>tabla[5,5]</code>.</li>
+              <li>Llénala con la fórmula: <code>tabla[i,j] &lt;- i * j;</code></li>
+              <li>Muéstrala en formato de tabla. El resultado debe verse así:</li>
+            </ol>
+            <pre><code>1   2   3   4   5
+2   4   6   8  10
+3   6   9  12  15
+4   8  12  16  20
+5  10  15  20  25</code></pre>
+          </div>
+        </details>
+
+        <!-- Ejercicio 8 -->
+        <details>
+          <summary>Ejercicio (10 min): Sumar dos matrices <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>La suma de matrices se hace elemento a elemento: <code>C[i,j] = A[i,j] + B[i,j]</code>.</p>
+            <ol>
+              <li>Crea dos matrices 3×3 con valores fijos (<code>A</code> y <code>B</code>).</li>
+              <li>Crea una tercera matriz <code>C[3,3]</code>.</li>
+              <li>Recorre con dos <code>Para</code> y calcula: <code>C[i,j] &lt;- A[i,j] + B[i,j];</code></li>
+              <li>Muestra las tres matrices: A, B y el resultado C.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 9 -->
+        <details>
+          <summary>Ejercicio (10 min): Transponer una matriz <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Transponer una matriz es intercambiar filas por columnas: la fila 1 se vuelve columna 1, etc.</p>
+            <ol>
+              <li>Crea una matriz <code>original[3,4]</code> con valores fijos.</li>
+              <li>Crea una matriz <code>transpuesta[4,3]</code> (dimensiones invertidas).</li>
+              <li>Llénala con: <code>transpuesta[j,i] &lt;- original[i,j];</code></li>
+              <li>Muestra la original y la transpuesta para verificar.</li>
+            </ol>
+            <p>Ejemplo: si la original es 3 filas × 4 columnas, la transpuesta será 4 filas × 3 columnas.</p>
+          </div>
+        </details>
+
+        <!-- Ejercicio 10 -->
+        <details>
+          <summary>Ejercicio (10 min): Contar valores por rango <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Una matriz guarda las edades de personas encuestadas. Clasifícalas por rango.</p>
+            <ol>
+              <li>Crea una matriz 4×5 con edades (valores fijos entre 5 y 80).</li>
+              <li>Recórrela y cuenta cuántas personas hay en cada rango:
+                <ul>
+                  <li>Niños: 0-12</li>
+                  <li>Adolescentes: 13-17</li>
+                  <li>Adultos: 18-64</li>
+                  <li>Adultos mayores: 65+</li>
+                </ul>
+              </li>
+              <li>Muestra el conteo de cada categoría.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 11 -->
+        <details>
+          <summary>Ejercicio (12 min): Mapa de un juego (buscar tesoro) <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Una matriz 5×5 representa el mapa de un juego. Cada celda tiene un valor: 0 = vacío, 1 = muro, 2 = tesoro.</p>
+            <ol>
+              <li>Crea la matriz con valores fijos (pon exactamente un <code>2</code> en alguna posición y varios <code>1</code>).</li>
+              <li>Muestra el mapa completo con símbolos: <code>"."</code> para vacío, <code>"#"</code> para muro, <code>"T"</code> para tesoro.</li>
+              <li>Recorre la matriz buscando el tesoro (valor 2).</li>
+              <li>Muestra: <code>"¡Tesoro encontrado en fila X, columna Y!"</code>.</li>
+              <li>Cuenta y muestra cuántos muros hay en el mapa.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 12 -->
+        <details>
+          <summary>Ejercicio (12 min): Registro de ventas semanal <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Una tienda registra las ventas de 4 productos durante 5 días en una matriz 4×5.</p>
+            <ol>
+              <li>Crea dos arreglos auxiliares: <code>productos[4]</code> con los nombres y <code>dias[5]</code> con "Lun" a "Vie".</li>
+              <li>Pide al usuario las ventas de cada producto por día.</li>
+              <li>Calcula y muestra:
+                <ul>
+                  <li>Total de ventas por producto (suma de cada fila).</li>
+                  <li>Total de ventas por día (suma de cada columna).</li>
+                  <li>El producto más vendido (fila con mayor suma).</li>
+                  <li>El día con más ventas (columna con mayor suma).</li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 13 -->
+        <details>
+          <summary>Ejercicio (15 min): Tablero de batalla naval simplificado <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Simula un tablero de batalla naval de 4×4.</p>
+            <ol>
+              <li>Crea una matriz <code>tablero[4,4]</code> inicializada en 0 (agua).</li>
+              <li>Coloca 3 "barcos" en posiciones fijas cambiando esos valores a 1.</li>
+              <li>Usa un <code>Repetir</code> para que el usuario ingrese coordenadas (fila, columna) de disparo.</li>
+              <li>Si <code>tablero[fila,col] = 1</code>: muestra <code>"¡Impacto!"</code>, cámbialo a 2 (hundido) e incrementa un contador de aciertos.</li>
+              <li>Si es 0: muestra <code>"Agua..."</code>, cámbialo a 3 (ya disparado).</li>
+              <li>Si es 2 o 3: muestra <code>"Ya disparaste ahí"</code>.</li>
+              <li>El juego termina cuando hunde los 3 barcos. Muestra en cuántos disparos lo logró.</li>
+              <li>Después de cada disparo, muestra el tablero: <code>"~"</code> agua, <code>"X"</code> impacto, <code>"O"</code> fallo, <code>"?"</code> sin explorar.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 14 -->
+        <details>
+          <summary>Ejercicio (15 min): Imagen en arte ASCII <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Una imagen en blanco y negro se puede representar como una matriz de números (0 = negro, 1 = gris oscuro, 2 = gris claro, 3 = blanco).</p>
+            <ol>
+              <li>Crea una matriz 6×8 con valores de 0 a 3 que formen un dibujo simple (ej: una letra, una cara, una flecha).</li>
+              <li>Recorre la matriz y reemplaza cada número por un carácter:
+                <ul>
+                  <li>0 → <code>"█"</code> (bloque lleno)</li>
+                  <li>1 → <code>"▓"</code> (bloque medio)</li>
+                  <li>2 → <code>"░"</code> (bloque claro)</li>
+                  <li>3 → <code>" "</code> (espacio)</li>
+                </ul>
+              </li>
+              <li>Muestra la "imagen" resultante en consola.</li>
+              <li>Cuenta cuántos píxeles hay de cada tono y muestra el resumen.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Ejercicio 15 -->
+        <details>
+          <summary>Ejercicio (20 min): Tres en raya (Tic-Tac-Toe) <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Crea el juego de tres en raya para dos jugadores en una matriz 3×3.</p>
+            <ol>
+              <li>Crea una matriz <code>tablero[3,3]</code> de tipo Entero, inicializada en 0 (vacío).</li>
+              <li>El jugador 1 usa el valor 1 (<code>"X"</code>) y el jugador 2 usa el valor 2 (<code>"O"</code>).</li>
+              <li>Crea un SubProceso <code>MostrarTablero</code> que dibuje el tablero: <code>" . "</code> vacío, <code>" X "</code> jugador 1, <code>" O "</code> jugador 2.</li>
+              <li>En cada turno:
+                <ul>
+                  <li>Muestra el tablero.</li>
+                  <li>Pide fila y columna al jugador actual.</li>
+                  <li>Valida que la casilla esté vacía (si no, pide otra).</li>
+                  <li>Coloca la ficha.</li>
+                </ul>
+              </li>
+              <li>Después de cada jugada, verifica si alguien ganó:
+                <ul>
+                  <li>Revisa las 3 filas, las 3 columnas y las 2 diagonales.</li>
+                  <li>Si los 3 valores de una línea son iguales y distintos de 0, ese jugador ganó.</li>
+                </ul>
+              </li>
+              <li>Si se llenó el tablero sin ganador, es empate.</li>
+              <li>Muestra el resultado final: <code>"¡Jugador X gana!"</code> o <code>"¡Empate!"</code>.</li>
+            </ol>
+            <p>Pista: usa una variable <code>turno</code> que alterne entre 1 y 2. Para verificar victoria, necesitas revisar 8 combinaciones posibles.</p>
           </div>
         </details>
       </section>
