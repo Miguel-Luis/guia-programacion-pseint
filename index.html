@@ -50,6 +50,7 @@
       <nav class="nav" id="nav">
         <a href="#s0" class="navlink"><span>0) Qué es programar</span><span class="tag">base</span></a>
         <a href="#s01" class="navlink"><span>0.1) Interfaz de PSeInt</span><span class="tag">entorno</span></a>
+        <a href="#s02" class="navlink"><span>0.2) Diagramas de flujo</span><span class="tag">flujo</span></a>
         <a href="#s1" class="navlink"><span>1) Variables y E/S</span><span class="tag">base</span></a>
         <a href="#s2" class="navlink"><span>2) Estructura del algoritmo</span><span class="tag">clave</span></a>
         <a href="#s3" class="navlink"><span>3) Tipos de datos</span><span class="tag">datos</span></a>
@@ -492,6 +493,520 @@ FinAlgoritmo</code></pre>
               <li>Cuando aparezca la pregunta, escribe tu nombre y presiona Enter.</li>
               <li>Después, prueba con <code>F5</code> (paso a paso) para ver cómo avanza línea por línea.</li>
               <li>Finalmente, genera el diagrama de flujo con <code>F7</code> y observa las formas.</li>
+            </ol>
+          </div>
+        </details>
+      </section>
+
+      <!-- 0.2 -->
+      <section id="s02">
+        <h3>0.2) Diagramas de flujo</h3>
+        <p class="lead">
+          Un <strong>diagrama de flujo</strong> es una representación gráfica de un algoritmo. Usa formas geométricas
+          conectadas por flechas para mostrar el orden en que se ejecutan las instrucciones.
+          PSeInt los genera automáticamente con <code>F7</code>, pero es importante que entiendas qué significa cada forma.
+        </p>
+
+        <!-- Formas básicas -->
+        <div class="grid">
+          <div class="card col-12">
+            <h4>Todas las formas que usa PSeInt (con sus colores exactos)</h4>
+            <p class="muted">Cada estructura de PSeInt tiene una forma y un color específico en el diagrama de flujo. Memoriza estos y podrás leer cualquier diagrama.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <!-- Inicio/Fin -->
+          <div class="card col-4" style="text-align:center">
+            <svg width="200" height="65" viewBox="0 0 200 65" style="margin:0 auto;display:block">
+              <rect x="5" y="8" width="190" height="48" rx="24" ry="24" fill="#fff2cc" stroke="#aa8800" stroke-width="2"/>
+              <text x="100" y="39" text-anchor="middle" font-family="var(--sans)" font-size="13" font-weight="600" fill="#333">Algoritmo</text>
+            </svg>
+            <h4 style="margin-top:8px">Inicio / Fin</h4>
+            <p class="muted">Cápsula <strong style="color:#d4a017">#fff2cc</strong>. Marca dónde comienza (<code>Algoritmo</code>) y termina (<code>FinAlgoritmo</code>) el programa.</p>
+          </div>
+          <!-- Leer -->
+          <div class="card col-4" style="text-align:center">
+            <svg width="200" height="65" viewBox="0 0 200 65" style="margin:0 auto;display:block">
+              <polygon points="30,8 195,8 170,56 5,56" fill="#ffe5f2" stroke="#cc3388" stroke-width="2"/>
+              <text x="100" y="39" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="#333">Leer edad</text>
+            </svg>
+            <h4 style="margin-top:8px">Entrada (Leer)</h4>
+            <p class="muted">Paralelogramo <strong style="color:#cc3388">#ffe5f2</strong>. El usuario ingresa datos. Siempre va después de un <code>Escribir</code> que le diga qué ingresar.</p>
+          </div>
+          <!-- Escribir -->
+          <div class="card col-4" style="text-align:center">
+            <svg width="200" height="65" viewBox="0 0 200 65" style="margin:0 auto;display:block">
+              <polygon points="30,8 195,8 170,56 5,56" fill="#e5ffe5" stroke="#33aa33" stroke-width="2"/>
+              <text x="100" y="39" text-anchor="middle" font-family="var(--mono)" font-size="11" fill="#333">Escribir "Hola"</text>
+            </svg>
+            <h4 style="margin-top:8px">Salida (Escribir)</h4>
+            <p class="muted">Paralelogramo <strong style="color:#33aa33">#e5ffe5</strong>. Muestra información en pantalla. Mismo forma que Leer pero distinto color.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <!-- Si/Entonces (Decisión) -->
+          <div class="card col-4" style="text-align:center">
+            <svg width="220" height="90" viewBox="0 0 220 90" style="margin:0 auto;display:block">
+              <polygon points="110,5 215,45 110,85 5,45" fill="#d8e5ff" stroke="#3355aa" stroke-width="2"/>
+              <text x="110" y="42" text-anchor="middle" font-family="var(--mono)" font-size="11" fill="#333">condicion</text>
+              <text x="30" y="75" text-anchor="middle" font-family="var(--sans)" font-size="10" font-weight="700" fill="#c62828">F</text>
+              <text x="190" y="75" text-anchor="middle" font-family="var(--sans)" font-size="10" font-weight="700" fill="#2e7d32">V</text>
+            </svg>
+            <h4 style="margin-top:8px">Condicional (Si/Entonces)</h4>
+            <p class="muted">Rombo <strong style="color:#3355aa">#d8e5ff</strong>. Evalúa una condición: sale por <strong style="color:#2e7d32">V</strong> (Verdadero) o <strong style="color:#c62828">F</strong> (Falso). Dos caminos.</p>
+          </div>
+          <!-- Segun -->
+          <div class="card col-4" style="text-align:center">
+            <svg width="220" height="90" viewBox="0 0 220 90" style="margin:0 auto;display:block">
+              <polygon points="35,5 185,5 215,45 185,85 35,85 5,45" fill="#d8e5ff" stroke="#3355aa" stroke-width="2"/>
+              <text x="110" y="35" text-anchor="middle" font-family="var(--mono)" font-size="11" fill="#333">expresion</text>
+              <text x="110" y="55" text-anchor="middle" font-family="var(--sans)" font-size="9" fill="#666">+ De Otro Modo</text>
+            </svg>
+            <h4 style="margin-top:8px">Selección múltiple (Según)</h4>
+            <p class="muted">Hexágono <strong style="color:#3355aa">#d8e5ff</strong>. Evalúa una expresión y elige entre múltiples caminos (casos). Incluye <code>De Otro Modo</code>.</p>
+          </div>
+          <!-- Mientras -->
+          <div class="card col-4" style="text-align:center">
+            <svg width="220" height="90" viewBox="0 0 220 90" style="margin:0 auto;display:block">
+              <polygon points="110,5 215,45 110,85 5,45" fill="#f2ccff" stroke="#8833aa" stroke-width="2"/>
+              <text x="110" y="42" text-anchor="middle" font-family="var(--mono)" font-size="11" fill="#333">condicion</text>
+              <text x="30" y="75" text-anchor="middle" font-family="var(--sans)" font-size="10" font-weight="700" fill="#c62828">F</text>
+              <text x="190" y="75" text-anchor="middle" font-family="var(--sans)" font-size="10" font-weight="700" fill="#2e7d32">V</text>
+            </svg>
+            <h4 style="margin-top:8px">Ciclo Mientras</h4>
+            <p class="muted">Rombo <strong style="color:#8833aa">#f2ccff</strong>. La condición se evalúa <strong>antes</strong>. Si es V, ejecuta el cuerpo y vuelve al rombo. Si es F, sale del ciclo.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <!-- Repetir -->
+          <div class="card col-4" style="text-align:center">
+            <svg width="220" height="90" viewBox="0 0 220 90" style="margin:0 auto;display:block">
+              <polygon points="110,5 215,45 110,85 5,45" fill="#ccb2ff" stroke="#5500aa" stroke-width="2"/>
+              <text x="110" y="42" text-anchor="middle" font-family="var(--mono)" font-size="11" fill="#333">condicion</text>
+              <text x="30" y="75" text-anchor="middle" font-family="var(--sans)" font-size="10" font-weight="700" fill="#c62828">F</text>
+              <text x="190" y="75" text-anchor="middle" font-family="var(--sans)" font-size="10" font-weight="700" fill="#2e7d32">V</text>
+            </svg>
+            <h4 style="margin-top:8px">Ciclo Repetir</h4>
+            <p class="muted">Rombo <strong style="color:#5500aa">#ccb2ff</strong>. Ejecuta el cuerpo <strong>primero</strong> y evalúa la condición <strong>después</strong>. Se repite mientras sea F. Siempre se ejecuta al menos una vez.</p>
+          </div>
+          <!-- Para -->
+          <div class="card col-4" style="text-align:center">
+            <svg width="220" height="75" viewBox="0 0 220 75" style="margin:0 auto;display:block">
+              <ellipse cx="110" cy="38" rx="105" ry="30" fill="#f2ccff" stroke="#8833aa" stroke-width="2"/>
+              <text x="110" y="35" text-anchor="middle" font-family="var(--mono)" font-size="9" fill="#333">i &lt;- 1 Hasta 10</text>
+              <text x="110" y="50" text-anchor="middle" font-family="var(--mono)" font-size="9" fill="#333">Con Paso 1</text>
+            </svg>
+            <h4 style="margin-top:8px">Ciclo Para</h4>
+            <p class="muted">Elipse <strong style="color:#8833aa">#f2ccff</strong>. Indica variable, valor inicial, valor final y paso. Se repite un número determinado de veces.</p>
+          </div>
+          <!-- Flechas -->
+          <div class="card col-4" style="text-align:center">
+            <svg width="200" height="75" viewBox="0 0 200 75" style="margin:0 auto;display:block">
+              <line x1="20" y1="38" x2="170" y2="38" stroke="#555" stroke-width="2.5"/>
+              <polygon points="170,31 190,38 170,45" fill="#555"/>
+              <line x1="100" y1="8" x2="100" y2="55" stroke="#555" stroke-width="2.5"/>
+              <polygon points="93,55 100,72 107,55" fill="#555"/>
+            </svg>
+            <h4 style="margin-top:8px">Flechas (flujo)</h4>
+            <p class="muted">Indican el <strong>orden de ejecución</strong>. Siempre sigue la dirección de la flecha. El flujo principal va de arriba hacia abajo.</p>
+          </div>
+        </div>
+
+        <!-- Tabla resumen con colores -->
+        <div class="grid">
+          <div class="card col-12">
+            <h4>Tabla resumen: forma → color → instrucción</h4>
+            <div class="table-wrap" style="margin-top:8px">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Forma</th>
+                    <th>Color</th>
+                    <th>Significado</th>
+                    <th>Instrucción PSeInt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Cápsula (óvalo)</td>
+                    <td><span style="display:inline-block;width:16px;height:16px;border-radius:4px;background:#fff2cc;border:1px solid #aa8800;vertical-align:middle"></span> <code>#fff2cc</code></td>
+                    <td>Inicio / Fin</td>
+                    <td class="muted"><code>Algoritmo</code> / <code>FinAlgoritmo</code></td>
+                  </tr>
+                  <tr>
+                    <td>Paralelogramo</td>
+                    <td><span style="display:inline-block;width:16px;height:16px;border-radius:4px;background:#ffe5f2;border:1px solid #cc3388;vertical-align:middle"></span> <code>#ffe5f2</code></td>
+                    <td>Entrada</td>
+                    <td class="muted"><code>Leer</code></td>
+                  </tr>
+                  <tr>
+                    <td>Paralelogramo</td>
+                    <td><span style="display:inline-block;width:16px;height:16px;border-radius:4px;background:#e5ffe5;border:1px solid #33aa33;vertical-align:middle"></span> <code>#e5ffe5</code></td>
+                    <td>Salida</td>
+                    <td class="muted"><code>Escribir</code></td>
+                  </tr>
+                  <tr>
+                    <td>Rombo</td>
+                    <td><span style="display:inline-block;width:16px;height:16px;border-radius:4px;background:#d8e5ff;border:1px solid #3355aa;vertical-align:middle"></span> <code>#d8e5ff</code></td>
+                    <td>Decisión / Selección</td>
+                    <td class="muted"><code>Si/Entonces</code>, <code>Segun</code></td>
+                  </tr>
+                  <tr>
+                    <td>Rombo / Elipse</td>
+                    <td><span style="display:inline-block;width:16px;height:16px;border-radius:4px;background:#f2ccff;border:1px solid #8833aa;vertical-align:middle"></span> <code>#f2ccff</code></td>
+                    <td>Ciclos (condición antes)</td>
+                    <td class="muted"><code>Mientras</code>, <code>Para</code></td>
+                  </tr>
+                  <tr>
+                    <td>Rombo</td>
+                    <td><span style="display:inline-block;width:16px;height:16px;border-radius:4px;background:#ccb2ff;border:1px solid #5500aa;vertical-align:middle"></span> <code>#ccb2ff</code></td>
+                    <td>Ciclo (condición después)</td>
+                    <td class="muted"><code>Repetir / Hasta Que</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ejemplo 1: Diagrama lineal -->
+        <div class="grid">
+          <div class="card col-6" style="text-align:center">
+            <h4>Ejemplo 1: Diagrama lineal (sin decisiones)</h4>
+            <p class="muted">Algoritmo que pide tu nombre y te saluda.</p>
+            <svg width="260" height="420" viewBox="0 0 260 420" style="margin:10px auto;display:block">
+              <!-- Inicio -->
+              <rect x="50" y="10" width="160" height="40" rx="20" ry="20" fill="#fff2cc" stroke="#aa8800" stroke-width="2"/>
+              <text x="130" y="36" text-anchor="middle" font-family="var(--sans)" font-size="13" font-weight="600" fill="#333">Algoritmo Saludo</text>
+              <!-- Flecha -->
+              <line x1="130" y1="50" x2="130" y2="80" stroke="#555" stroke-width="2"/>
+              <polygon points="124,76 130,86 136,76" fill="#555"/>
+              <!-- Escribir pregunta -->
+              <polygon points="65,86 235,86 218,122 48,122" fill="#e5ffe5" stroke="#33aa33" stroke-width="1.5"/>
+              <text x="140" y="109" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#333">Escribir "¿Tu nombre?"</text>
+              <!-- Flecha -->
+              <line x1="130" y1="122" x2="130" y2="148" stroke="#555" stroke-width="2"/>
+              <polygon points="124,144 130,154 136,144" fill="#555"/>
+              <!-- Leer -->
+              <polygon points="70,154 220,154 205,190 55,190" fill="#ffe5f2" stroke="#cc3388" stroke-width="1.5"/>
+              <text x="137" y="177" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="#333">Leer nombre</text>
+              <!-- Flecha -->
+              <line x1="130" y1="190" x2="130" y2="216" stroke="#555" stroke-width="2"/>
+              <polygon points="124,212 130,222 136,212" fill="#555"/>
+              <!-- Escribir saludo -->
+              <polygon points="55,222 245,222 228,258 38,258" fill="#e5ffe5" stroke="#33aa33" stroke-width="1.5"/>
+              <text x="140" y="245" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#333">Escribir "¡Hola ", nombre</text>
+              <!-- Flecha -->
+              <line x1="130" y1="258" x2="130" y2="288" stroke="#555" stroke-width="2"/>
+              <polygon points="124,284 130,294 136,284" fill="#555"/>
+              <!-- Fin -->
+              <rect x="50" y="294" width="160" height="40" rx="20" ry="20" fill="#fff2cc" stroke="#aa8800" stroke-width="2"/>
+              <text x="130" y="319" text-anchor="middle" font-family="var(--sans)" font-size="13" font-weight="600" fill="#333">FinAlgoritmo</text>
+            </svg>
+          </div>
+
+          <div class="card col-6">
+            <h4>Código equivalente</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Este código genera el diagrama de la izquierda</div><button class="btn small copy" data-copy="code-flujo-1">Copiar</button></div>
+              <pre><code id="code-flujo-1">Algoritmo Saludo
+	Definir nombre Como Cadena;
+	Escribir "¿Cómo te llamas?";
+	Leer nombre;
+	Escribir "¡Hola ", nombre, "!";
+FinAlgoritmo</code></pre>
+            </div>
+
+            <div class="callout" style="margin-top:14px">
+              <div class="badge good">✓</div>
+              <div>
+                <strong>Lee el diagrama así</strong>
+                <div class="muted">
+                  <strong>1.</strong> Empieza en la cápsula verde de arriba (Inicio).<br>
+                  <strong>2.</strong> Sigue la flecha hacia abajo.<br>
+                  <strong>3.</strong> Cada forma te dice qué hace esa línea de código.<br>
+                  <strong>4.</strong> Termina en la cápsula verde de abajo (Fin).
+                </div>
+              </div>
+            </div>
+
+            <div class="callout" style="margin-top:14px">
+              <div class="badge warn">!</div>
+              <div>
+                <strong>¿Cómo sé qué forma usar?</strong>
+                <div class="muted">
+                  Pregúntate: "¿Esta línea <strong>calcula</strong> algo, <strong>muestra/pide</strong> datos, o <strong>decide</strong> algo?"<br>
+                  • Calcula / asigna → <strong>Rectángulo</strong><br>
+                  • Muestra → <strong style="color:#33aa33">Paralelogramo verde</strong> · Pide datos → <strong style="color:#cc3388">Paralelogramo rosa</strong><br>
+                  • Decide → <strong style="color:#3355aa">Rombo azul</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ejemplo 2: Diagrama con decisión -->
+        <div class="grid">
+          <div class="card col-6" style="text-align:center">
+            <h4>Ejemplo 2: Diagrama con decisión (Si/SiNo)</h4>
+            <p class="muted">Algoritmo que pregunta la edad y dice si es mayor o menor de edad.</p>
+            <svg width="440" height="520" viewBox="0 0 440 520" style="margin:10px auto;display:block">
+              <!-- Inicio -->
+              <rect x="140" y="5" width="160" height="38" rx="19" ry="19" fill="#fff2cc" stroke="#aa8800" stroke-width="2"/>
+              <text x="220" y="29" text-anchor="middle" font-family="var(--sans)" font-size="12" font-weight="600" fill="#333">Algoritmo MayorDeEdad</text>
+              <!-- Flecha -->
+              <line x1="220" y1="43" x2="220" y2="62" stroke="#555" stroke-width="2"/>
+              <polygon points="215,59 220,67 225,59" fill="#555"/>
+              <!-- Escribir -->
+              <polygon points="140,68 320,68 305,100 125,100" fill="#e5ffe5" stroke="#33aa33" stroke-width="1.5"/>
+              <text x="222" y="89" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#333">Escribir "Ingresa tu edad"</text>
+              <!-- Flecha -->
+              <line x1="220" y1="100" x2="220" y2="118" stroke="#555" stroke-width="2"/>
+              <polygon points="215,115 220,123 225,115" fill="#555"/>
+              <!-- Leer -->
+              <polygon points="160,124 290,124 278,156 148,156" fill="#ffe5f2" stroke="#cc3388" stroke-width="1.5"/>
+              <text x="219" y="145" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="#333">Leer edad</text>
+              <!-- Flecha -->
+              <line x1="220" y1="156" x2="220" y2="178" stroke="#555" stroke-width="2"/>
+              <polygon points="215,175 220,183 225,175" fill="#555"/>
+              <!-- Decisión -->
+              <polygon points="220,184 335,232 220,280 105,232" fill="#d8e5ff" stroke="#3355aa" stroke-width="2"/>
+              <text x="220" y="229" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="#333">edad &gt;= 18</text>
+              <!-- Etiqueta V (derecha) -->
+              <text x="340" y="222" font-family="var(--sans)" font-size="12" font-weight="700" fill="#2e7d32">V</text>
+              <!-- Etiqueta F (izquierda) -->
+              <text x="90" y="222" font-family="var(--sans)" font-size="12" font-weight="700" fill="#c62828">F</text>
+              <!-- Rama V (derecha) -->
+              <line x1="335" y1="232" x2="370" y2="232" stroke="#555" stroke-width="2"/>
+              <line x1="370" y1="232" x2="370" y2="330" stroke="#555" stroke-width="2"/>
+              <polygon points="365,326 370,336 375,326" fill="#555"/>
+              <!-- Escribir V -->
+              <polygon points="300,338 440,338 426,372 286,372" fill="#e5ffe5" stroke="#33aa33" stroke-width="1.5"/>
+              <text x="363" y="360" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#333">"Mayor de edad"</text>
+              <!-- Línea V → unión -->
+              <line x1="363" y1="372" x2="363" y2="410" stroke="#555" stroke-width="2"/>
+              <line x1="363" y1="410" x2="220" y2="410" stroke="#555" stroke-width="2"/>
+              <!-- Rama F (izquierda) -->
+              <line x1="105" y1="232" x2="70" y2="232" stroke="#555" stroke-width="2"/>
+              <line x1="70" y1="232" x2="70" y2="330" stroke="#555" stroke-width="2"/>
+              <polygon points="65,326 70,336 75,326" fill="#555"/>
+              <!-- Escribir F -->
+              <polygon points="10,338 140,338 127,372 -3,372" fill="#e5ffe5" stroke="#33aa33" stroke-width="1.5"/>
+              <text x="68" y="360" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#333">"Menor de edad"</text>
+              <!-- Línea F → unión -->
+              <line x1="68" y1="372" x2="68" y2="410" stroke="#555" stroke-width="2"/>
+              <line x1="68" y1="410" x2="220" y2="410" stroke="#555" stroke-width="2"/>
+              <!-- Unión → Fin -->
+              <line x1="220" y1="410" x2="220" y2="458" stroke="#555" stroke-width="2"/>
+              <polygon points="215,454 220,464 225,454" fill="#555"/>
+              <!-- Fin -->
+              <rect x="140" y="464" width="160" height="38" rx="19" ry="19" fill="#fff2cc" stroke="#aa8800" stroke-width="2"/>
+              <text x="220" y="488" text-anchor="middle" font-family="var(--sans)" font-size="12" font-weight="600" fill="#333">FinAlgoritmo</text>
+            </svg>
+          </div>
+
+          <div class="card col-6">
+            <h4>Código equivalente</h4>
+            <div class="examples">
+              <div class="codebar"><div class="muted">Este código genera el diagrama de la izquierda</div><button class="btn small copy" data-copy="code-flujo-2">Copiar</button></div>
+              <pre><code id="code-flujo-2">Algoritmo MayorDeEdad
+	Definir edad Como Entero;
+	Escribir "Ingresa tu edad:";
+	Leer edad;
+
+	Si edad &gt;= 18 Entonces
+		Escribir "Eres mayor de edad";
+	SiNo
+		Escribir "Eres menor de edad";
+	FinSi
+FinAlgoritmo</code></pre>
+            </div>
+
+            <div class="callout" style="margin-top:14px">
+              <div class="badge good">✓</div>
+              <div>
+                <strong>Cómo leer una decisión en el diagrama</strong>
+                <div class="muted">
+                  <strong>1.</strong> Llegas al rombo (la pregunta).<br>
+                  <strong>2.</strong> Si la respuesta es <strong style="color:#2e7d32">V</strong> (Verdadero), sigues el camino derecho.<br>
+                  <strong>3.</strong> Si la respuesta es <strong style="color:#c62828">F</strong> (Falso), sigues el camino izquierdo.<br>
+                  <strong>4.</strong> Ambos caminos se unen más abajo y continúan hacia el final.
+                </div>
+              </div>
+            </div>
+
+            <div class="callout" style="margin-top:14px">
+              <div class="badge warn">!</div>
+              <div>
+                <strong>Reglas importantes de los diagramas</strong>
+                <div class="muted">
+                  • Todo diagrama tiene <strong>un solo inicio</strong> y <strong>un solo fin</strong>.<br>
+                  • Las flechas <strong>nunca se cruzan</strong> si puedes evitarlo.<br>
+                  • El flujo va de <strong>arriba hacia abajo</strong> (a veces de izquierda a derecha).<br>
+                  • De un rombo siempre salen <strong>exactamente 2 caminos</strong> (SÍ y NO).<br>
+                  • Toda forma tiene <strong>al menos una flecha entrando</strong> y <strong>una saliendo</strong> (excepto Inicio y Fin).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Correspondencia código ↔ diagrama -->
+        <div class="grid">
+          <div class="card col-12">
+            <h4>Correspondencia: instrucción PSeInt → forma en el diagrama</h4>
+            <div class="table-wrap" style="margin-top:12px">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Instrucción PSeInt</th>
+                    <th>Forma</th>
+                    <th>Color (en PSeInt)</th>
+                    <th>Ejemplo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>Algoritmo</code> / <code>FinAlgoritmo</code></td>
+                    <td>Cápsula (rectángulo redondeado)</td>
+                    <td><span style="color:#4caf50;font-weight:600">■</span> Verde</td>
+                    <td class="muted">Marca el inicio y el fin del programa</td>
+                  </tr>
+                  <tr>
+                    <td><code>Definir</code>, <code>&lt;-</code> (asignación)</td>
+                    <td>Rectángulo</td>
+                    <td><span style="color:#42a5f5;font-weight:600">■</span> Azul</td>
+                    <td class="muted"><code>edad &lt;- 20;</code>, <code>suma &lt;- a + b;</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>Escribir</code>, <code>Leer</code></td>
+                    <td>Paralelogramo</td>
+                    <td><span style="color:#ffb74d;font-weight:600">■</span> Naranja</td>
+                    <td class="muted"><code>Escribir "Hola";</code>, <code>Leer nombre;</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>Si ... Entonces</code></td>
+                    <td>Rombo</td>
+                    <td><span style="color:#f9a825;font-weight:600">■</span> Amarillo</td>
+                    <td class="muted">Dos caminos: SÍ (verdadero) y NO (falso)</td>
+                  </tr>
+                  <tr>
+                    <td><code>Mientras ... Hacer</code></td>
+                    <td>Rombo (con flecha de retorno)</td>
+                    <td><span style="color:#f9a825;font-weight:600">■</span> Amarillo</td>
+                    <td class="muted">El camino SÍ vuelve al rombo (ciclo)</td>
+                  </tr>
+                  <tr>
+                    <td><code>Para ... Hacer</code></td>
+                    <td>Hexágono o rombo</td>
+                    <td><span style="color:#f9a825;font-weight:600">■</span> Amarillo</td>
+                    <td class="muted">Indica inicio, fin y paso del contador</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cómo generar el diagrama -->
+        <div class="callout">
+          <div class="badge good">✓</div>
+          <div>
+            <strong>Genera tu diagrama en PSeInt</strong>
+            <div class="muted">
+              <strong>1.</strong> Escribe tu código en el editor.<br>
+              <strong>2.</strong> Presiona <code>F7</code> (o el botón de diagrama de flujo en la barra de herramientas).<br>
+              <strong>3.</strong> PSeInt genera el diagrama automáticamente en una ventana nueva.<br>
+              <strong>4.</strong> Puedes hacer clic en cualquier forma del diagrama y PSeInt resaltará la línea de código correspondiente.
+            </div>
+          </div>
+        </div>
+
+        <details open>
+          <summary>Ejercicio (5 min): Dibuja antes de programar <span class="tag">práctica</span></summary>
+          <div class="details-body">
+            <p>Antes de escribir código, dibuja el diagrama de flujo (en papel o pizarra) para este problema:</p>
+            <ol>
+              <li>Pide al usuario dos números.</li>
+              <li>Si el primero es mayor, muestra <code>"El primero es mayor"</code>.</li>
+              <li>Si el segundo es mayor, muestra <code>"El segundo es mayor"</code>.</li>
+              <li>Si son iguales, muestra <code>"Son iguales"</code>.</li>
+            </ol>
+            <p>Después de dibujarlo, escríbelo en PSeInt y genera el diagrama con <code>F7</code> para comparar con tu dibujo.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (7 min): Del diagrama al código <span class="tag">práctica</span></summary>
+          <div class="details-body">
+            <p>Observa este diagrama y escribe el código PSeInt equivalente:</p>
+            <div style="text-align:center;margin:14px 0">
+              <svg width="440" height="480" viewBox="0 0 440 480" style="display:inline-block">
+                <!-- Inicio -->
+                <rect x="140" y="5" width="160" height="36" rx="18" fill="#fff2cc" stroke="#aa8800" stroke-width="2"/>
+                <text x="220" y="28" text-anchor="middle" font-family="var(--sans)" font-size="12" font-weight="600" fill="#333">Algoritmo Descuento</text>
+                <line x1="220" y1="41" x2="220" y2="58" stroke="#555" stroke-width="2"/>
+                <polygon points="215,55 220,63 225,55" fill="#555"/>
+                <!-- Leer precio -->
+                <polygon points="160,64 300,64 285,96 145,96" fill="#ffe5f2" stroke="#cc3388" stroke-width="1.5"/>
+                <text x="222" y="85" text-anchor="middle" font-family="var(--mono)" font-size="11" fill="#333">Leer precio</text>
+                <line x1="220" y1="96" x2="220" y2="116" stroke="#555" stroke-width="2"/>
+                <polygon points="215,113 220,121 225,113" fill="#555"/>
+                <!-- Decisión -->
+                <polygon points="220,122 335,170 220,218 105,170" fill="#d8e5ff" stroke="#3355aa" stroke-width="2"/>
+                <text x="220" y="167" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="#333">precio &gt; 100</text>
+                <!-- Etiqueta V (derecha) -->
+                <text x="340" y="160" font-family="var(--sans)" font-size="12" font-weight="700" fill="#2e7d32">V</text>
+                <!-- Etiqueta F (izquierda) -->
+                <text x="90" y="160" font-family="var(--sans)" font-size="12" font-weight="700" fill="#c62828">F</text>
+                <!-- Rama V (derecha) -->
+                <line x1="335" y1="170" x2="370" y2="170" stroke="#555" stroke-width="2"/>
+                <line x1="370" y1="170" x2="370" y2="264" stroke="#555" stroke-width="2"/>
+                <polygon points="365,260 370,270 375,260" fill="#555"/>
+                <!-- Proceso V (10% descuento) -->
+                <rect x="305" y="272" width="130" height="34" rx="4" fill="#e5ffe5" stroke="#33aa33" stroke-width="1.5"/>
+                <text x="370" y="294" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#333">precio &lt;- precio*0.9</text>
+                <!-- Línea V → unión -->
+                <line x1="370" y1="306" x2="370" y2="345" stroke="#555" stroke-width="2"/>
+                <line x1="370" y1="345" x2="220" y2="345" stroke="#555" stroke-width="2"/>
+                <!-- Rama F (izquierda) -->
+                <line x1="105" y1="170" x2="70" y2="170" stroke="#555" stroke-width="2"/>
+                <line x1="70" y1="170" x2="70" y2="264" stroke="#555" stroke-width="2"/>
+                <polygon points="65,260 70,270 75,260" fill="#555"/>
+                <!-- Proceso F (5% descuento) -->
+                <rect x="5" y="272" width="130" height="34" rx="4" fill="#e5ffe5" stroke="#33aa33" stroke-width="1.5"/>
+                <text x="70" y="294" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#333">precio &lt;- precio*0.95</text>
+                <!-- Línea F → unión -->
+                <line x1="70" y1="306" x2="70" y2="345" stroke="#555" stroke-width="2"/>
+                <line x1="70" y1="345" x2="220" y2="345" stroke="#555" stroke-width="2"/>
+                <!-- Unión → Escribir -->
+                <line x1="220" y1="345" x2="220" y2="370" stroke="#555" stroke-width="2"/>
+                <polygon points="215,366 220,376 225,366" fill="#555"/>
+                <!-- Escribir -->
+                <polygon points="135,378 325,378 308,410 118,410" fill="#e5ffe5" stroke="#33aa33" stroke-width="1.5"/>
+                <text x="222" y="399" text-anchor="middle" font-family="var(--mono)" font-size="10" fill="#333">Escribir "Total: ", precio</text>
+                <line x1="220" y1="410" x2="220" y2="428" stroke="#555" stroke-width="2"/>
+                <polygon points="215,425 220,433 225,425" fill="#555"/>
+                <!-- Fin -->
+                <rect x="140" y="434" width="160" height="36" rx="18" fill="#fff2cc" stroke="#aa8800" stroke-width="2"/>
+                <text x="220" y="456" text-anchor="middle" font-family="var(--sans)" font-size="12" font-weight="600" fill="#333">FinAlgoritmo</text>
+              </svg>
+            </div>
+            <p>Pistas: el programa pide un precio. Si es mayor a 100, aplica 10% de descuento. Si no, aplica 5%. Al final muestra el precio con descuento.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Ejercicio (5 min): Verifica con PSeInt <span class="tag">práctica</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Escribe el código del ejercicio anterior en PSeInt.</li>
+              <li>Ejecútalo con <code>F9</code> para verificar que funcione.</li>
+              <li>Genera el diagrama con <code>F7</code> y compáralo con el de arriba.</li>
+              <li>¿Se parecen? Si hay diferencias, identifica por qué.</li>
             </ol>
           </div>
         </details>
