@@ -1302,6 +1302,190 @@ FinAlgoritmo</code></pre>
             </ol>
           </div>
         </details>
+
+        <!-- ═══════ Ejercicios adicionales ═══════ -->
+        <h4 style="margin-top:28px; padding-left:14px; border-left:3px solid var(--accent);">Más ejercicios de condicionales</h4>
+
+        <!-- Adicional 1 -->
+        <details>
+          <summary>Ejercicio (3 min): ¿Es mayor de edad? <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide la edad al usuario.</li>
+              <li>Si es &gt;= 18, muestra <code>"Eres mayor de edad"</code>.</li>
+              <li>Si no, muestra <code>"Eres menor de edad"</code>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Adicional 2 -->
+        <details>
+          <summary>Ejercicio (3 min): Número positivo, negativo o cero <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide un número al usuario.</li>
+              <li>Si es mayor a 0: <code>"Es positivo"</code>.</li>
+              <li>Si es menor a 0: <code>"Es negativo"</code>.</li>
+              <li>Si es 0: <code>"Es cero"</code>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Adicional 3 -->
+        <details>
+          <summary>Ejercicio (5 min): Par o impar <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide un número entero al usuario.</li>
+              <li>Usa <code>MOD 2</code> para verificar si es par o impar.</li>
+              <li>Muestra: <code>"El número X es par"</code> o <code>"El número X es impar"</code>.</li>
+            </ol>
+            <p>Pista: un número es par si <code>numero MOD 2 = 0</code>.</p>
+          </div>
+        </details>
+
+        <!-- Adicional 4 -->
+        <details>
+          <summary>Ejercicio (5 min): Calificación con letras <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Convierte una nota numérica a letra según la escala americana.</p>
+            <ol>
+              <li>Pide una nota del 0 al 100.</li>
+              <li>Muestra la letra correspondiente:
+                <ul>
+                  <li>90-100: <code>"A — Excelente"</code></li>
+                  <li>80-89: <code>"B — Muy bien"</code></li>
+                  <li>70-79: <code>"C — Bien"</code></li>
+                  <li>60-69: <code>"D — Suficiente"</code></li>
+                  <li>0-59: <code>"F — Reprobado"</code></li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Adicional 5 -->
+        <details>
+          <summary>Ejercicio (7 min): Calculadora simple <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide dos números al usuario.</li>
+              <li>Muestra un menú: <code>"1) Sumar  2) Restar  3) Multiplicar  4) Dividir"</code>.</li>
+              <li>Pide la opción y usa <code>Segun</code> para hacer la operación correcta.</li>
+              <li>Si elige dividir y el segundo número es 0, muestra <code>"Error: no se puede dividir entre cero"</code>.</li>
+              <li>Si elige una opción inválida: <code>"Opción no válida"</code>.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Adicional 6 -->
+        <details>
+          <summary>Ejercicio (7 min): Año bisiesto <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Un año es bisiesto si cumple estas reglas:</p>
+            <ol>
+              <li>Pide un año al usuario.</li>
+              <li>Es bisiesto si:
+                <ul>
+                  <li>Es divisible entre 4 <strong>Y</strong> no es divisible entre 100, <strong>O</strong></li>
+                  <li>Es divisible entre 400.</li>
+                </ul>
+              </li>
+              <li>Muestra: <code>"El año 2024 ES bisiesto"</code> o <code>"El año 2023 NO es bisiesto"</code>.</li>
+            </ol>
+            <p>Pista: usa <code>MOD</code> para verificar divisibilidad y combina con <code>Y</code> / <code>O</code>.</p>
+          </div>
+        </details>
+
+        <!-- Adicional 7 -->
+        <details>
+          <summary>Ejercicio (8 min): Clasificar triángulo <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <ol>
+              <li>Pide las longitudes de 3 lados (a, b, c).</li>
+              <li>Primero verifica si forman un triángulo válido: cada lado debe ser menor que la suma de los otros dos.</li>
+              <li>Si no es válido: <code>"Esos lados no forman un triángulo"</code>.</li>
+              <li>Si es válido, clasifícalo:
+                <ul>
+                  <li>Si los 3 lados son iguales: <code>"Equilátero"</code></li>
+                  <li>Si solo 2 son iguales: <code>"Isósceles"</code></li>
+                  <li>Si todos son diferentes: <code>"Escaleno"</code></li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Adicional 8 -->
+        <details>
+          <summary>Ejercicio (10 min): Precio con descuento por categoría <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Una tienda aplica descuentos según la categoría del cliente y el monto de la compra.</p>
+            <ol>
+              <li>Pide el monto de la compra y la categoría del cliente:
+                <ul>
+                  <li>1 = Normal, 2 = Premium, 3 = VIP</li>
+                </ul>
+              </li>
+              <li>Aplica el descuento:
+                <ul>
+                  <li>Normal: 5% si la compra &gt; 500, si no 0%.</li>
+                  <li>Premium: 10% siempre, 15% si la compra &gt; 1000.</li>
+                  <li>VIP: 20% siempre.</li>
+                </ul>
+              </li>
+              <li>Muestra: descuento aplicado, monto del descuento y precio final.</li>
+            </ol>
+          </div>
+        </details>
+
+        <!-- Adicional 9 -->
+        <details>
+          <summary>Ejercicio (10 min): Conversor de unidades <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>Crea un conversor que maneje múltiples tipos de conversión.</p>
+            <ol>
+              <li>Muestra un menú principal:
+                <ul>
+                  <li>1) Temperatura (°C ↔ °F)</li>
+                  <li>2) Longitud (km ↔ millas)</li>
+                  <li>3) Peso (kg ↔ libras)</li>
+                </ul>
+              </li>
+              <li>Según la categoría, muestra un submenú: <code>"1) De X a Y  2) De Y a X"</code>.</li>
+              <li>Pide el valor y calcula la conversión:
+                <ul>
+                  <li>°C a °F: <code>F &lt;- C * 9 / 5 + 32</code></li>
+                  <li>km a millas: <code>millas &lt;- km * 0.621371</code></li>
+                  <li>kg a libras: <code>libras &lt;- kg * 2.20462</code></li>
+                </ul>
+              </li>
+              <li>Muestra el resultado con 2 decimales.</li>
+            </ol>
+            <p>Pista: usa <code>Segun</code> anidados (uno para la categoría, otro para la dirección de conversión).</p>
+          </div>
+        </details>
+
+        <!-- Adicional 10 -->
+        <details>
+          <summary>Ejercicio (15 min): Horóscopo chino <span class="tag">reto</span></summary>
+          <div class="details-body">
+            <p>El horóscopo chino se repite cada 12 años. Determina el animal según el año de nacimiento.</p>
+            <ol>
+              <li>Pide el año de nacimiento al usuario.</li>
+              <li>Calcula el residuo: <code>residuo &lt;- anio MOD 12</code>.</li>
+              <li>Según el residuo, muestra el animal:
+                <ul>
+                  <li>0 = Mono, 1 = Gallo, 2 = Perro, 3 = Cerdo, 4 = Rata, 5 = Buey</li>
+                  <li>6 = Tigre, 7 = Conejo, 8 = Dragón, 9 = Serpiente, 10 = Caballo, 11 = Cabra</li>
+                </ul>
+              </li>
+              <li>Además, muestra una característica de cada animal (ej: "Dragón — Poderoso y ambicioso").</li>
+              <li>Pregunta si quiere consultar otro año y repite si dice que sí.</li>
+            </ol>
+            <p>Pista: usa <code>Segun residuo Hacer</code> con 12 casos. Envuelve todo en un <code>Repetir / Hasta Que</code> para permitir múltiples consultas.</p>
+          </div>
+        </details>
       </section>
 
       <!-- 6 -->
