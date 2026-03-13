@@ -559,13 +559,36 @@ FinAlgoritmo</code></pre>
           </div>
           <!-- Segun -->
           <div class="card col-4" style="text-align:center">
-            <svg width="220" height="90" viewBox="0 0 220 90" style="margin:0 auto;display:block">
-              <polygon points="35,5 185,5 215,45 185,85 35,85 5,45" fill="#d8e5ff" stroke="#3355aa" stroke-width="2"/>
-              <text x="110" y="35" text-anchor="middle" font-family="var(--mono)" font-size="11" fill="#333">expresion</text>
-              <text x="110" y="55" text-anchor="middle" font-family="var(--sans)" font-size="9" fill="#666">+ De Otro Modo</text>
+            <svg width="220" height="110" viewBox="0 0 220 110" style="margin:0 auto;display:block">
+              <!-- Trapecio superior (variable) -->
+              <polygon points="30,5 190,5 210,40 10,40" fill="#d8e5ff" stroke="#3355aa" stroke-width="1.5"/>
+              <text x="110" y="28" text-anchor="middle" font-family="var(--mono)" font-size="11" fill="#333">expresion</text>
+              <!-- Fila de opciones -->
+              <rect x="10" y="40" width="40" height="24" fill="#d8e5ff" stroke="#3355aa" stroke-width="1"/>
+              <text x="30" y="56" text-anchor="middle" font-family="var(--mono)" font-size="9" fill="#333">1</text>
+              <rect x="50" y="40" width="40" height="24" fill="#d8e5ff" stroke="#3355aa" stroke-width="1"/>
+              <text x="70" y="56" text-anchor="middle" font-family="var(--mono)" font-size="9" fill="#333">2</text>
+              <rect x="90" y="40" width="40" height="24" fill="#d8e5ff" stroke="#3355aa" stroke-width="1"/>
+              <text x="110" y="56" text-anchor="middle" font-family="var(--mono)" font-size="9" fill="#333">3</text>
+              <rect x="130" y="40" width="80" height="24" fill="#d8e5ff" stroke="#3355aa" stroke-width="1"/>
+              <text x="170" y="56" text-anchor="middle" font-family="var(--sans)" font-size="8" fill="#333">De Otro</text>
+              <!-- Flechas hacia abajo -->
+              <line x1="30" y1="64" x2="30" y2="82" stroke="#555" stroke-width="1.5"/>
+              <polygon points="27,79 30,87 33,79" fill="#555"/>
+              <line x1="70" y1="64" x2="70" y2="82" stroke="#555" stroke-width="1.5"/>
+              <polygon points="67,79 70,87 73,79" fill="#555"/>
+              <line x1="110" y1="64" x2="110" y2="82" stroke="#555" stroke-width="1.5"/>
+              <polygon points="107,79 110,87 113,79" fill="#555"/>
+              <line x1="170" y1="64" x2="170" y2="82" stroke="#555" stroke-width="1.5"/>
+              <polygon points="167,79 170,87 173,79" fill="#555"/>
+              <!-- Acciones -->
+              <text x="30" y="100" text-anchor="middle" font-family="var(--mono)" font-size="7" fill="#666">acc1</text>
+              <text x="70" y="100" text-anchor="middle" font-family="var(--mono)" font-size="7" fill="#666">acc2</text>
+              <text x="110" y="100" text-anchor="middle" font-family="var(--mono)" font-size="7" fill="#666">acc3</text>
+              <text x="170" y="100" text-anchor="middle" font-family="var(--mono)" font-size="7" fill="#666">otro</text>
             </svg>
             <h4 style="margin-top:8px">Selección múltiple (Según)</h4>
-            <p class="muted">Hexágono <strong style="color:#3355aa">#d8e5ff</strong>. Evalúa una expresión y elige entre múltiples caminos (casos). Incluye <code>De Otro Modo</code>.</p>
+            <p class="muted">Trapecio + celdas <strong style="color:#3355aa">#d8e5ff</strong>. Evalúa una expresión y elige entre múltiples caminos (casos). Cada valor tiene su propia salida, más <code>De Otro Modo</code>.</p>
           </div>
           <!-- Mientras -->
           <div class="card col-4" style="text-align:center">
@@ -594,13 +617,22 @@ FinAlgoritmo</code></pre>
           </div>
           <!-- Para -->
           <div class="card col-4" style="text-align:center">
-            <svg width="220" height="75" viewBox="0 0 220 75" style="margin:0 auto;display:block">
-              <ellipse cx="110" cy="38" rx="105" ry="30" fill="#f2ccff" stroke="#8833aa" stroke-width="2"/>
-              <text x="110" y="35" text-anchor="middle" font-family="var(--mono)" font-size="9" fill="#333">i &lt;- 1 Hasta 10</text>
-              <text x="110" y="50" text-anchor="middle" font-family="var(--mono)" font-size="9" fill="#333">Con Paso 1</text>
+            <svg width="130" height="130" viewBox="0 0 130 130" style="margin:0 auto;display:block">
+              <!-- Círculo exterior -->
+              <circle cx="65" cy="65" r="58" fill="#f2ccff" stroke="#8833aa" stroke-width="2"/>
+              <!-- Línea horizontal (separa variable de valores) -->
+              <line x1="18" y1="72" x2="112" y2="72" stroke="#8833aa" stroke-width="1.5"/>
+              <!-- Variable arriba -->
+              <text x="65" y="55" text-anchor="middle" font-family="var(--mono)" font-size="14" fill="#333">i</text>
+              <!-- Tres celdas abajo: inicio, fin, paso -->
+              <line x1="50" y1="72" x2="50" y2="110" stroke="#8833aa" stroke-width="1"/>
+              <line x1="80" y1="72" x2="80" y2="110" stroke="#8833aa" stroke-width="1"/>
+              <text x="35" y="95" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="#333">1</text>
+              <text x="65" y="95" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="#333">1</text>
+              <text x="95" y="95" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="#333">5</text>
             </svg>
             <h4 style="margin-top:8px">Ciclo Para</h4>
-            <p class="muted">Elipse <strong style="color:#8833aa">#f2ccff</strong>. Indica variable, valor inicial, valor final y paso. Se repite un número determinado de veces.</p>
+            <p class="muted">Círculo <strong style="color:#8833aa">#f2ccff</strong>. Arriba la variable, abajo tres celdas: valor inicial, valor final y paso. Se repite un número determinado de veces.</p>
           </div>
           <!-- Flechas -->
           <div class="card col-4" style="text-align:center">
@@ -655,7 +687,7 @@ FinAlgoritmo</code></pre>
                     <td class="muted"><code>Si/Entonces</code>, <code>Segun</code></td>
                   </tr>
                   <tr>
-                    <td>Rombo / Elipse</td>
+                    <td>Rombo / Círculo</td>
                     <td><span style="display:inline-block;width:16px;height:16px;border-radius:4px;background:#f2ccff;border:1px solid #8833aa;vertical-align:middle"></span> <code>#f2ccff</code></td>
                     <td>Ciclos (condición antes)</td>
                     <td class="muted"><code>Mientras</code>, <code>Para</code></td>
@@ -901,7 +933,7 @@ FinAlgoritmo</code></pre>
                   </tr>
                   <tr>
                     <td><code>Para ... Hacer</code></td>
-                    <td>Hexágono o rombo</td>
+                    <td>Trapecio + celdas o círculo</td>
                     <td><span style="color:#f9a825;font-weight:600">■</span> Amarillo</td>
                     <td class="muted">Indica inicio, fin y paso del contador</td>
                   </tr>
