@@ -2679,7 +2679,7 @@ Nivel 5: necesitas 500 EXP</code></pre>
         <h3>8) Arreglos (vectores)</h3>
         <p class="lead">
           Un arreglo es una <strong>lista ordenada</strong> de valores del mismo tipo. Piensa en él como una fila de casilleros numerados.
-          En PSeInt, los arreglos empiezan en la posición <strong>1</strong> (no en 0). Se crean con <code>Dimension</code>.
+          En esta guía los índices <strong>empiezan en 0</strong>: si escribes <code>Dimension enemigos[3]</code>, las posiciones válidas son <code>0</code>, <code>1</code> y <code>2</code>. Se crean con <code>Dimension</code>.
         </p>
 
         <div class="grid">
@@ -2691,12 +2691,12 @@ Nivel 5: necesitas 500 EXP</code></pre>
 	Definir enemigos Como Cadena;
 	Dimension enemigos[3];
 
-	enemigos[1] &lt;- "Goomba";
-	enemigos[2] &lt;- "Koopa";
-	enemigos[3] &lt;- "Bowser";
+	enemigos[0] &lt;- "Goomba";
+	enemigos[1] &lt;- "Koopa";
+	enemigos[2] &lt;- "Bowser";
 
-	Escribir "Primero: ", enemigos[1];
-	Escribir "Último: ", enemigos[3];
+	Escribir "Primero (índice 0): ", enemigos[0];
+	Escribir "Último (índice 2): ", enemigos[2];
 FinAlgoritmo</code></pre>
             </div>
           </div>
@@ -2709,13 +2709,13 @@ FinAlgoritmo</code></pre>
 	Definir i Como Entero;
 	Dimension nombres[4];
 
-	nombres[1] &lt;- "Ana";
-	nombres[2] &lt;- "Beto";
-	nombres[3] &lt;- "Carla";
-	nombres[4] &lt;- "Diego";
+	nombres[0] &lt;- "Ana";
+	nombres[1] &lt;- "Beto";
+	nombres[2] &lt;- "Carla";
+	nombres[3] &lt;- "Diego";
 
-	Para i &lt;- 1 Hasta 4 Con Paso 1 Hacer
-		Escribir "Posición ", i, ": ", nombres[i];
+	Para i &lt;- 0 Hasta 3 Con Paso 1 Hacer
+		Escribir "Índice ", i, ": ", nombres[i];
 	FinPara
 FinAlgoritmo</code></pre>
             </div>
@@ -2731,9 +2731,9 @@ FinAlgoritmo</code></pre>
                 <thead>
                   <tr>
                     <th>Índice</th>
+                    <th><code>[0]</code></th>
                     <th><code>[1]</code></th>
                     <th><code>[2]</code></th>
-                    <th><code>[3]</code></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2749,8 +2749,8 @@ FinAlgoritmo</code></pre>
             <div class="callout">
               <div class="badge warn">!</div>
               <div>
-                <strong>Los arreglos en PSeInt empiezan en 1</strong>
-                <div class="muted">A diferencia de otros lenguajes (C, Java, Python), el primer elemento es <code>[1]</code>, no <code>[0]</code>.</div>
+                <strong>Índice base 0 en esta guía</strong>
+                <div class="muted">Con <code>Dimension arr[n]</code> hay <code>n</code> elementos: índices <code>0</code> hasta <code>n - 1</code>. En PSeInt el índice inicial puede configurarse en opciones; aquí usamos <strong>0</strong> como en C, Java o Python.</div>
               </div>
             </div>
           </div>
@@ -2767,14 +2767,14 @@ FinAlgoritmo</code></pre>
 	n &lt;- 5;
 	Dimension notas[n];
 
-	Para i &lt;- 1 Hasta n Con Paso 1 Hacer
-		Escribir "Ingresa la nota ", i, ":";
+	Para i &lt;- 0 Hasta n - 1 Con Paso 1 Hacer
+		Escribir "Ingresa la nota (índice ", i, "):";
 		Leer notas[i];
 	FinPara
 
 	Escribir "=== Notas ingresadas ===";
-	Para i &lt;- 1 Hasta n Con Paso 1 Hacer
-		Escribir "Nota ", i, ": ", notas[i];
+	Para i &lt;- 0 Hasta n - 1 Con Paso 1 Hacer
+		Escribir "Índice ", i, ": ", notas[i];
 	FinPara
 FinAlgoritmo</code></pre>
             </div>
@@ -2788,14 +2788,14 @@ FinAlgoritmo</code></pre>
 	Definir i, mayor Como Entero;
 	Dimension datos[5];
 
-	datos[1] &lt;- 30;
-	datos[2] &lt;- 85;
-	datos[3] &lt;- 50;
-	datos[4] &lt;- 120;
-	datos[5] &lt;- 45;
+	datos[0] &lt;- 30;
+	datos[1] &lt;- 85;
+	datos[2] &lt;- 50;
+	datos[3] &lt;- 120;
+	datos[4] &lt;- 45;
 
-	mayor &lt;- datos[1];
-	Para i &lt;- 2 Hasta 5 Con Paso 1 Hacer
+	mayor &lt;- datos[0];
+	Para i &lt;- 1 Hasta 4 Con Paso 1 Hacer
 		Si datos[i] &gt; mayor Entonces
 			mayor &lt;- datos[i];
 		FinSi
@@ -2810,17 +2810,17 @@ FinAlgoritmo</code></pre>
         <details open>
           <summary>Error común: índice fuera de rango <span class="tag">típico</span></summary>
           <div class="details-body">
-            <p>Si declaras <code>Dimension arr[5]</code> y accedes a <code>arr[6]</code>, PSeInt dará error.</p>
+            <p>Si declaras <code>Dimension arr[5]</code>, los índices válidos son <code>0</code> a <code>4</code>; si accedes a <code>arr[5]</code>, PSeInt dará error.</p>
             <div class="grid examples">
               <div class="card col-6">
                 <h4>❌ Error</h4>
                 <pre><code>Dimension datos[3];
-Escribir datos[5];  // No existe posición 5</code></pre>
+Escribir datos[3];  // Solo existen índices 0, 1 y 2</code></pre>
               </div>
               <div class="card col-6">
                 <h4>✅ Correcto</h4>
                 <pre><code>Dimension datos[3];
-Escribir datos[3];  // Última posición válida</code></pre>
+Escribir datos[2];  // Última posición válida</code></pre>
               </div>
             </div>
           </div>
@@ -2832,7 +2832,7 @@ Escribir datos[3];  // Última posición válida</code></pre>
           <div class="details-body">
             <ol>
               <li>Crea un arreglo de 3 cadenas con habilidades: <code>"Golpe"</code>, <code>"Escudo"</code>, <code>"Curar"</code>.</li>
-              <li>Recorre el arreglo con <code>Para</code> e imprime cada habilidad con su número: <code>"1) Golpe"</code>.</li>
+              <li>Recorre el arreglo con <code>Para</code> e imprime cada habilidad con su <strong>índice</strong> (0, 1, 2), por ejemplo: <code>"Índice 0: Golpe"</code>.</li>
               <li>Al final, muestra: <code>"Total de habilidades: 3"</code>.</li>
             </ol>
           </div>
@@ -2845,8 +2845,8 @@ Escribir datos[3];  // Última posición válida</code></pre>
             <p>Simula un inventario donde el jugador recoge objetos durante una aventura.</p>
             <ol>
               <li>Crea un arreglo <code>inventario[5]</code> de tipo Cadena.</li>
-              <li>Asígnale 3 objetos iniciales: <code>"Espada"</code>, <code>"Poción"</code>, <code>"Mapa"</code>.</li>
-              <li>El jugador encuentra 2 objetos más: pídelos con <code>Leer</code> y guárdalos en las posiciones 4 y 5.</li>
+              <li>Asígnale 3 objetos iniciales en índices <code>0</code>, <code>1</code> y <code>2</code>: <code>"Espada"</code>, <code>"Poción"</code>, <code>"Mapa"</code>.</li>
+              <li>El jugador encuentra 2 objetos más: pídelos con <code>Leer</code> y guárdalos en los índices <code>3</code> y <code>4</code>.</li>
               <li>Muestra el inventario completo numerado.</li>
             </ol>
           </div>
@@ -2875,7 +2875,7 @@ Escribir datos[3];  // Última posición válida</code></pre>
               <li>Crea un arreglo con 6 nombres: <code>"Ana"</code>, <code>"Luis"</code>, <code>"María"</code>, <code>"Pedro"</code>, <code>"Sofía"</code>, <code>"Carlos"</code>.</li>
               <li>Pide al usuario un nombre a buscar.</li>
               <li>Recorre el arreglo comparando cada posición con el nombre buscado.</li>
-              <li>Si lo encuentra, muestra <code>"Encontrado en la posición X"</code> y deja de buscar.</li>
+              <li>Si lo encuentra, muestra <code>"Encontrado en el índice X"</code> (0 a 5) y deja de buscar.</li>
               <li>Si termina el ciclo sin encontrarlo, muestra <code>"No está en la lista"</code>.</li>
             </ol>
             <p>Pista: usa una variable <code>encontrado</code> de tipo Logico para saber si ya lo hallaste.</p>
@@ -2904,10 +2904,10 @@ Escribir datos[3];  // Última posición válida</code></pre>
             <ol>
               <li>Crea un arreglo <code>original[5]</code> con valores: <code>10, 20, 30, 40, 50</code>.</li>
               <li>Crea un segundo arreglo <code>invertido[5]</code>.</li>
-              <li>Usa un <code>Para</code> para copiar los elementos en orden inverso: <code>invertido[1] &lt;- original[5]</code>, etc.</li>
+              <li>Usa un <code>Para</code> para copiar en orden inverso: por ejemplo <code>invertido[i] &lt;- original[4 - i]</code> con <code>i</code> de <code>0</code> a <code>4</code>.</li>
               <li>Muestra ambos arreglos para verificar.</li>
             </ol>
-            <p>Pista: si <code>i</code> va de 1 a 5, la posición invertida es <code>5 - i + 1</code>.</p>
+            <p>Pista: con índices de <code>0</code> a <code>4</code>, la posición espejada es <code>4 - i</code>.</p>
           </div>
         </details>
 
@@ -2955,10 +2955,10 @@ Escribir datos[3];  // Última posición válida</code></pre>
             <ol>
               <li>Crea un arreglo con: <code>64, 25, 12, 89, 37, 41</code> (tamaño 6).</li>
               <li>Muestra el arreglo original.</li>
-              <li>Usa dos <code>Para</code> anidados:
+              <li>Usa dos <code>Para</code> anidados (arreglo con índices <code>0</code>..<code>5</code>):
                 <ul>
-                  <li>El externo <code>i</code> va de 1 a 5 (n-1 pasadas).</li>
-                  <li>El interno <code>j</code> va de 1 a <code>6-i</code>.</li>
+                  <li>El externo <code>i</code> va de <code>0</code> a <code>4</code> (pasadas de burbuja).</li>
+                  <li>El interno <code>j</code> va de <code>0</code> a <code>4 - i</code>.</li>
                   <li>Si <code>datos[j] &gt; datos[j+1]</code>, intercámbialos usando una variable <code>auxiliar</code>.</li>
                 </ul>
               </li>
@@ -3005,7 +3005,7 @@ Escribir datos[3];  // Última posición válida</code></pre>
         <h3>9) Matrices (arreglos bidimensionales)</h3>
         <p class="lead">
           Una matriz es un arreglo de <strong>dos dimensiones</strong>: filas y columnas. Es como una tabla o una cuadrícula.
-          Se declara con <code>Dimension matriz[filas, columnas]</code>.
+          Se declara con <code>Dimension matriz[filas, columnas]</code>. Igual que en vectores, en esta guía los índices de fila y columna <strong>empiezan en 0</strong>.
         </p>
 
         <div class="grid">
@@ -3018,20 +3018,20 @@ Escribir datos[3];  // Última posición válida</code></pre>
 	Definir f, c Como Entero;
 	Dimension mat[3,3];
 
-	// Llenar con valores
-	mat[1,1] &lt;- 1;
-	mat[1,2] &lt;- 2;
-	mat[1,3] &lt;- 3;
-	mat[2,1] &lt;- 4;
-	mat[2,2] &lt;- 5;
-	mat[2,3] &lt;- 6;
-	mat[3,1] &lt;- 7;
-	mat[3,2] &lt;- 8;
-	mat[3,3] &lt;- 9;
+	// Llenar con valores (filas y columnas desde 0)
+	mat[0,0] &lt;- 1;
+	mat[0,1] &lt;- 2;
+	mat[0,2] &lt;- 3;
+	mat[1,0] &lt;- 4;
+	mat[1,1] &lt;- 5;
+	mat[1,2] &lt;- 6;
+	mat[2,0] &lt;- 7;
+	mat[2,1] &lt;- 8;
+	mat[2,2] &lt;- 9;
 
 	// Mostrar como tabla
-	Para f &lt;- 1 Hasta 3 Con Paso 1 Hacer
-		Para c &lt;- 1 Hasta 3 Con Paso 1 Hacer
+	Para f &lt;- 0 Hasta 2 Con Paso 1 Hacer
+		Para c &lt;- 0 Hasta 2 Con Paso 1 Hacer
 			Escribir Sin Saltar mat[f,c], "  ";
 		FinPara
 		Escribir "";
@@ -3048,19 +3048,19 @@ FinAlgoritmo</code></pre>
 	Definir i, j Como Entero;
 	Dimension notas[3,4];
 
-	// 3 alumnos, 4 materias
-	Para i &lt;- 1 Hasta 3 Con Paso 1 Hacer
-		Escribir "--- Alumno ", i, " ---";
-		Para j &lt;- 1 Hasta 4 Con Paso 1 Hacer
-			Escribir "Nota materia ", j, ":";
+	// 3 filas (alumnos), 4 columnas (materias); índices desde 0
+	Para i &lt;- 0 Hasta 2 Con Paso 1 Hacer
+		Escribir "--- Alumno (fila índice ", i, ") ---";
+		Para j &lt;- 0 Hasta 3 Con Paso 1 Hacer
+			Escribir "Nota materia (col índice ", j, "):";
 			Leer notas[i,j];
 		FinPara
 	FinPara
 
 	// Mostrar
-	Para i &lt;- 1 Hasta 3 Con Paso 1 Hacer
-		Escribir "Alumno ", i, ":";
-		Para j &lt;- 1 Hasta 4 Con Paso 1 Hacer
+	Para i &lt;- 0 Hasta 2 Con Paso 1 Hacer
+		Escribir "Fila ", i, ":";
+		Para j &lt;- 0 Hasta 3 Con Paso 1 Hacer
 			Escribir Sin Saltar notas[i,j], "  ";
 		FinPara
 		Escribir "";
@@ -3075,10 +3075,10 @@ FinAlgoritmo</code></pre>
           <div>
             <strong>Visualización de una matriz 3×3</strong>
             <div class="muted">
-              <code>[1,1]=1  [1,2]=2  [1,3]=3</code><br>
-              <code>[2,1]=4  [2,2]=5  [2,3]=6</code><br>
-              <code>[3,1]=7  [3,2]=8  [3,3]=9</code><br><br>
-              Primer índice = <strong>fila</strong>, segundo índice = <strong>columna</strong>.
+              <code>[0,0]=1  [0,1]=2  [0,2]=3</code><br>
+              <code>[1,0]=4  [1,1]=5  [1,2]=6</code><br>
+              <code>[2,0]=7  [2,1]=8  [2,2]=9</code><br><br>
+              Primer índice = <strong>fila</strong> (0..2), segundo índice = <strong>columna</strong> (0..2).
             </div>
           </div>
         </div>
@@ -3127,7 +3127,7 @@ FinAlgoritmo</code></pre>
             <ol>
               <li>Llena la matriz con datos fijos.</li>
               <li>Para cada fila (alumno), suma sus 4 notas y calcula el promedio.</li>
-              <li>Muestra: <code>"Alumno 1: promedio = 7.5"</code> para cada uno.</li>
+              <li>Muestra el promedio de cada fila (puedes etiquetar <code>"Fila índice 0: promedio = ..."</code>, etc.).</li>
             </ol>
           </div>
         </details>
@@ -3140,10 +3140,10 @@ FinAlgoritmo</code></pre>
             <ol>
               <li>Crea una matriz 4×4 con valores fijos.</li>
               <li>Muestra la matriz completa.</li>
-              <li>Recorre solo la diagonal principal (<code>mat[1,1]</code>, <code>mat[2,2]</code>, <code>mat[3,3]</code>, <code>mat[4,4]</code>) y muestra esos valores.</li>
+              <li>Recorre solo la diagonal principal (<code>mat[0,0]</code>, <code>mat[1,1]</code>, <code>mat[2,2]</code>, <code>mat[3,3]</code>) y muestra esos valores.</li>
               <li>Calcula la suma de la diagonal.</li>
             </ol>
-            <p>Pista: solo necesitas un <code>Para i &lt;- 1 Hasta 4</code> y accedes a <code>mat[i,i]</code>.</p>
+            <p>Pista: solo necesitas un <code>Para i &lt;- 0 Hasta 3 Con Paso 1 Hacer</code> y accedes a <code>mat[i,i]</code>.</p>
           </div>
         </details>
 
@@ -3167,7 +3167,7 @@ FinAlgoritmo</code></pre>
             <p>Genera automáticamente una tabla de multiplicar del 1 al 5 dentro de una matriz.</p>
             <ol>
               <li>Declara <code>tabla[5,5]</code>.</li>
-              <li>Llénala con la fórmula: <code>tabla[i,j] &lt;- i * j;</code></li>
+              <li>Con <code>i</code> y <code>j</code> de <code>0</code> a <code>4</code>, llénala con: <code>tabla[i,j] &lt;- (i + 1) * (j + 1);</code> (así la tabla mostrada coincide con la tabla del 1 al 5).</li>
               <li>Muéstrala en formato de tabla. El resultado debe verse así:</li>
             </ol>
             <pre><code>1   2   3   4   5
@@ -3196,7 +3196,7 @@ FinAlgoritmo</code></pre>
         <details>
           <summary>Ejercicio (10 min): Transponer una matriz <span class="tag">reto</span></summary>
           <div class="details-body">
-            <p>Transponer una matriz es intercambiar filas por columnas: la fila 1 se vuelve columna 1, etc.</p>
+            <p>Transponer una matriz es intercambiar filas por columnas (la fila de índice <code>0</code> pasa a ser la columna de índice <code>0</code>, etc.).</p>
             <ol>
               <li>Crea una matriz <code>original[3,4]</code> con valores fijos.</li>
               <li>Crea una matriz <code>transpuesta[4,3]</code> (dimensiones invertidas).</li>
@@ -3270,7 +3270,7 @@ FinAlgoritmo</code></pre>
             <ol>
               <li>Crea una matriz <code>tablero[4,4]</code> inicializada en 0 (agua).</li>
               <li>Coloca 3 "barcos" en posiciones fijas cambiando esos valores a 1.</li>
-              <li>Usa un <code>Repetir</code> para que el usuario ingrese coordenadas (fila, columna) de disparo.</li>
+              <li>Usa un <code>Repetir</code> para que el usuario ingrese coordenadas (fila y columna, índices <code>0</code> a <code>3</code>) de disparo.</li>
               <li>Si <code>tablero[fila,col] = 1</code>: muestra <code>"¡Impacto!"</code>, cámbialo a 2 (hundido) e incrementa un contador de aciertos.</li>
               <li>Si es 0: muestra <code>"Agua..."</code>, cámbialo a 3 (ya disparado).</li>
               <li>Si es 2 o 3: muestra <code>"Ya disparaste ahí"</code>.</li>
@@ -3313,7 +3313,7 @@ FinAlgoritmo</code></pre>
               <li>En cada turno:
                 <ul>
                   <li>Muestra el tablero.</li>
-                  <li>Pide fila y columna al jugador actual.</li>
+                  <li>Pide fila y columna al jugador actual (índices <code>0</code>, <code>1</code> o <code>2</code>).</li>
                   <li>Valida que la casilla esté vacía (si no, pide otra).</li>
                   <li>Coloca la ficha.</li>
                 </ul>
@@ -3649,16 +3649,16 @@ edad &lt;- 20;  // número en variable numérica</code></pre>
             <div class="card col-6">
               <h4>❌ Con error</h4>
               <pre><code>Dimension datos[3]
-Escribir datos[5]  // solo tiene 1,2,3</code></pre>
+Escribir datos[3]  // solo hay índices 0, 1 y 2</code></pre>
             </div>
             <div class="card col-6">
               <h4>✅ Corregido</h4>
               <pre><code>Dimension datos[3]
-Escribir datos[3]  // último válido</code></pre>
+Escribir datos[2]  // último índice válido</code></pre>
             </div>
           </div>
           <div class="error-tip">
-            <strong>Solución:</strong> Si declaraste <code>Dimension arr[N]</code>, los índices válidos son de <code>1</code> a <code>N</code>.
+            <strong>Solución:</strong> Si declaraste <code>Dimension arr[N]</code> (convención de esta guía), los índices válidos van de <code>0</code> a <code>N - 1</code>.
           </div>
         </div>
 
@@ -3928,10 +3928,10 @@ FinAlgoritmo</code></pre>
             <strong>Instrucciones:</strong>
             <ol>
               <li>Declara un arreglo de 5 nombres de enemigos.</li>
-              <li>Recorre el arreglo con <code>Para</code> e imprime cada uno con su número: <code>"Enemigo 1: Goomba"</code>.</li>
+              <li>Recorre el arreglo con <code>Para</code> e imprime cada uno con su índice, por ejemplo: <code>"Enemigo índice 0: Goomba"</code>.</li>
               <li>Al final imprime cuántos enemigos hay.</li>
             </ol>
-            <strong>Pista:</strong> Usa <code>Para i &lt;- 1 Hasta 5</code> y accede con <code>enemigos[i]</code>.
+            <strong>Pista:</strong> Usa <code>Para i &lt;- 0 Hasta 4 Con Paso 1 Hacer</code> y accede con <code>enemigos[i]</code>.
           </div>
         </div>
 
@@ -3950,7 +3950,7 @@ FinAlgoritmo</code></pre>
               <li>Calcula y muestra el promedio.</li>
               <li>Muestra si aprobó (promedio &gt;= 6) o no.</li>
             </ol>
-            <strong>Pista:</strong> Usa una variable <code>suma &lt;- 0</code> y ve acumulando: <code>suma &lt;- suma + notas[i]</code>
+            <strong>Pista:</strong> Usa <code>Para i &lt;- 0 Hasta 4 Con Paso 1 Hacer</code>, una variable <code>suma &lt;- 0</code> y acumula: <code>suma &lt;- suma + notas[i];</code>
           </div>
         </div>
 
@@ -3995,8 +3995,8 @@ FinAlgoritmo</code></pre>
               <li>Llena la tienda: Espada=30, Escudo=25, Poción=10, Armadura=80.</li>
               <li>El jugador tiene <code>oro &lt;- 100</code>.</li>
               <li>Recorre la tienda y muestra qué puede comprar (precio &lt;= oro).</li>
-              <li>Pide al usuario el número del objeto a comprar y resta el precio al oro.</li>
-              <li>Repite hasta que el usuario elija salir (ingrese 0).</li>
+              <li>Pide al usuario el <strong>índice</strong> del objeto a comprar (<code>0</code> a <code>3</code>) y resta el precio al oro.</li>
+              <li>Repite hasta que el usuario elija salir (por ejemplo ingresando <code>-1</code> u otra opción que definas).</li>
             </ol>
           </div>
         </div>
